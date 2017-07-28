@@ -1,0 +1,26 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  // Opinions list
+  .col-sm-12
+    .block
+      .block-content
+        table.table.table-hover.table_opinion
+          thead
+            tr.table_opinion__tr
+              th.table_opinion__th.table_opinion__th_left
+                | {{'opinions.form.source' | translate}}
+              th.table_opinion__th
+                | {{'opinions.form.source' | translate}}             
+              th.table_opinion__th.table_opinion__th_right
+                | {{'opinions.form.message' | translate}}
+                //| {{ 'opinions.comment' | translate }}
+          tbody(ng-repeat='opinion in $ctrl.opinions')
+            tr.table_opinion__tr
+              td.table_opinion__td.table_opinion__td_left.font-w600
+                | {{ opinion.location }}
+              td.table_opinion__td
+                i.fa.fa-smile-o.fa-smile-o_feedback.fa-smile-o_green.fa_hide(ng-class="{'fa-show' : opinion.style === 'positive'}")
+                i.fa.fa-frown-o.fa-frown-o_feedback.fa-frown-o_yellow.fa_hide(ng-class="{'fa-show' : opinion.style === 'negative'}")
+              td.table_opinion__td.table_opinion__td_right.font-w600
+                | {{ opinion.message }}

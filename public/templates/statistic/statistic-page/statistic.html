@@ -1,0 +1,120 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-boxed">
+  <div class="row font-s13">
+    <div class="block">
+      <div class="content content-narrow">
+        <div class="form-group">
+          <label for="statistic-filter">
+             
+            {{'statistics.filter.title' | translate}}
+          </label>
+          <select id="statistics-filter" name="statistics-filter" ng-model="$ctrl.filter" ng-change="$ctrl.statsupdate()" class="form-control form-control_black">
+            <option value="last7days">{{'statistics.filter.week' | translate}}</option>
+            <option value="last30days">{{'statistics.filter.month' | translate}}</option>
+            <option value="last90days">{{'statistics.filter.quarter' | translate}}</option>
+            <option value="year">{{'statistics.filter.year' | translate}}          </option>
+          </select>
+          <label for="locations-stats" class="push-10-t">
+             
+            {{'statistics.address_list.address' | translate}}
+          </label>
+          <select id="locations-stats" name="statistics-filter" ng-options="location.address for location in $ctrl.locations" ng-model="$ctrl.location" ng-change="$ctrl.statsupdate()" class="form-control form-control_black"></select>
+        </div>
+      </div>
+    </div>
+    <div class="row font-s13">
+      <div class="col-sm-12">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.clients-chart.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div id="new_old_users_chart">
+              <canvas chart-data="new_old_users.data" chart-labels="new_old_users.labels" chart-series="new_old_users.series" chart-options="new_old_users.options" chart-colors="new_old_users.colors" height="330" width="454" class="char chart-bar"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row font-s13">
+      <div class="col-sm-6">
+        <div class="block"> 
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.time-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="time_pie.data" chart-labels="time_pie.labels" chart-options="time_pie.options" chart-series="time_pie.series" chart-colors="time_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.social-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="social_pie.data" chart-labels="social_pie.labels" chart-options="social_pie.options" chart-series="social_pie.series" chart-colors="social_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row font-s13">
+      <div class="col-sm-6">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.gender-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="gender_pie.data" chart-labels="gender_pie.labels" chart-options="gender_pie.options" chart-series="gender_pie.series" chart-colors="gender_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.age-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="age_pie.data" chart-labels="age_pie.labels" chart-options="age_pie.options" chart-series="age_pie.series" chart-colors="age_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row font-s13">
+      <div class="col-sm-6">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.clients-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="visitors_pie.data" chart-labels="visitors_pie.labels" chart-options="visitors_pie.options" chart-series="visitors_pie.series" chart-colors="visitors_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">{{'statistics.charts.newvstotal-pie.title' | translate}}</h3>
+          </div>
+          <div class="block-content block-content-full text-center">
+            <div>
+              <canvas chart-data="new_old_users_pie.data" chart-labels="new_old_users_pie.labels" chart-options="new_old_users_pie.options" chart-series="new_old_users_pie.series" chart-colors="new_old_users_pie.colors" height="330" width="454" class="chart chart-pie"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

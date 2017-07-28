@@ -1,0 +1,29 @@
+
+<section id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+  <sidebar></sidebar>
+  <topbar></topbar>
+  <main id="main-container" class="main-content-wrap">
+    <breadcrumbs></breadcrumbs>
+    <basicstats></basicstats>
+    <div class="content content-boxed">
+      <div class="row font-s13">
+        <!-- Brand Card-->
+        <div class="col-sm-5 col-xs-12">
+          <div class="block">
+            <div class="block-content block-content-full text-center">
+              <brand-card brand="$ctrl.brand"></brand-card>
+            </div>
+          </div>
+        </div>
+        <!-- Brand Form-->
+        <div class="col-sm-7 col-xs-12">
+          <div class="block block-themed">
+            <div class="block-content">
+              <brand-form brand="$ctrl.brand" action="'create'"></brand-form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

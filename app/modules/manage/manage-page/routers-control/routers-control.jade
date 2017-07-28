@@ -1,0 +1,183 @@
+.block.block-themed.block-rounded#routers-control
+  ul.block-options
+    li
+      button(type='button')
+        i.si.si-settings
+  .block-header.bg-primary(ng-click="showRoutersControl = !showRoutersControl")
+    | {{ 'manage-page.routers' | translate}}
+  .block-content.block-content-full(ng-show="showRoutersControl")
+    table.js-table-sections.table.table-hover
+      thead
+        tr
+          th(style='width: 30px;')
+          th
+            | {{ 'routers.serial' | translate }}
+          th(style='width: 10%;')
+            | {{ 'routers.status' | translate }}
+          th(style='width: 30%;')
+            | {{ 'routers.comment' | translate }}
+          th(style='width: 30%;')
+            | {{ 'routers.settings' | translate }}
+          th(style='width: 30%;')
+            | {{ 'routers.edit' | translate }}
+      // First TBody (header)
+      tbody.js-table-sections-header(ng-repeat-start='router in $ctrl.routers')
+        tr
+          td.text-center
+            i.fa.fa-angle-right
+          td.font-w600
+            | {{ router.serial }}
+          td
+            // <span class="label" label="{{router.status}}" set-label-status>
+            // {{ router.status }}
+            // </span>
+            span.fa.fa-check.font_green.router-status.inline_hide(ng-class="{'inline_show' : router.status === true}")
+            span.fa.fa-remove.font_red.router-status.inline_hide(ng-class="{'inline_show' : router.status === false}")
+          td.font-w600
+            | {{ router.comment }}
+          td
+            a.btn.btn-xs.btn-success.push-5-r.push-10.router-settings(href='/api/public/router_files/{{router.common_name}}/{{router.common_name}}.zip', onclick="ga('send', 'event', 'dashboard', 'router', 'settings')")
+              i.fa.fa-rocket
+              |                   {{ router.common_name }}
+          td
+            a.btn.btn-xs.btn-primary.push-5-r.push-10.router-edit(ui-sref='dashboard.router({id:router.id})')
+              i.fa.fa-edit
+              |                   {{ 'routers.edit' | translate }}
+      // Second TBody (data)
+      tbody(on-finish-render='ngRepeatFinished', ng-repeat-end='')
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.router-local-ip' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.router_local_ip }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.comment' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.comment }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.first-dns-server' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.first_dns_server }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.second-dns-server' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.second_dns_server }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.common-name' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.common_name }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.ip-name' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.ip_name }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.router-local-ip' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.router_admin_ip }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.disable-service-access' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.disable_service_access }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.split-networks' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.split_networks }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.isolate-wlan' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.isolate_wlan }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.block-service-ports' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.block_service_ports }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.admin-ethernet-port' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.admin_ethernet_port }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.router-admin-ip' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.router_admin_ip }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.admin-password' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.admin_password }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.radius-secret' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.radius_secret }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.ssl-certificate' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.ssl_certificate }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.ssl-key' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.ssl_key }}
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.radius-db-nas-id' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.radius_db_nas_id }}
+        // TODO: Only if current_user.role == 'Admin'
+        tr
+          td.text-center
+          td.font-w600.text-success
+            | {{ 'routers.user' | translate }}
+          td(colspan='3')
+            small.text-muted.text-center
+              | {{ router.user_id }}
+    .content.text-center
+      uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

@@ -1,0 +1,12 @@
+ul(
+  uib-pagination
+  previous-text="<<"
+  next-text=">>"
+  total-items="$ctrl.totalItems"
+  items-per-page="$ctrl.itemsOnPage"
+  ng-model="$ctrl.currentPage"
+  max-size="$ctrl.maxSize"
+  boundary-link-numbers="true"
+  ng-change="$ctrl.onChange($ctrl.currentPage)"
+  rotate="false"
+)

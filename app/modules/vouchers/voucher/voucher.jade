@@ -1,0 +1,14 @@
+.form-group(style="margin: 0")
+  .col-xs-6
+    label {{'vouchers.password' | translate}}:
+    input.form-control.form-control_xs.form-control_black(type='text', ng-model="$ctrl.voucher.password")
+  .col-xs-6
+    label {{'vouhers.expiration' | translate}}:
+    input.form-control.form-control_xs.form-control_black(
+      type='text',
+      placeholder="{{'general.time.days' | translate}}: {{$ctrl.voucher.expiration.days}} {{'general.time.hours' | translate}}: {{$ctrl.voucher.expiration.hours}}"
+      disabled
+    )
+  .col-xs-12(style="padding-top: 10px; text-align: right")
+    span.btn-xs.btn-primary.button-pointer(style="display: inline-block", ng-click="$ctrl.update()") {{'general.update' | translate}}
+    span.btn-xs.btn-danger.button-pointer(style="display: inline-block; margin-left: 10px", ng-click="$ctrl.remove()") {{'general.delete' | translate}}

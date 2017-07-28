@@ -1,0 +1,112 @@
+.content.overflow-hidden
+  .row
+    .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-4.col-lg-offset-4
+      // Login Block
+      .form-login.block.block-themed.animated.fadeIn
+        .block-header.form-login_color
+          ul.block-options
+            li.btn-group
+              button.btn.btn-link.text-gray.dropdown-toggle(data-toggle='dropdown', type='button')
+                i.fa.fa-caret-down.fa-caret-down_sidebar-lang
+                img.lang-flag(src='/images/{{$ctrl.lang}}.png', alt='English lang')
+              ul.dropdown-menu.dropdown-menu_sidebar.dropdown-menu-right.font-s13.sidebar-mini-hide
+                li
+                  a(href='javascript:void(0)', ng-click="$ctrl.changeLang('ru')")
+                    i.pull-right
+                      img.lang-flag.lang-flag_small-drop(src='/images/ru.png', alt='English lang')
+                    span.font-w600 Русский
+                li
+                  a(href='javascript:void(0)', ng-click="$ctrl.changeLang('en')")
+                    i.pull-right
+                      img.lang-flag.lang-flag_small-drop(src='/images/en.png', alt='English lang')
+                    span.font-w600 English
+          h3.block-title(ng-if='$ctrl.loginForm')
+            | {{ 'login-page.title' | translate }}
+          h3.block-title(ng-if='!$ctrl.loginForm')
+            | {{ 'login-page.sign-up-button' | translate }}
+        .block-content.block-content-full.block-content-narrow
+          // Login Title
+          .text-center
+            img(width='150', height='112', src='../logo_login.png')
+          // END Login Title
+          // Login Form
+          // jQuery Validation (.js-validation-login class is initialized in /js/pages/base-pages-login-page.js)
+          // For more examples you can check out https://github.com/jzaefferer/jquery-validation
+          form.js-validation.form-horizontal.push-30-t.push-50(ng-submit="$ctrl.authenticate('password')")
+            //
+                <div class="form-group">
+                <div class="col-xs-12">
+                <div class="form-material form-material-primary">
+                <input ng-model="$ctrl.username" class="form-control" type="text" id="login-username" name="login-username">
+                <label for="login-username">
+                {{ "login-page.username" | translate }}
+                </label>
+                </div>
+                </div>
+                </div>
+            .form-group
+              .col-xs-12
+                .form-material.form-material-primary
+                  input#login-email.form-control(ng-model='$ctrl.email', type='text', name='login-email')
+                  label(for='login-email')
+                    | {{ "login-page.email" | translate }}
+            .form-group(ng-if='!$ctrl.loginForm')
+              .col-xs-12
+                .form-material.form-material-primary
+                  input#login-username.form-control(ng-model='$ctrl.username', type='text', name='login-username')
+                  label(for='login-username')
+                    | {{ "login-page.username" | translate }}
+            .form-group
+              .col-xs-12
+                .form-material.form-material-primary
+                  input#login-password.form-control(ng-model='$ctrl.password', type='password', name='login-password')
+                  label(for='login-password')
+                    | {{ "login-page.password" | translate }}
+            .form-group
+              .col-xs-12
+                button.btn.form-login_color.login-button.col-xs-12(type='submit', ng-if='$ctrl.loginForm')
+                  i.si.si-login.pull-right
+                  |                   {{ "login-page.sign-in-button" | translate }}
+                button.btn.form-login_color.login-button.col-xs-12(type='submit', ng-if='!$ctrl.loginForm')
+                  i.si.si-login.pull-right
+                  |                   {{ "login-page.sign-up-button" | translate }}
+            .form-group
+              .col-xs-12
+                button.btn.form-login_color.login-button.col-xs-12(ui-sref='requestPassword')
+                  i.si.si-lock.pull-right
+                  |                   {{ "Забыли пароль?" | translate }}
+          .row
+            .col-md-12
+              button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('twitter')" type="button")
+                i.fa.fa-share-alt.pull-right
+                i.fa.fa-twitter.pull-left
+                |                  {{ "login-page.twitter-button" | translate }}
+              button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('instagram')", type='button')
+                i.fa.fa-share-alt.pull-right
+                i.fa.fa-instagram.pull-left
+                |                 {{ "login-page.instagram-button" | translate }}
+              button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('google')", type='button')
+                i.fa.fa-share-alt.pull-right
+                i.fa.fa-google.pull-left
+                |                 {{ "login-page.google-button" | translate }}
+              button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('vk')", type='button')
+                i.fa.fa-share-alt.pull-right
+                i.fa.fa-vk.pull-left
+                |                 {{ "login-page.vk-button" | translate }}
+              button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('facebook')", type='button')
+                i.fa.fa-share-alt.pull-right
+                i.fa.fa-facebook.pull-left
+                |                 {{ "login-page.facebook-button" | translate }}
+          // END Login Form
+      // END Login Block
+// END Login Content
+// Login Footer
+.push-10-t.text-center.animated.fadeInUp
+  small.text-muted.font-w600
+    a.or-sign-in-up(href='', ng-click='$ctrl.signInSignUp()', ng-if='$ctrl.loginForm')
+      // <span class="js-year-copy"></span>
+      | {{ "login-page.or-sign-up" | translate }}
+    a.or-sign-in-up(href='', ng-click='$ctrl.signInSignUp()', ng-if='!$ctrl.loginForm')
+      // <span class="js-year-copy"></span>
+      | {{ "login-page.or-sign-in" | translate }}
+// END Login Footer

@@ -1,0 +1,42 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13
+    // Brand Card Col
+    .col-sm-5.col-xs-12
+      // Brand card
+      .block
+        .block-content.block-content-full.text-center
+          brand-card(brand='$ctrl.brand')
+      // Buttons block
+      div
+        // Button view locations
+        // a.block.block-link-hover2.block-margin-10(ui-sref="dashboard.locations")
+        a.block.block-link-hover2.block-margin-10(href='', ng-click='$ctrl.viewLocations()')
+          .block-content.block-content-full.bg-primary.clearfix
+            i.si.si-pointer.fa-2x.text-white.pull-right
+            span.h4.font-w700.text-white
+              | {{'brands.view-button.view' | translate}}
+            span.h4.text-white-op
+              | {{'brands.view-button.locations' | translate}}
+        // Button create layout
+        // a.block.block-link-hover2.block-margin-10(ui-sref="dashboard.layouts({id: $ctrl.id}))
+        // .block-content.block-content-full.bg-flat.clearfix
+        // i.si.si-eye.fa-2x.text-white.pull-right
+        // span.h4.font-w700.text-white.
+        // {{'brands.view-button.view' | translate}}
+        // span.h4.text-white-op.
+        // {{'brands.view-button.layouts' | translate}}
+        // Button delete brand
+        a.block.block-link-hover2.block-margin-10(href='', ng-click='$ctrl.deleteBrand()')
+          .block-content.block-content-full.bg-city.clearfix
+            i.si.si-trash.fa-2x.text-white.pull-right
+            span.h4.font-w700.text-white
+              | {{'general.forms.delete-button.delete' | translate}}
+            span.h4.text-white-op
+              | {{'general.forms.delete-button.brand' | translate}}
+    // Brand Form Col
+    .col-sm-7.col-xs-12
+      .block.block-themed
+        .block-content
+          brand-form(action="'update'", brand='$ctrl.brand')

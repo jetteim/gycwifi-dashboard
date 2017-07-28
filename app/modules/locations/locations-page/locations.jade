@@ -1,0 +1,22 @@
+breadcrumbs
+basicstats
+// Page Content
+.content.content-boxed
+  .row.font-s13
+    .col-sm-12
+      g-map
+    //(ng-if="$ctrl.isCreateNewLocations")
+    .col-sm-12
+      a#add_location.block.block-link-hover2.button-pointer(ng-click='$ctrl.makeNew()')
+        .block-content.block-content-full.bg-flat.clearfix
+          i.si.si-plus.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white {{'general.forms.add-button.add' | translate}}
+          span.h4.text-white-op {{'general.forms.add-button.new-location' | translate}}
+    .col-xs-6.col-xs-6_xxs.col-sm-6.col-lg-4(ng-repeat='location in $ctrl.locations')
+      a.block.block-link-hover3(ui-sref='dashboard.location({slug:location.slug})')
+        location-card(location='location')
+  hr
+  .row
+    .col-md-6.col-md-offset-4
+      .block-content
+        uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

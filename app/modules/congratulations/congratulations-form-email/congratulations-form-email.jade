@@ -1,0 +1,25 @@
+.block.block-themed
+  .block-header.bg-info
+    ul.block-options
+      li
+        i.si.si-note.color-white
+    h3.block-title {{'congratulations.email.title' | translate}}
+  .block-content
+    form.js-validation.form-horizontal.push-5-t(ng-submit='$ctrl.send()')
+      .form-group
+        .col-xs-6
+          label(for='message-subject') {{'congratulations.email.subject' | translate}}
+          input#message-subject.form-control.form-control_black(type='text', name='message-subject', ng-model='$ctrl.msg.subject')
+        .col-xs-6
+          label(for='message-interval') {{'congratulations.email.interval' | translate}}
+          select#message-interval.form-control.form-control_black(name='message-interval', ng-model='$ctrl.msg.interval')
+            option(value='0') {{'congratulations.email.value1' | translate}}
+            option(value='1') {{'congratulations.email.value2' | translate}}
+            option(value='7') {{'congratulations.email.value3' | translate}}
+      .form-group
+        label.col-xs-12(for='message-msg') {{'congratulations.email.body' | translate}}
+        .col-xs-12
+          textarea#message-msg.form-control.form-control_black(name='message-msg', rows='7', ng-model='$ctrl.msg.message')
+      .form-group
+        .col-xs-12
+          button.btn.btn-sm.btn-info(type='submit') {{'congratulations.email.submit' | translate}}

@@ -1,0 +1,9 @@
+img.img-responsive(ng-src='{{$ctrl.location.logo}}', alt='')
+.block-content
+  .push
+    h4.push-10.card-promo-title.
+      {{$ctrl.location.title}}
+    p.text-primary.font-w600.card-promo-text.
+      {{$ctrl.location.address||'locations.no-address' | translate}}
+    p.text-primary.font-w600.card-promo-text.
+      {{$ctrl.location.promo_text}}

@@ -1,0 +1,135 @@
+nav#sidebar
+  // Sidebar Scroll Container
+  #sidebar-scroll
+    // Sidebar Content
+    // Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode
+    .sidebar-content(ng-click='$ctrl.closeSideBar()')
+      // Side Header
+      .side-header.side-content.bg-white-op.text-center
+        // Layout API, functionality initialized in App() -> uiLayoutApi()
+        button.btn.btn-link.text-gray.pull-right.hidden-md.hidden-lg(type='button', data-toggle='layout', data-action='sidebar_close')
+          i.fa.fa-times
+        // Themes functionality initialized in App() -> uiHandleTheme()
+        a.h5.logo-link.text-white(ui-sref='dashboard.statistic')
+          img.gyc-logo.gyc-logo_sm(src='../images/logo_sidebar.png')
+      // END Side Header
+
+      // Side Content
+      .side-content
+        ul.nav-main
+          // Dashboard
+          li
+            a(ui-sref='dashboard.statistic')
+              i.si.si-speedometer
+              span.sidebar-mini-hide
+                | {{ 'sidebar.statistic' | translate }}
+          // Clients
+          li
+            a(ui-sref='dashboard.clients')
+              i.si.si-users
+              span.sidebar-mini-hide
+                | {{ 'sidebar.clients' | translate }}
+          li
+            a(ui-sref='dashboard.authorizations')
+              i.si.si-speedometer
+              span.sidebar-mini-hide
+                | {{ 'sidebar.authorizations' | translate }}
+          // Divider
+          li.nav-main-heading
+            span.sidebar-mini-hide {{ 'sidebar.engagement' | translate }}
+
+          // Congratulations
+          li
+            a(ui-sref='dashboard.congratulations')
+              i.si.si-present
+              span.sidebar-mini-hide
+                | {{ 'sidebar.congratulations' | translate }}
+          // Sales
+          li
+            a(ui-sref='dashboard.sales')
+              i.si.si-basket-loaded
+              span.sidebar-mini-hide {{ 'sidebar.sales' | translate }}
+          // Polls
+          li
+            a(ui-sref='dashboard.polls')
+              i.glyphicon.glyphicon-bullhorn
+              span.sidebar-mini-hide
+                | {{ 'sidebar.polls' | translate }}
+
+          // Divider
+          li.nav-main-heading
+            span.sidebar-mini-hide {{ 'sidebar.settings' | translate }}
+
+          // Brands
+          li
+            a(ui-sref='dashboard.brands')
+              i.si.si-badge
+              span.sidebar-mini-hide
+                | {{ 'sidebar.brands' | translate }}
+          // Locations
+          li
+            a#nav_add_location(ui-sref='dashboard.locations')
+              i.si.si-pointer
+              span.sidebar-mini-hide
+                | {{ 'sidebar.locations' | translate }}
+          // Routers
+          li
+            a(ui-sref='dashboard.routers')
+              i.si.si-note
+              span.sidebar-mini-hide
+                | {{ 'sidebar.routers' | translate }}
+
+          // Divider
+          li.nav-main-heading
+            span.sidebar-mini-hide
+              | {{ 'sidebar.integration' | translate }}
+
+          // Export to AmoCRM
+          li
+            a(href='', target='_self', ng-click='$ctrl.amoCRM()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'amocrm')")
+              img(src='../images/amocrm_small.png', style="margin-right: 15px; height: 15px;")
+              span.sidebar-mini-hide
+                | {{ 'sidebar.exportTo' | translate }} AmoCRM
+          // Export to MailChimp
+          li
+            a(href='', target='_self', ng-click='$ctrl.MailChimp()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'mailchimp')")
+              img(src='../images/mailchimp_small.png', style="margin-right: 15px; height: 15px;")
+              span.sidebar-mini-hide
+                | {{ 'sidebar.exportTo' | translate }} MailChimp
+
+            //-  span.sidebar-mini-hide
+            //-  | {{ 'sidebar.exportTo' | translate }} MailChimp
+            // Divider
+            li.nav-main-heading
+              span.sidebar-mini-hide
+                | {{ 'sidebar.advanced' | translate }}
+            // Market
+            li
+              a(ui-sref='dashboard.market')
+                i.si.si-wallet
+                span.sidebar-mini-hide
+                  | {{ 'sidebar.market' | translate }}
+            // Vips
+            li
+              a(ui-sref='dashboard.vips')
+                i.si.si-bag
+                span.sidebar-mini-hide
+                  | {{ 'sidebar.vipNumbers' | translate }}
+            // Help
+            li
+              a(ui-sref='dashboard.help')
+                i.si.si-layers
+                span.sidebar-mini-hide
+                  | {{ 'sidebar.help' | translate }}
+            // Opinions
+            //- li(ng-if='($ctrl.role === "admin")||(($ctrl.role === "admin"))')
+            li(ng-if='["admin", "engineer", "operator", "manager", "agent"].includes($ctrl.role)')
+              a(ui-sref='dashboard.opinions')
+                i.si.si-book-open
+                span.sidebar-mini-hide
+                  | {{ 'sidebar.opinions' | translate }}
+
+      // END Side Content
+      // Sidebar Content
+      // END Sidebar Scroll Container
+// END Sidebar

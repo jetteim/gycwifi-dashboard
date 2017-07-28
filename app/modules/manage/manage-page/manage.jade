@@ -1,0 +1,27 @@
+.row.font-s13
+  .block
+    ul.nav.nav-tabs.nav-justified.push-20(data-js-tabs="", data-toggle='tabs')
+      li.active
+        a(href='#tab-manage-users', ng-click="$ctrl.tab('users')")
+          i.fa.fa-user
+          |  {{ 'manage-page.users' | translate}}
+      li
+        a(href='#tab-manage-objects', ng-click="$ctrl.tab('objects')")
+          i.fa.fa-fw.fa-pencil
+          |  {{'manage-page.objects' | translate}}
+      li
+        a(href='#tab-manage-settings', ng-click="$ctrl.tab('settings')")
+          i.fa.fa-fw.fa-asterisk
+          |  {{'manage-page.settings' | translate}}
+    .block-content.tab-content
+      #tab-manage-users.tab-pane.fade.in.active
+        .block.block-themed.block-rounded#account-stats-block
+          .block-content.block-content-full
+            accountstats(ng-if="$ctrl.tabName == 'users'")
+      #tab-manage-objects.tab-pane.fade
+        routerscontrol(ng-if="$ctrl.tabName == 'objects'")
+        brandscontrol(ng-if="$ctrl.tabName == 'objects'")
+        locationscontrol(ng-if="$ctrl.tabName == 'objects'")
+        userscontrol(ng-if="$ctrl.tabName == 'objects'")
+      #tab-manage-settings.tab-pane.fade
+        .row.items-push

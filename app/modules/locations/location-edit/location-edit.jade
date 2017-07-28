@@ -1,0 +1,25 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13
+    // Location Card
+    .col-sm-5.col-xs-12
+      .block
+        .block-content.block-content-full.text-center
+          location-card(location='$ctrl.location')
+      // Buttons block
+      div.block
+        // Button delete brand
+        a.block.block-link-hover2.block-margin-10.button-pointer(ng-click='$ctrl.deleteLocation()')
+          .block-content.block-content-full.bg-city.clearfix
+            i.si.si-trash.fa-2x.text-white.pull-right
+            span.h4.font-w700.text-white
+              | {{'general.forms.delete-button.delete' | translate}}
+            span.h4.text-white-op
+              | {{'general.forms.delete-button.location' | translate}}
+      vouchers(location='$ctrl.location')
+    // Location Form
+    .col-sm-7.col-xs-12
+      .block.block-themed
+        .block-content
+          location-form(location='$ctrl.location', action="'update'")

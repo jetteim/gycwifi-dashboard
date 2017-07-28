@@ -1,0 +1,30 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-boxed">
+  <!-- Opinions list-->
+  <div class="col-sm-12">
+    <div class="block">
+      <div class="block-content">
+        <table class="table table-hover table_opinion">
+          <thead>
+            <tr class="table_opinion__tr">
+              <th class="table_opinion__th table_opinion__th_left">{{'opinions.form.source' | translate}}</th>
+              <th class="table_opinion__th">{{'opinions.form.source' | translate}}             </th>
+              <th class="table_opinion__th table_opinion__th_right">{{'opinions.form.message' | translate}}
+                <!--| {{ 'opinions.comment' | translate }}-->
+              </th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="opinion in $ctrl.opinions">
+            <tr class="table_opinion__tr">
+              <td class="table_opinion__td table_opinion__td_left font-w600">{{ opinion.location }}</td>
+              <td class="table_opinion__td"><i ng-class="{'fa-show' : opinion.style === 'positive'}" class="fa fa-smile-o fa-smile-o_feedback fa-smile-o_green fa_hide"></i><i ng-class="{'fa-show' : opinion.style === 'negative'}" class="fa fa-frown-o fa-frown-o_feedback fa-frown-o_yellow fa_hide"></i></td>
+              <td class="table_opinion__td table_opinion__td_right font-w600">{{ opinion.message }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

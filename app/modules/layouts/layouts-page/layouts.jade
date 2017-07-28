@@ -1,0 +1,21 @@
+breadcrumbs
+basicstats
+.content.content-narrow
+  .row
+    // Preview
+    .col-lg-12
+      // Button create layout
+      a.block.block-link-hover2.block-margin-10(ui-sref='dashboard.layout({brandId: $ctrl.brandId})')
+        .block-content.block-content-full.bg-flat.clearfix
+          i.si.si-plus.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white
+            | {{'brands.create-button.create' | translate}}
+          span.h4.text-white-op
+            | {{'brands.create-button.layout' | translate}}
+    // &lt;!&ndash;Form&ndash;&gt;
+    // <div class="col-lg-12">
+    // <layout-form brand-id="$ctrl.brandId"></layout-form>
+    // </div>
+    .col-sm-6.col-lg-4(ng-repeat='layout in $ctrl.layouts')
+      a.block.block-link-hover3(ui-sref='dashboard.layout({brandId: $ctrl.brandId, layoutId: layout.id})')
+        h1 {{ layout.title }}

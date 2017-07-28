@@ -1,0 +1,31 @@
+// Client stats
+.content.bg-white.border-b.text-center
+  .row.items-push.text-uppercase
+    //- .col-xs-4
+    //-   .block
+    //-     .block-content.block-content-full.text-center
+    //-       div#authticker(style='height:80px')
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.clients.clients' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.clients.all_the_time' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.clients_all_time}}
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.clients.clients' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.clients.last_month' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.clients_last_month}}
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.clients.clients' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.basic.last_week' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.clients_last_week}}

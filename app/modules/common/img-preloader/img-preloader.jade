@@ -1,0 +1,10 @@
+.form-preloader
+  span.inline_hide(ng-class="{'inline_show' : $ctrl.loading == 'loading'}")
+    i.fa.fa-sun-o.fa-spin.font_green
+    span.font_green.custom-elem_green {{'preloader.loading' | translate}}
+  span.inline_hide(ng-class="{'inline_show' : $ctrl.loading == 'loaded'}")
+    i.fa.fa-check.font_green
+    span.font_green {{'preloader.loaded' | translate}}
+  span.inline_hide(ng-class="{'inline_show' : $ctrl.loading == 'error'}")
+    i.fa.fa-close.font_red
+    span.font_red {{'preloader.error' | translate}}

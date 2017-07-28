@@ -1,0 +1,38 @@
+
+<div class="block block-themed">
+  <div class="block-header bg-info">
+    <ul class="block-options">
+      <li><i class="si si-note color-white"></i></li>
+    </ul>
+    <h3 class="block-title">{{'congratulations.email.title' | translate}}</h3>
+  </div>
+  <div class="block-content">
+    <form ng-submit="$ctrl.send()" class="js-validation form-horizontal push-5-t">
+      <div class="form-group">
+        <div class="col-xs-6">
+          <label for="message-subject">{{'congratulations.email.subject' | translate}}</label>
+          <input id="message-subject" type="text" name="message-subject" ng-model="$ctrl.msg.subject" class="form-control form-control_black"/>
+        </div>
+        <div class="col-xs-6">
+          <label for="message-interval">{{'congratulations.email.interval' | translate}}</label>
+          <select id="message-interval" name="message-interval" ng-model="$ctrl.msg.interval" class="form-control form-control_black">
+            <option value="0">{{'congratulations.email.value1' | translate}}</option>
+            <option value="1">{{'congratulations.email.value2' | translate}}</option>
+            <option value="7">{{'congratulations.email.value3' | translate}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message-msg" class="col-xs-12">{{'congratulations.email.body' | translate}}</label>
+        <div class="col-xs-12">
+          <textarea id="message-msg" name="message-msg" rows="7" ng-model="$ctrl.msg.message" class="form-control form-control_black"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-sm btn-info">{{'congratulations.email.submit' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

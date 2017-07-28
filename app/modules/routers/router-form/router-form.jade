@@ -1,0 +1,28 @@
+form.js-validation.form-horizontal.push-5-t(name='brandForm', ng-submit='$ctrl.sendForm()')
+  // Title
+  .form-group
+    .col-xs-12
+      label(for='form-title') {{'routers.form.comment' | translate}}
+      input#form-title.form-control.form-control_black(type='text', name='title', placeholder='Enter comment..', ng-model='$ctrl.router.comment')
+  // Serial number
+  .form-group
+    .col-xs-12
+      label(for='form-serial') {{'routers.serial' | translate}}
+      input#form-serial.form-control.form-control_black(type='text', name='serial_number', placeholder='Enter serial number..', ng-model='$ctrl.router.serial')
+  // Location
+  .form-group
+    label.col-xs-12(for='location_id') {{'routers.form.location_id' | translate}}
+    .col-xs-12
+      select#location_id.form-control.form-control_black(name='brand_id', ng-options='location.title for location in $ctrl.locations', ng-model='$ctrl.location', ng-change='$ctrl.change()')
+  // Submit buttons
+  .form-group
+    .col-xs-12
+      button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.dontCreate', ng-if="$ctrl.action == 'create'")
+        | {{'routers.form.create' | translate}}
+      button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.dontCreate', ng-if="$ctrl.action == 'update'")
+        | {{'routers.form.update' | translate}}
+  .form-group
+    .col-xs-12
+      p.font_red(ng-if='$ctrl.dontCreate')
+        | {{'routers.error-missing-location' | translate}}
+        a(ui-sref='locationNew') {{'routers.error-add-address' | translate}}

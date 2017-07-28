@@ -1,0 +1,82 @@
+
+<form name="brandForm" ng-submit="$ctrl.sendForm()" class="js-validation form-horizontal push-5-t">
+  <!-- Title-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form-title">{{'brands.form.title' | translate}}</label>
+      <input id="form-title" type="text" name="title" placeholder="General brand" ng-model="$ctrl.brand.title" class="form-control form-control_black"/>
+      <!-- validate message-->
+      <!-- .ng-messages.col-xs-12(ng-messages="brandForm.title.$error")-->
+      <!-- p(ng-message="minlength") Min length is 6 chars.-->
+      <!-- p(ng-message="required") This field is required.-->
+      <!-- Logo image-->
+      <div class="form-group">
+        <label for="form-logo" class="col-xs-12"><span>{{'brands.form.logo' | translate}}</span>
+          <img-preloader img="'brand_logo'"></img-preloader>
+        </label>
+        <div class="col-xs-12">
+          <input id="form-logo" type="file" ng-upload="brand_logo"/>
+        </div>
+      </div>
+      <!-- Background color-->
+      <div class="form-group">
+        <label for="form-bg-color" class="col-xs-12"><span>{{'brands.form.background_color' | translate}}</span></label>
+        <div class="col-md-4 col-xs-6">
+          <input id="form-bg-color" colorpicker="" type="text" ng-model="$ctrl.brand.bg_color" name="bg_color" placeholder="#646464"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="brand-background" class="col-xs-12"><span>{{'brands.form.background_image' | translate}}</span>
+          <img-preloader img="'brand_background'"></img-preloader>
+        </label>
+        <div class="col-xs-12">
+          <input id="brand-background" type="file" ng-upload="brand_background"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="auth_expiration_time" class="col-xs-12">{{'brands.form.sms_auth.auth_time' | translate}}</label>
+        <div class="col-xs-12">
+          <select id="auth_expiration_time" size="1" ng-model="$ctrl.brand.auth_expiration_time" class="form-control form-control_black">
+            <option value="900">15 mins</option>
+            <option value="1800">30 mins</option>
+            <option value="3600">1 hour</option>
+            <option value="14400">4 hours</option>
+            <option value="43200">12 hours</option>
+            <option value="172800">24 hours</option>
+          </select>
+        </div>
+      </div>
+      <!-- Redirect url-->
+      <div class="form-group">
+        <label for="brand-redirect_url" class="col-xs-12">{{'brands.form.redirect_url' | translate}}</label>
+        <div class="col-xs-12">
+          <input id="brand-redirect_url" type="text" placeholder="https://gycwifi.com" ng-model="$ctrl.brand.redirect_url" name="redirect_url" class="form-control form-control_black"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="brand-category" class="col-xs-12">{{'brands.form.category' | translate}}</label>
+        <div class="col-xs-12">
+          <select-category select-id="'brand-category'" options="$ctrl.brand"></select-category>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="select-template" class="col-xs-12">{{'templates.label' | translate}}</label>
+        <div class="col-xs-12">
+          <select name="select-template" size="1" ng-model="$ctrl.brand.layout_id" ng-options="layout.id as layout.title for layout in $ctrl.layouts" class="form-control form-control_black ng-pristine"></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="brand-promo" class="col-xs-12">{{'brands.form.promo_text' | translate}}</label>
+        <div class="col-xs-12">
+          <textarea id="brand-promo" rows="3" placeholder="Promo text ..." ng-model="$ctrl.brand.promo_text" class="form-control form-control_black"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <button type="submit" ng-disabled="$ctrl.loading" ng-if="$ctrl.action == 'create'" class="btn btn-sm btn-info">{{'brands.form.create' | translate}}</button>
+          <button type="submit" ng-disabled="$ctrl.loading" ng-if="$ctrl.action == 'update'" class="btn btn-sm btn-info">{{'brands.form.update' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

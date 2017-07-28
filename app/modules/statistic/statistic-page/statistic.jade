@@ -1,0 +1,71 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13
+    .block
+      .content.content-narrow
+        .form-group
+          label(for='statistic-filter') 
+            | {{'statistics.filter.title' | translate}}
+          select#statistics-filter.form-control.form-control_black(name='statistics-filter', ng-model='$ctrl.filter', ng-change='$ctrl.statsupdate()')
+            option(value='last7days') {{'statistics.filter.week' | translate}}
+            option(value='last30days') {{'statistics.filter.month' | translate}}
+            option(value='last90days') {{'statistics.filter.quarter' | translate}}
+            option(value='year') {{'statistics.filter.year' | translate}}          
+          label(for='locations-stats').push-10-t 
+            | {{'statistics.address_list.address' | translate}}
+          select#locations-stats.form-control.form-control_black(name='statistics-filter', ng-options='location.address for location in $ctrl.locations', ng-model='$ctrl.location', ng-change='$ctrl.statsupdate()')
+    //- account
+    .row.font-s13
+      .col-sm-12
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.clients-chart.title' | translate}}
+          .block-content.block-content-full.text-center
+            div#new_old_users_chart
+              canvas.char.chart-bar(chart-data="new_old_users.data", chart-labels="new_old_users.labels", chart-series="new_old_users.series", chart-options="new_old_users.options", chart-colors="new_old_users.colors", height='330', width='454')
+    .row.font-s13
+      .col-sm-6
+        .block 
+          .block-header
+            h3.block-title {{'statistics.charts.time-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="time_pie.data", chart-labels="time_pie.labels", chart-options="time_pie.options", chart-series="time_pie.series", chart-colors="time_pie.colors", height='330', width='454')
+      .col-sm-6
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.social-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="social_pie.data", chart-labels="social_pie.labels", chart-options="social_pie.options", chart-series="social_pie.series", chart-colors="social_pie.colors", height='330', width='454')
+    .row.font-s13
+      .col-sm-6
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.gender-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="gender_pie.data", chart-labels="gender_pie.labels", chart-options="gender_pie.options", chart-series="gender_pie.series", chart-colors="gender_pie.colors", height='330', width='454')
+      .col-sm-6
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.age-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="age_pie.data", chart-labels="age_pie.labels", chart-options="age_pie.options", chart-series="age_pie.series", chart-colors="age_pie.colors", height='330', width='454')
+    .row.font-s13
+      .col-sm-6
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.clients-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="visitors_pie.data", chart-labels="visitors_pie.labels", chart-options="visitors_pie.options", chart-series="visitors_pie.series", chart-colors="visitors_pie.colors", height='330', width='454')
+      .col-sm-6
+        .block
+          .block-header
+            h3.block-title {{'statistics.charts.newvstotal-pie.title' | translate}}
+          .block-content.block-content-full.text-center
+            div
+              canvas.chart.chart-pie(chart-data="new_old_users_pie.data", chart-labels="new_old_users_pie.labels", chart-options="new_old_users_pie.options", chart-series="new_old_users_pie.series", chart-colors="new_old_users_pie.colors", height='330', width='454')

@@ -1,0 +1,36 @@
+breadcrumbs
+basicstats
+.content.content-narrow
+  .row
+    .block.block-themed
+      .block-header.bg-info
+        ul.block-options
+          li
+            i.si.si-note.color-white
+        h3.block-title  {{ 'layouts.layout' | translate }}
+      .block-content
+        form.js-validation.form-horizontal.push-5-t(ng-submit='$ctrl.send()')
+          // Layout title
+          .form-group
+            .col-xs-12
+              label(for='form_title') Layout title
+              input#form_title.form-control.form-control_black(type='text', name='title', ng-model='$ctrl.form.title')
+          // Form
+          .form-group
+            .col-xs-12
+              label(for='form_login') Form
+              input#form_login.form-control.form-control_black(type='text', name='form-login', ng-model='$ctrl.layoutCss.uvForm')
+          // Input
+          .form-group
+            .col-xs-12
+              label(for='form_input') Inputs
+              input#form_input.form-control.form-control_black(type='text', name='form-input', ng-model='$ctrl.layoutCss.uvInput')
+          // Submit Button
+          .form-group
+            .col-xs-12
+              label(for='form_btn_submit') Submit button
+              input#form_btn_submit.form-control.form-control_black(type='text', name='form-form-btn-submit', ng-model='$ctrl.layoutCss.uvBtnSubmit')
+          // Submit
+          .form-group
+            .col-xs-12
+              button.btn.btn-sm.btn-info(type='submit') {{ 'general.update' | translate }}

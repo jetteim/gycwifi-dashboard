@@ -1,0 +1,162 @@
+form.js-validation.form-horizontal.push-5-t(ng-submit='$ctrl.sendForm()')
+  // Brand id
+  .form-group
+    label.col-xs-12(for='form_brand')
+      | {{'locations.form.brands_list' | translate}}
+    .col-xs-12
+      select#form_brand.form-control.form-control_black(ng-options='brand.id as brand.title for brand in $ctrl.brands', ng-model='$ctrl.location.brand_id', ng-change='$ctrl.onChange()')
+  // Title
+  .form-group
+    .col-xs-12
+      label(for='form-title') {{'locations.form.title' | translate}}
+      input#form-title.form-control.form-control_black(type='text', name='title', ng-model='$ctrl.location.title', placeholder='My Company')
+  // Phone
+  .form-group
+    .col-xs-12
+      label(for='form_phone') {{'locations.form.phone' | translate}}
+      input#form_phone.form-control.form-control_black(type='text',
+      name='phone', ng-model='$ctrl.location.phone', ui-mask="(999) 999 - 99 - 99", ui-mask-placeholder-char="_")
+  // Address
+  .form-group
+    .col-xs-12
+      label(for='form_address') {{'locations.form.address' | translate}}
+      input#form_address.form-control.form-control_black(type='text', name='address', ng-model='$ctrl.location.address', placeholder='Москва, ул. Вавилова, 18')
+  // Ssid
+  .form-group
+    .col-xs-12
+      label(for='form-ssid') {{'locations.form.guest_ssid' | translate}}
+      input#form-ssid.form-control.form-control_black(type='text', name='ssid', ng-model='$ctrl.location.ssid', placeholder='Enter ssid..')
+  // Staff ssid
+  .form-group
+    .col-xs-12
+      label(for='form_staff_ssid') {{'locations.form.staff_ssid' | translate}}
+      input#form_staff_ssid.form-control.form-control_black(type='text', name='staff_ssid', ng-model='$ctrl.location.staff_ssid', placeholder='Enter staff ssid..')
+  // Staff ssid password
+  .form-group
+    .col-xs-12
+      label(for='staff_ssid_password') {{'locations.form.staff_password' | translate}}
+      input#staff_ssid_password.form-control.form-control_black(type='text', name='staff_ssid_password', ng-model='$ctrl.location.staff_ssid_pass', placeholder='Enter staff ssid password..')
+  // Redirect url
+  .form-group
+    label.col-xs-12(for='form-redirect_url') {{'locations.form.redirect_url' | translate}}
+    .col-xs-12
+      input#form-redirect_url.form-control.form-control_black(type='url', name='redirect_url', ng-model='$ctrl.location.redirect_url', placeholder='Enter redirect url..')
+  // Social
+  .form-group
+    label.col-xs-12 {{'locations.form.social_networks' | translate}}
+    .col-xs-12
+      label.checkbox-inline(for='checkbox_twitter')
+        //
+          <input type="checkbox" id="checkbox_twitter"
+          name="checkbox_twitter" ng-model="$ctrl.location.twitter"> Twitter
+          </label>
+    .col-xs-12
+      label.checkbox-inline(for='checkbox_instagram')
+        input#checkbox_instagram(type='checkbox', name='checkbox_instagram', ng-model='$ctrl.location.insta')
+        |  Instagram
+      label.checkbox-inline(for='checkbox_facebook')
+        input#checkbox_facebook(type='checkbox',name='checkbox_facebook', ng-model='$ctrl.location.facebook')
+        |  Facebook
+    .col-xs-12
+      label.checkbox-inline(for='checkbox_google')
+        input#checkbox_google(type='checkbox', name='checkbox_google', ng-model='$ctrl.location.google')
+        |  Google
+      label.checkbox-inline(for='checkbox_vk')
+        input#checkbox_vk(type='checkbox', name='checkbox_vk', ng-model='$ctrl.location.vk')
+        |  Vk
+      label.checkbox-inline(for='checkbox_pass')
+        input#checkbox_pass(type='checkbox', name='checkbox_pass', ng-model='$ctrl.location.password')
+        |  {{'locations.form.password' | translate}}
+      label.checkbox-inline(for='checkbox_vouchers')
+        input#checkbox_vouchers(type='checkbox', name='checkbox_vouchers', ng-model='$ctrl.location.voucher')
+        |  {{'locations.form.vouchers' | translate}}
+  // Wlan
+  .form-group
+    label.col-xs-12(for='form_wlan')
+      | {{'locations.form.wlan' | translate}}
+    .col-xs-12
+      select#form_wlan.form-control.form-control_black(name='wlan', size='1', ng-model='$ctrl.location.wlan')
+        option(value='512K') 512K
+        option(value='1M') 1M
+        option(value='2M') 2M
+        option(value='5M') 5M
+        option(value='10M') 10M
+  // Wan
+  .form-group
+    label.col-xs-12(for='form_wan')
+      | {{'locations.form.wan' | translate}}
+    .col-xs-12
+      select#form_wan.form-control.form-control_black(name='wan', size='1', ng-model='$ctrl.location.wan')
+        option(value='512K') 512K
+        option(value='1M') 1M
+        option(value='2M') 2M
+        option(value='5M') 5M
+        option(value='10M') 10M
+  // Auth expiration time
+  .form-group
+    label.col-xs-12(for='form_auth_expiration_time')
+      | {{'locations.form.auth_time' | translate}}
+    .col-xs-12
+      select#form_auth_expiration_time.form-control.form-control_black(name='auth_expiration_time', size='1', ng-model='$ctrl.location.auth_expiration_time')
+        option(value='900') 15 mins
+        option(value='1800') 30 mins
+        option(value='3600') 1 hour
+        option(value='14400') 4 hours
+        option(value='43200') 12 hours
+        option(value='172800') 24 hours
+  // Logo
+  .form-group
+    label.col-xs-12(for='form-logo')
+      span {{'locations.form.logo' | translate}}
+      img-preloader(img="'location_logo'")
+    .col-xs-12
+      input#form-logo(type='file', ng-upload='location_logo')
+  // Background color
+  .form-group
+    label.col-xs-12(for='form-bg-color')
+      span {{'locations.form.background_color' | translate}}
+    .col-md-4.col-xs-6
+      input#form-bg-color(colorpicker='', type='text', ng-model='$ctrl.location.bg_color', name='bg_color')
+  // Background image
+  .form-group
+    label.col-xs-12(for='location-background')
+      span {{'locations.form.background_image' | translate}}
+      img-preloader(img="'location_background'")
+    .col-xs-12
+      input#location-background(type='file', ng-upload='location_background')
+  // Template
+  .form-group
+    label.col-xs-12(for='select-template') {{'templates.label' | translate}}
+    .col-xs-12
+      span {{$ctrl.brand.template}}
+  // Promo category
+  .form-group
+    label.col-xs-12(for='form-category') {{'locations.form.category' | translate}}
+    .col-xs-12
+      select-category(select-id="'form-category'", options='$ctrl.location')
+  // Promo text
+  .form-group
+    label.col-xs-12(for='brand-promo') {{'brands.form.promo_text' | translate}}
+    .col-xs-12
+      textarea#brand-promo.form-control.form-control_black(rows='3', placeholder='Promo text ...', ng-model='$ctrl.location.promo_text')
+  // Promo Poll
+  .form-group
+    label.col-xs-12(for='poll') {{'polls.poll' | translate}}
+    .col-xs-12
+      select#poll.form-control.form-control_black(name='poll', ng-options='poll.title for poll in $ctrl.polls',
+      ng-model='$ctrl.poll', ng-change='$ctrl.selectPoll($ctrl.poll.id)')
+  // Select promo
+  .form-group
+    label.col-xs-12 {{'locations.form.promo_type' | translate}}
+    .col-xs-12
+      label.radio-inline(for='promo_text')
+        input#promo_text(type='radio', name='last_page_content', value='text', ng-model='$ctrl.location.last_page_content')
+        | {{'locations.form.promo_text' | translate}}
+      label.radio-inline(for='promo_poll')
+        input#promo_poll(type='radio', name='last_page_content', value='poll', ng-model='$ctrl.location.last_page_content')
+        | {{'locations.form.poll' | translate}}
+  // button submit
+  .form-group
+    .col-xs-12
+      button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.loading', ng-if="$ctrl.action == 'create'") {{'locations.form.create' | translate}}
+      button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.loading', ng-if="$ctrl.action == 'update'") {{'locations.form.update' | translate}}

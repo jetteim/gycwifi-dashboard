@@ -1,0 +1,42 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="block">
+        <div class="block-header">
+          <div class="block-options">
+            <!-- Header here-->
+          </div>
+          <h3 class="block-title">Vips</h3>
+        </div>
+        <div class="block-content">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 50px;" class="text-center">#</th>
+                <th>Phone</th>
+                <th style="width: 33%;" class="hidden-xs">Location</th>
+                <th style="width: 100px;" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="vip in $ctrl.vips">
+                <td class="text-center">1</td>
+                <td>{{ vip.phone }}</td>
+                <td class="hidden-xs"><span class="label label-info">{{ vip.location_id }}</span></td>
+                <td class="text-center">
+                  <div class="btn-group">
+                    <button type="button" data-toggle="tooltip" title="" data-original-title="Edit Client" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></button>
+                    <button type="button" data-toggle="tooltip" title="" data-original-title="Remove Client" class="btn btn-xs btn-default"><i class="fa fa-times"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

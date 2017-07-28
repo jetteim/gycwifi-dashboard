@@ -1,0 +1,29 @@
+.modal-dialog
+  .modal-content
+    .block.block-themed.block-transparent.remove-margin-b
+      .block-header.bg-primary-dark
+        ul.block-options
+          li
+            button(data-dismiss='modal', type='button')
+              i.si.si-close
+        h3.block-title
+          | {{'opinions.form.caption' | translate}}
+      .block-content
+        div.stars-rating-wrap
+          span.stars-rating-title(style="display: block; font-size: 12px;")
+            | {{'opinions.yourOpinion' | translate}}:
+          span.stars-rating.stars-rating-ui(
+            uib-rating
+            ng-model="$ctrl.rating"
+            max="5"
+            enable-reset="false"
+            titles="['','','','','']"
+            aria-labelledby="default-rating"
+            style="display: block; font-size: 16px;"
+          )
+        textarea.rating-form_textarea(ng-model='$ctrl.message')
+      .modal-footer
+        button.btn.btn-sm.btn-default(type='button', data-dismiss='modal')
+          | {{'opinions.form.dismiss' | translate}}
+        button.btn.btn-sm.btn-primary(type='button', data-dismiss='modal', ng-click='$ctrl.send()')
+          | {{'opinions.form.submit' | translate}}

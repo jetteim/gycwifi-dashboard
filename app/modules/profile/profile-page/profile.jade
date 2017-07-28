@@ -1,0 +1,65 @@
+.content.content-boxed
+  .row.font-s13
+    .block
+      .bg-image(style="background-image: url('images/backgound_profile.jpg');")
+        .block-content.bg-primary-op.text-center.overflow-hidden
+          .push-30-t.push.animated.fadeInDown
+            img.img-avatar.img-avatar96.img-avatar-thumb(src='{{$ctrl.profile.avatar}}', alt='')
+          .push-30.animated.fadeInUp
+            h2.h4.font-w600.text-white.push-5 {{$ctrl.profile.username}}
+    form(ng-submit='$ctrl.saveProfile()')
+      .block
+        ul.nav.nav-tabs.nav-justified.push-20(data-toggle='tabs')
+          li.active
+            a(href='#tab-profile-avatar')
+              i.fa.fa-user
+              |  {{'profile-page.avatar' | translate}}
+          li
+            a(href='#tab-profile-personal')
+              i.fa.fa-fw.fa-pencil
+              |  {{'profile-page.personal' | translate}}
+          li
+            a(href='#tab-profile-password')
+              i.fa.fa-fw.fa-asterisk
+              |  {{'profile-page.password.password' | translate}}
+        .block-content.tab-content
+          #tab-profile-avatar.tab-pane.fade.in.active
+            .row.items-push
+              .col-sm-6.col-sm-offset-3.form-horizontal
+                .form-group
+                  .col-xs-12
+                    label(for='profile_avatar')
+                      span {{'profile-page.avatar' | translate}}
+                      img-preloader(img="'user_avatar'")
+                    input#profile_avatar.form-control.input-lg(type='file', ng-upload='user_avatar')
+          #tab-profile-personal.tab-pane.fade
+            .row.items-push
+              .col-sm-6.col-sm-offset-3.form-horizontal
+                .form-group
+                  .col-xs-5
+                    label {{'profile-page.username' | translate}}
+                    .form-control-static.font-w700 {{'profile-page.admin' | translate}}
+                .form-group
+                  .col-xs-12
+                    label(for='profile-email') {{'profile-page.email' | translate}}
+                    input#profile-email.form-control.input-lg(ng-model='$ctrl.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
+          #tab-profile-password.tab-pane.fade
+            .row.items-push
+              .col-sm-6.col-sm-offset-3.form-horizontal
+                .form-group
+                  .col-xs-12
+                    label(for='profile-password') {{'profile-page.password.current-password' | translate}}
+                    input#profile-password.form-control.input-lg(type='password', name='profile-password')
+                hr
+                .form-group
+                  .col-xs-12
+                    label(for='profile-password-new') {{'profile-page.password.new-password' | translate}}
+                    input#profile-password-new.form-control.input-lg(type='password', name='profile-password-new')
+                .form-group
+                  .col-xs-12
+                    label(for='profile-password-new-confirm') {{'profile-page.password.confirm' | translate}}
+                    input#profile-password-new-confirm.form-control.input-lg(type='password', name='profile-password-new-confirm')
+        .block-content.block-content-full.bg-gray-lighter.text-center
+          button.btn.btn-sm.btn-primary(type='submit')
+            i.fa.fa-check.push-5-r
+            |  {{'profile-page.save' | translate}}

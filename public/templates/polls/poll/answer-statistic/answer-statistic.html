@@ -1,0 +1,26 @@
+
+<div class="block-header text-center">
+  <h3>Статистика</h3>
+</div>
+<div class="block-content block-content-full answer-statistic-table">
+  <table class="table table-striped table-vcenter">
+    <thead>
+      <tr>
+        <th style="width: 55px" class="text-center">#</th>
+        <th style="width: 33%" class="text-center">Номер телефона</th>
+        <th style="width: 33%" class="text-center">Дата</th>
+        <th style="width: 33%" class="text-center">Вариант ответа</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="client in $ctrl.clients track by $index">
+        <td class="text-center">
+          <div class="img-container"><img src="{{ client.image }}" alt="{{ client.username }}" class="img-avatar img-avatar32"/></div>
+        </td>
+        <td class="text-center font-w600"> <a href="tel:{{ client.phone_number }}">{{ client.phone_number }}</a></td>
+        <td class="text-center">{{ client.attempt_date | date:'dd.MM.yyyy HH:mm:ss' }}</td>
+        <td class="text-center">{{ client.custom_answer }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

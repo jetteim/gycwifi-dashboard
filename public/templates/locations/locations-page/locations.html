@@ -1,0 +1,25 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<!-- Page Content-->
+<div class="content content-boxed">
+  <div class="row font-s13">
+    <div class="col-sm-12">
+      <g-map></g-map>
+    </div>
+    <div class="col-sm-12"><a ng-click="$ctrl.makeNew()" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-flat clearfix"><i class="si si-plus fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'locations.add-button.add' | translate}}</span><span class="h4 text-white-op">{{'locations.add-button.new-location' | translate}}</span></div></a></div>
+    <div ng-repeat="location in $ctrl.locations" class="col-sm-6 col-lg-4"><a ui-sref="dashboard.location({slug:location.slug})" class="block block-link-hover3">
+        <location-card location="location"></location-card></a></div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-4">
+      <!-- Disabled and Active States-->
+      <div class="block-content">
+        <pagination page="'locations'"></pagination>
+      </div>
+      <!-- END Disabled and Active States-->
+    </div>
+  </div>
+</div>

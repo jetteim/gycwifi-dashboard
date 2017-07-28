@@ -1,0 +1,69 @@
+.block.block-themed.block-rounded#users-control
+  ul.block-options
+    li
+      button(type='button')
+        i.si.si-settings
+  .block-header.bg-primary(ng-click="showUsersControl = !showUsersControl")
+    | {{ 'manage-page.users' | translate}}
+  .block-content.block-content-full(ng-show="showUsersControl")
+    table.table-responsive.js-table-sections.table.table-hover.table-condensed(ng-if="showUsersControl")
+      thead
+        tr
+          th(style='width: 30px;')
+          th(style='width: 40%;')
+            | {{ 'statistics.accounts.username' | translate }}
+          th(style='width: 40%;')
+            | {{ 'statistics.accounts.email' | translate }}
+          th(colspan='2',style='width: 10%;')
+            | {{ 'statistics.accounts.locations_count' | translate }}
+          th(colspan='3',style='width: 10%;')
+            | {{ 'statistics.accounts.routers_count' | translate }}
+      tbody.js-table-sections-header(ng-repeat-start='user in $ctrl.accounts')
+        tr
+          td.text-center
+            i.fa.fa-angle-right
+          td(style='width: 30%;')
+            | {{ user.username }}
+          td(style='width: 30%;')
+            | {{ user.email }}
+          td(style='width: 10%;')
+            | {{ user.role }}
+          td(style='width: 10%;')
+            | {{ user.expiration }}
+          td(colspan='2',style='width: 10%;')
+            | {{ user.locations_count }}
+          td(colspan='3',style='width: 10%;')
+            | {{ user.routers_count }}
+      tbody(ng-repeat-end='', on-finish-render='ngRepeatFinished')
+        tr(ng-repeat='location in user.locations')
+          td.text-center
+          td
+            | {{ location.extended_address }}
+          td
+            | {{ 'statistics.accounts.smscount' | translate }} 
+            | {{ location.smscount }}
+          td
+            | {{ 'statistics.accounts.auth_count' | translate }} 
+            | {{ location.auth_count }}
+          td(style='width: 25%;')
+            | {{ 'statistics.accounts.address_completed' | translate }} 
+            small.text-muted.text-center
+              span.fa.fa-check.font_green.router-status.inline_hide(ng-class="{'inline_show' : location.address_completed === true}")
+              span.fa.fa-remove.font_red.router-status.inline_hide(ng-class="{'inline_show' : location.address_completed === false}")
+          td(style='width: 25%;')
+            | {{ 'statistics.accounts.phone_completed' | translate }} 
+            small.text-muted.text-center
+              span.fa.fa-check.font_green.router-status.inline_hide(ng-class="{'inline_show' : location.phone_completed === true}")
+              span.fa.fa-remove.font_red.router-status.inline_hide(ng-class="{'inline_show' : location.phone_completed === false}")
+          td(style='width: 25%;')
+            | {{ 'statistics.accounts.logo_uploaded' | translate }} 
+            small.text-muted.text-center
+              span.fa.fa-check.font_green.router-status.inline_hide(ng-class="{'inline_show' : location.logo_uploaded === true}")
+              span.fa.fa-remove.font_red.router-status.inline_hide(ng-class="{'inline_show' : location.logo_uploaded === false}")
+          td(style='width: 25%;')
+            | {{ 'statistics.accounts.url_completed' | translate }} 
+            small.text-muted.text-center
+              span.fa.fa-check.font_green.router-status.inline_hide(ng-class="{'inline_show' : location.url_completed === true}")
+              span.fa.fa-remove.font_red.router-status.inline_hide(ng-class="{'inline_show' : location.url_completed === false}")
+    .content.text-center
+      uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

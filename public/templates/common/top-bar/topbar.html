@@ -1,0 +1,31 @@
+
+<!-- Header-->
+<header id="header-navbar" class="content-mini content-mini-full">
+  <!-- Header Navigation Right-->
+  <ul class="nav-header pull-right">
+    <li>
+      <div class="btn-group">
+        <button data-toggle="dropdown" type="button" class="btn btn-default btn-image dropdown-toggle"><span>{{ $ctrl.profile.username + " " }}</span><img src="{{$ctrl.profile.avatar}}" alt="Avatar"/><span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-header">{{'topbar.profile' | translate}}</li>
+          <li><a tabindex="-1" href="" ui-sref="dashboard.manage"><i class="si si-logout pull-right"></i>{{'topbar.manage' | translate}}</a></li>
+          <li><a tabindex="-1" href=""><i class="si si-envelope-open pull-right"></i><span class="badge badge-primary pull-right"></span>{{'topbar.inbox' | translate}}</a></li>
+          <li><a tabindex="-1" ui-sref="dashboard.profile"><i class="si si-user pull-right"></i>{{'topbar.profile' | translate}}</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">{{'topbar.actions' | translate}}</li>
+          <li><a tabindex="-1" href="" ng-click="$ctrl.logout()"><i class="si si-logout pull-right"></i>{{'topbar.logout' | translate}}</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <!-- END Header Navigation Right-->
+  <!-- Header Navigation Left-->
+  <ul class="nav-header pull-left">
+    <li class="hidden-md hidden-lg">
+      <!-- Layout API, functionality initialized in App() -> uiLayoutApi()-->
+      <button data-toggle="layout" data-action="sidebar_toggle" type="button" class="btn btn-default"><i class="fa fa-navicon"></i></button>
+    </li>
+  </ul>
+  <!-- END Header Navigation Left-->
+</header>
+<!-- END Header-->

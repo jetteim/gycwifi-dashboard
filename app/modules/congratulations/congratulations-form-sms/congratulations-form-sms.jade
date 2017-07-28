@@ -1,0 +1,24 @@
+.block.block-themed
+  .block-header.bg-info
+    ul.block-options
+      li
+        i.si.si-note.color-white
+    h3.block-title SMS
+  .block-content
+    form.form-horizontal.push-5-t(onsubmit='return false;')
+      .form-group
+        .col-xs-6
+          label(for='contact1-firstname') Заголовок
+          input#contact1-firstname.form-control(type='text', name='contact1-firstname')
+        .col-xs-6
+          label(for='contact1-subject') Когда?
+          select#contact1-subject.form-control(name='contact1-subject', size='1')
+            option(value='1') за 7 дней
+            option(value='2') за 14 дней
+      .form-group
+        label.col-xs-12(for='contact1-msg') Сообщение
+        .col-xs-12
+          textarea#contact1-msg.form-control(name='contact1-msg', rows='7')
+      .form-group
+        .col-xs-12
+          button.btn.btn-sm.btn-info(type='submit', disabled='') Отправить

@@ -1,0 +1,6 @@
+select.form-control(
+  name='statistics-filter',
+  ng-options='location.address for location in $ctrl.locations',
+  ng-model='$ctrl.location',
+  ng-change='$ctrl.change($ctrl.location.id)'
+)

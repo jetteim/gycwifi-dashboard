@@ -1,0 +1,38 @@
+.block.block-themed
+  .block-content
+    form.form-horizontal.push-5-t
+      .form-group
+        .row
+          label.col-xs-6(for="title_").
+            {{'polls.questions.question' | translate}}
+          label.col-xs-6(for="contact1-subject").
+            {{'polls.questions.selection' | translate}}
+        .row
+          .col-xs-6
+            input.input-sm.form-control.form-control_black(type="text" name="title" id="title_" ng-model="$ctrl.question.title")
+          .col-xs-6
+            select.input-sm.form-control.form-control_black(id="contact1-subject" name="contact1-subject" ng-model='$ctrl.question.question_type')
+              option(value="radio") {{'polls.questions.single' | translate}}
+              option(value="checkbox") {{'polls.questions.multi' | translate}}
+              //- option(value="switch") {{'polls.questions.switch' | translate}}
+      .answers.form-group(ng-repeat="answer in $ctrl.question.answers track by $index")
+        .row
+          label.col-xs-6 {{'polls.questions.answer' | translate}}
+        .row
+          .col-xs-6
+            input.input-sm.form-control.form-control_black(type="text" name="answer" ng-model="$ctrl.question.answers[$index].title")
+          .col-xs-4
+            label.css-input.css-checkbox.css-checkbox-inline.css-checkbox-primary(for='custom-{{$index}}')
+              input(id='custom-{{$index}}', type='checkbox', name='custom-{{$index}}', ng-model="$ctrl.question.answers[$index].custom")
+              span.mr-right-10
+              {{'polls.questions.custom' | translate}}
+          .col-xs-2
+            i.fa.fa-remove.fa-2x.custom-line.text-city.btn(ng-click="$ctrl.remove(answer)")
+      .form-group
+        .col-xs-12
+          i.fa.fa-plus.fa-2x.text-flat.btn(ng-click="$ctrl.add()")
+            span.text-primary(style='font-size: 14px; padding-left: 10px; vertical-align: middle') {{'polls.questions.add-answer' | translate}}
+      .form-group
+        .col-xs-12
+          button.btn.btn-sm.btn-danger(ng-click="$ctrl.removeQuestion($ctrl.question)")
+            {{'polls.questions.delete' | translate}}

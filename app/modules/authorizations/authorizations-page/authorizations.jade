@@ -1,0 +1,40 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13
+    .block
+      .content.content-narrow
+        .form-group
+          label(for='locations-stats').push-10-t
+            | {{'statistics.address_list.address' | translate}}
+          locations-select(change="$ctrl.statsupdate")#locations-stats.locations-select.locations-select_black
+  .row
+    .col-xs-12
+      .table-responsive
+        table.table.table-hover.table-condensed.table-bordered
+          thead
+            tr
+              th.text-center(style='width: 30%;') 
+                | {{'authorizations.provider' | translate}}
+              th.text-center(style='width: 15%;') 
+                | {{'authorizations.location' | translate}}
+              th.text-center(style='width: 15%;') 
+                | {{'authorizations.router' | translate}}
+              th.text-center(style='width: 15%;') 
+                | {{'authorizations.date' | translate}}
+          tbody(ng-repeat='authorization in $ctrl.authorizations')
+            tr
+              td.text-center 
+                | {{ authorization.username||authorization.provider }}
+              td.text-center
+                | {{ authorization.title }}
+              td.text-center
+                | {{ authorization.serial }}
+              td.text-center
+                | {{ authorization.created_at }}
+  hr
+  .row
+    .col-md-10.col-md-offset-1.text-center
+      //Disabled and Active States
+      .block-content
+        uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

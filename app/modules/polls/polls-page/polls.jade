@@ -1,0 +1,24 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13
+
+    // Add Poll
+    //(ng-if="$ctrl.polls.can_create")
+    .col-sm-12 
+      a.block.block-link-hover2.button-pointer(ng-click='$ctrl.makeNew()')
+        .block-content.block-content-full.bg-flat.clearfix
+          i.si.si-plus.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white.
+            {{'general.forms.add-button.add' | translate}}
+          span.h4.text-white-op.mr-left-8.
+            {{'polls.poll' | translate}}
+
+    // Polls list
+    .col-sm-12
+      .block(ng-repeat="poll in $ctrl.polls")
+        a(ui-sref="dashboard.poll({pollId:poll.id})")
+          .block-content.block-content-full
+            .font-w600.h4
+              i.fa.fa-wpforms.pull-right
+              {{poll.title}}

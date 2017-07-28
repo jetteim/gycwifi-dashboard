@@ -1,0 +1,49 @@
+// Header
+header#header-navbar.content-mini.content-mini-full
+  // Header Navigation Right
+  stars-rating
+  ul.nav-header.pull-right
+    //- span.badge.badge-warning.pull-right(ng-if='$ctrl.unread_count > 0')
+    //- | {{ $ctrl.unread_count }}
+    li
+      .btn-group
+        button.btn.btn-default.btn-image.dropdown-toggle(data-toggle='dropdown', type='button')
+          span
+            | {{ $ctrl.profile.username + " " }}
+          img(src='{{$ctrl.profile.avatar}}', alt='Avatar')
+          span.caret
+        ul.dropdown-menu.dropdown-menu-right
+          li.dropdown-header {{'topbar.profile' | translate}}
+          li
+            a(tabindex='-1', href='', ui-sref='dashboard.manage')
+              i.si.si-logout.pull-right
+              | {{'topbar.manage' | translate}}
+          li
+            a(tabindex='-1', href='', ui-sref='dashboard.inbox')
+              i.si.si-envelope-open.pull-right
+              span.badge.badge-primary.pull-right(ng-if='$ctrl.unread_count > 0')
+                | {{ $ctrl.unread_count }}
+              | {{'topbar.inbox' | translate}} 
+          li
+            a(tabindex='-1', ui-sref='dashboard.profile')
+              i.si.si-user.pull-right
+              | {{'topbar.profile' | translate}}
+          li.divider
+          li.dropdown-header {{'topbar.actions' | translate}}
+          li
+            tutorial-switch(style="display: block; padding: 7px 12px; color: #333;")
+          li
+            a(tabindex='-1', href='', ng-click='$ctrl.logout()')
+              i.si.si-logout.pull-right
+              | {{'topbar.logout' | translate}}
+    li
+      lang-switch.btn-group
+  // END Header Navigation Right
+  // Header Navigation Left
+  ul.nav-header.pull-left
+    li.hidden-md.hidden-lg
+      // Layout API, functionality initialized in App() -> uiLayoutApi()
+      button.btn.btn-default(data-toggle='layout', data-action='sidebar_toggle', type='button')
+        i.fa.fa-navicon
+  // END Header Navigation Left
+// END Header

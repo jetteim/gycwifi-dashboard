@@ -1,0 +1,53 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-narrow">
+  <div class="row">
+    <div class="block block-themed">
+      <div class="block-header bg-info">
+        <ul class="block-options">
+          <li><i class="si si-note color-white"></i></li>
+        </ul>
+        <h3 class="block-title"> {{ 'layouts.layout' | translate }}</h3>
+      </div>
+      <div class="block-content">
+        <form ng-submit="$ctrl.send()" class="js-validation form-horizontal push-5-t">
+          <!-- Layout title-->
+          <div class="form-group">
+            <div class="col-xs-12">
+              <label for="form_title">Layout title</label>
+              <input id="form_title" type="text" name="title" ng-model="$ctrl.form.title" class="form-control form-control_black"/>
+            </div>
+          </div>
+          <!-- Form-->
+          <div class="form-group">
+            <div class="col-xs-12">
+              <label for="form_login">Form</label>
+              <input id="form_login" type="text" name="form-login" ng-model="$ctrl.layoutCss.uvForm" class="form-control form-control_black"/>
+            </div>
+          </div>
+          <!-- Input-->
+          <div class="form-group">
+            <div class="col-xs-12">
+              <label for="form_input">Inputs</label>
+              <input id="form_input" type="text" name="form-input" ng-model="$ctrl.layoutCss.uvInput" class="form-control form-control_black"/>
+            </div>
+          </div>
+          <!-- Submit Button-->
+          <div class="form-group">
+            <div class="col-xs-12">
+              <label for="form_btn_submit">Submit button</label>
+              <input id="form_btn_submit" type="text" name="form-form-btn-submit" ng-model="$ctrl.layoutCss.uvBtnSubmit" class="form-control form-control_black"/>
+            </div>
+          </div>
+          <!-- Submit-->
+          <div class="form-group">
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-sm btn-info">{{ 'general.update' | translate }}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .col-sm-12
+    .block.block_inbox
+      .block-content
+        table.js-table-sections.table.table-hover
+
+          thead
+            th
+              | {{'topbar.inbox' | translate}}
+            th.text-center(style="width: 10%")
+              | {{'notifications.favorite' | translate}}
+            th.text-center(style="width: 10%")
+              | {{'notifications.seen' | translate}}
+
+          // First TBody (header)
+          tbody.js-table-sections-header.table__row(ng-repeat-start='notification in $ctrl.notifications' ng-class="{'table__row_dark' : notification.seen == false}")
+            tr.no-hover(ng-click='$ctrl.markRead(notification)')
+              td.font-w600(ng-class="notification.seen ? 'text-muted text-line-through' : 'text-primary-darker'")
+                | {{ notification.title }}
+              td.text-center
+                span.glyphicon(ng-class="notification.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'" ng-click="$ctrl.toggle($event, notification, 'favorite')")
+              td.text-center
+                span.fa(ng-class="notification.seen ? 'fa-sticky-note-o' : 'fa-sticky-note'" ng-click="$ctrl.toggle($event, notification, 'seen')")
+
+          // Second TBody (data)
+          tbody(on-finish-render='ngRepeatFinished', ng-repeat-end='')
+            tr.no-hover
+              td(colspan='3')
+                small.text-muted.text-center
+                  | {{ notification.details }}
+  .col-sm-12
+    .content.text-center
+      uib-pagination(
+        ng-if="$ctrl.notifications.length"
+        items-on-page="$ctrl.itemsOnPage"
+        total-items="$ctrl.totalItems"
+        on-change="$ctrl.changePageHandler"
+      )

@@ -1,0 +1,48 @@
+
+<div class="block block-themed">
+  <div class="block-content">
+    <form class="form-horizontal push-5-t">
+      <div class="form-group">
+        <div class="row">
+          <label for="title_" class="col-xs-6">{{'polls.questions.question' | translate}}</label>
+          <label for="contact1-subject" class="col-xs-6">{{'polls.questions.selection' | translate}}</label>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <input type="text" name="title" id="title_" ng-model="$ctrl.question.title" class="input-sm form-control form-control_black"/>
+          </div>
+          <div class="col-xs-6">
+            <select id="contact1-subject" name="contact1-subject" ng-model="$ctrl.question.question_type" class="input-sm form-control form-control_black">
+              <option value="radio">{{'polls.questions.single' | translate}}</option>
+              <option value="checkbox">{{'polls.questions.multi' | translate}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div ng-repeat="answer in $ctrl.question.answers track by $index" class="answers form-group">
+        <div class="row">
+          <label class="col-xs-6">{{'polls.questions.answer' | translate}}</label>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <input type="text" name="answer" ng-model="$ctrl.question.answers[$index].title" class="input-sm form-control form-control_black"/>
+          </div>
+          <div class="col-xs-4">
+            <label for="custom-{{$index}}" class="css-input css-checkbox css-checkbox-primary">
+              <input id="custom-{{$index}}" type="checkbox" name="custom-{{$index}}" ng-model="$ctrl.question.answers[$index].custom"/><span class="mr-right-10"></span>{{'polls.questions.custom' | translate}}
+            </label>
+          </div>
+          <div class="col-xs-2"><i ng-click="$ctrl.remove(answer)" class="fa fa-remove fa-2x custom-line text-city btn"></i></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12"><i ng-click="$ctrl.add()" class="fa fa-plus fa-2x text-flat btn"><span style="font-size: 14px; padding-left: 10px; vertical-align: middle" class="text-primary">{{'polls.questions.add-answer' | translate}}</span></i></div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <button ng-click="$ctrl.removeQuestion($ctrl.question)" class="btn btn-sm btn-danger">{{'polls.questions.delete' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

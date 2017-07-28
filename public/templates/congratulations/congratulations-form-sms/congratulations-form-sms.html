@@ -1,0 +1,37 @@
+
+<div class="block block-themed">
+  <div class="block-header bg-info">
+    <ul class="block-options">
+      <li><i class="si si-note color-white"></i></li>
+    </ul>
+    <h3 class="block-title">SMS</h3>
+  </div>
+  <div class="block-content">
+    <form onsubmit="return false;" class="form-horizontal push-5-t">
+      <div class="form-group">
+        <div class="col-xs-6">
+          <label for="contact1-firstname">Заголовок</label>
+          <input id="contact1-firstname" type="text" name="contact1-firstname" class="form-control"/>
+        </div>
+        <div class="col-xs-6">
+          <label for="contact1-subject">Когда?</label>
+          <select id="contact1-subject" name="contact1-subject" size="1" class="form-control">
+            <option value="1">за 7 дней</option>
+            <option value="2">за 14 дней</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contact1-msg" class="col-xs-12">Сообщение</label>
+        <div class="col-xs-12">
+          <textarea id="contact1-msg" name="contact1-msg" rows="7" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <button type="submit" disabled="" class="btn btn-sm btn-info">Отправить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

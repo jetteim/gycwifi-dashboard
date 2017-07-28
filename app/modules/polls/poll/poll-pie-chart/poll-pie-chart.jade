@@ -1,0 +1,16 @@
+.block.block-bordered.poll-activity
+  .block-header
+    control(refresh="$ctrl.refresh")
+
+    h3.block-title.poll-activity__title
+      | {{ $ctrl.chart.title }}
+
+  .block-content
+    div.chart-canvas-wrap
+      canvas.chart-canvas.chart.chart-pie.chart-xs(
+        chart-data="$ctrl.chart.data",
+        chart-labels="$ctrl.chart.labels",
+        chart-options="$ctrl.chartoptions",
+        height='330', width='454',
+        chart-click="$ctrl.handleClickOnPie"
+      )

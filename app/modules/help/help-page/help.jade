@@ -1,0 +1,410 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row
+    .col-xs-12
+      //- .block.block-bordered.remove-margin.remove-padding#getting-started
+        .block-header.bg-gray-lighter(onclick="App.blocks('#getting-started', 'content_toggle');")
+          h2.block-title {{ 'help-page.introduction.h2' | translate }}
+        .block-content.block-content-full
+          h3 {{ 'help-page.start.welcome' | translate }}
+          h4 {{'help-page.start.h2' | translate}}
+          ol
+            li
+              h5 {{'help-page.start.step-one.title' | translate}}
+              ul.fa-ul
+                h6 {{'help-page.start.step-one.reset-router.title' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.reset-router.hold-reset' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.reset-router.turn-on' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.reset-router.release-reset' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.reset-router.toggle-power' | translate}}
+              ul.fa-ul
+                b {{'help-page.start.step-one.update-router.title' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.update-router.connect-router' | translate}}
+                li
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.update-router.settings-page' | translate}}
+                  a(href='http://192.168.88.1') http://192.168.88.1
+                  {{'help-page.start.step-one.update-router.settings-login' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-one.update-router.update-menu' | translate}}
+            li
+              h5 {{'help-page.start.step-two.title' | translate}}
+              ul.fa-ul
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-two.add-location' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-two.fill-in.title' | translate}}
+                  ul.fa-ul
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.location-info' | translate}}
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.guest-wifi' | translate}}
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.staff-wifi' | translate}}
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.redirect-url' | translate}}
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.auth-methods' | translate}}
+                    li 
+                      i.fa.fa-angle-right.fa-li
+                      i.fa.fa-angle-right.fa-li
+                      {{'help-page.start.step-two.fill-in.login-design' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-two.save-settings' | translate}}
+            li
+              h5 {{'help-page.start.step-three.title' | translate}}
+              ul.fa-ul
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-three.add-router' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-three.fill-in' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-three.download-settings' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-three.run-setup' | translate}}
+                li 
+                  i.fa.fa-angle-right.fa-li
+                  {{'help-page.start.step-three.finalize-setup' | translate}}
+      .block.block-bordered.remove-margin.remove-padding.push-10-t#how-to-setup
+        .block-header.bg-gray-lighter
+          h2.block-title {{ 'help-page.control_center.additional_info' | translate }}
+        .block-content.block-content-full
+          ul.nav.nav-tabs.nav-tabs-alt.nav-justified(data-toggle='tabs')
+            li
+              a(href='#btabs-static-justified-self-setup')
+                | {{ 'help-page.control_center.self-setup.title' | translate }}
+            li.active
+              a(href='#btabs-static-justified-call-for-service')
+                | {{ 'help-page.control_center.call-for-service.title' | translate }}
+            li
+              a(href='#btabs-static-justified-tech-info')
+                | {{ 'help-page.control_center.tech-info.title' | translate }}
+          .block-content.tab-content
+            #btabs-static-justified-self-setup.tab-pane
+              h3.push-15.push-15-t.text-center
+                | {{ 'help-page.control_center.self-setup.mikrotik-self-start.title' | translate }}
+              .prepare-router.push-15.push-15-t
+                ul.fa-ul
+                  h4
+                    | {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.title' | translate }}
+                  li.reset-router
+                    i.fa.fa-check.fa-li
+                    h5 {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.reset' | translate }}
+                    ul.fa-ul
+                      li
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step1' | translate }}
+                      li
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step2' | translate }}
+                      li
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step3' | translate }}
+                      li
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step4' | translate }}
+                  li.update-router
+                    i.fa.fa-check.fa-li
+                    h5 {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.update' | translate }}
+                    ul.fa-ul
+                      li 
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step1' | translate }}
+                      li 
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step2-begin' | translate }}
+                        a(href="{{'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.webfig' | translate}}")
+                          |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.webfig' | translate }}
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step2-end' | translate }}
+                      li
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step3' | translate }}
+              .setup_router.push-15.push-15-t
+                ul.fa-ul
+                  h4
+                    |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.title' | translate }}
+                  li.add-router
+                    i.fa.fa-check.fa-li
+                    |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.add' | translate }}
+                    ul.fa-ul
+                      li 
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step1' | translate }}
+                      li 
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step2' | translate }}
+                      li 
+                        i.fa.fa-angle-right.fa-li
+                        |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step3' | translate }}
+                  li.download-package
+                    i.fa.fa-check.fa-li
+                    |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.download_package' | translate }}
+                  li.run-setup
+                    i.fa.fa-check.fa-li
+                    |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.run_setup' | translate }}
+                  li.final-steps 
+                    i.fa.fa-check.fa-li
+                    |{{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.final_step' | translate }}
+            #btabs-static-justified-call-for-service.tab-pane.active
+              .youdo.push-15.push-15-t
+                h5.push-15
+                  |{{ 'help-page.control_center.call-for-service.youdo-begin' | translate }}
+                  a(href="{{ 'help-pagecontrol_center.call-for-service.youdo-link' | translate}}", target = "_blank")
+                    |{{ 'help-page.control_center.call-for-service.youdo-link' | translate }}
+                  |{{ 'help-page.control_center.call-for-service.youdo-end' | translate }}
+                ul.fa-ul
+                  li 
+                    i.fa.fa-angle-right.fa-li
+                    |{{ 'help-page.control_center.call-for-service.step1' | translate }}
+                  li 
+                    i.fa.fa-angle-right.fa-li
+                    |{{ 'help-page.control_center.call-for-service.step2' | translate }}
+                  li 
+                    i.fa.fa-angle-right.fa-li
+                    |{{ 'help-page.control_center.call-for-service.step3' | translate }}
+                  li 
+                    i.fa.fa-angle-right.fa-li
+                    |{{ 'help-page.control_center.call-for-service.step4' | translate }}
+                    a(href="mailto:{{ 'help-page.control_center.info-email | translate' }}")
+                      |{{ 'help-page.control_center.info-email' | translate }}
+            #btabs-static-justified-tech-info.tab-pane
+              h5.push-15.push-15-t.text-center
+                |{{ 'help-page.control_center.tech-info.title' | translate }}
+              .router-package.push-15.push-15-t
+                p
+                  |{{ 'help-page.control_center.tech-info.router-package.package-text1' | translate }}
+                  a(href="{{'help-page.control_center.tech-info.router-package.package-url' | translate}}", target = "_blank")
+                    |{{ 'help-page.control_center.tech-info.router-package.package-url' | translate }}
+                  |{{ 'help-page.control_center.tech-info.router-package.package-text2' | translate }}
+              .vpn-link.push-15.push-15-t
+                p
+                  |{{ 'help-page.control_center.tech-info.vpn-link.text1' | translate }}
+                  a(href="{{'help-page.control_center.tech-info.vpn-server' | translate}}", target = '_blank')
+                    |{{ 'help-page.control_center.tech-info.vpn-server' | translate }}
+                  |{{ 'help-page.control_center.tech-info.vpn-link.text2' | translate }}
+              .hotspot.push-15.push-15-t
+                p
+                  |{{ 'help-page.control_center.tech-info.hotspot.text1' | translate }}
+                p
+                  |{{ 'help-page.control_center.tech-info.hotspot.text2-begin' | translate }}
+                  a(href="{{'control_center.tech-info.login-server' | translate}}", target = '_blank')
+                    |{{ 'help-page.control_center.tech-info.login-server' | translate }}
+                  |{{ 'control_center.tech-info.hotspot.text2-end' | translate }}
+// FAQ Help
+//- .content.content-boxed
+//-   .row
+//-     .col-xs-12
+//-       .block.block-opt-hidden#getting-started
+//-         .block-header(onclick="App.blocks('#getting-started', 'content_toggle');")
+//-           ul.block-options
+//-             li
+//-               button(type='button', data-toggle='block-option', data-action='content_toggle')
+//-                 i.si.si-arrow-up
+//-           h2.h3 {{'help-page.introduction.h2' | translate}}
+//-           p {{ 'general.click-to-expand' | translate }}
+//-       .block-content.block-content-full.block-content-narrow
+//-         #faq1.panel-group
+//-           .panel.panel-default(ng-accordion='')
+//-             #faq1_q1.panel-collapse.collapse.in
+//-               .panel-body
+//-                 h2#-mikrotik-3- {{'help-page.start.h2' | translate}}
+//-                 ol
+//-                   li
+//-                     | {{'help-page.start.step-one.title' | translate}}
+//-                     ul
+//-                       b {{'help-page.start.step-one.reset-router.title' | translate}}
+//-                       li {{'help-page.start.step-one.reset-router.hold-reset' | translate}}
+//-                       li {{'help-page.start.step-one.reset-router.turn-on' | translate}}
+//-                       li {{'help-page.start.step-one.reset-router.release-reset' | translate}}
+//-                       li {{'help-page.start.step-one.reset-router.toggle-power' | translate}}
+//-                     ul
+//-                       b {{'help-page.start.step-one.update-router.title' | translate}}
+//-                       li {{'help-page.start.step-one.update-router.connect-router' | translate}}
+//-                       li
+//-                         {{'help-page.start.step-one.update-router.settings-page' | translate}}
+//-                         a(href='http://192.168.88.1') http://192.168.88.1
+//-                         {{'help-page.start.step-one.update-router.settings-login' | translate}}
+//-                       li {{'help-page.start.step-one.update-router.update-menu' | translate}}
+//-                   li
+//-                     {{'help-page.start.step-two.title' | translate}}
+//-                     ul
+//-                       li {{'help-page.start.step-two.add-location' | translate}}
+//-                       li {{'help-page.start.step-two.fill-in.title' | translate}}
+//-                       ul
+//-                         li {{'help-page.start.step-two.fill-in.location-info' | translate}}
+//-                         li {{'help-page.start.step-two.fill-in.guest-wifi' | translate}}
+//-                         li {{'help-page.start.step-two.fill-in.staff-wifi' | translate}}
+//-                         li {{'help-page.start.step-two.fill-in.redirect-url' | translate}}
+//-                         li {{'help-page.start.step-two.fill-in.auth-methods' | translate}}
+//-                         li {{'help-page.start.step-two.fill-in.login-design' | translate}}
+//-                       li {{'help-page.start.step-two.save-settings' | translate}}
+//-                   li
+//-                     | {{'help-page.start.step-three.title' | translate}}
+//-                     ul
+//-                       li {{'help-page.start.step-three.add-router' | translate}}
+//-                       li {{'help-page.start.step-three.fill-in' | translate}}
+//-                       li {{'help-page.start.step-three.download-settings' | translate}}
+//-                       li {{'help-page.start.step-three.run-setup' | translate}}
+//-                       li {{'help-page.start.step-three.finalize-setup' | translate}}
+//-                 h3#- {{'help-page.start.welcome' | translate}}
+//-       .block#how-to-setup
+//-         .block-header(onclick="App.blocks('#how-to-setup', 'content_toggle');")
+//-           ul.block-options
+//-             li
+//-               button(type='button', data-toggle='block-option', data-action='content_toggle')
+//-                 i.si.si-arrow-up
+//-           h2.h3.font-w600 {{'help-page.control_center.additional_info' | translate}}
+//-           p {{ 'general.click-to-expand' | translate }}
+//-         .block-content.block-content-full
+//-           ul.nav.nav-tabs.nav-tabs-alt.nav-justified(data-toggle='tabs')
+//-             li.active
+//-               a(href='#btabs-static-justified-self-setup')
+//-                 {{ 'help-page.control_center.self-setup.title' | translate }}
+//-             li
+//-               a(href='#btabs-static-justified-call-for-service')
+//-                 {{ 'help-page.control_center.call-for-service.title' | translate }}
+//-             li
+//-               a(href='#btabs-static-justified-tech-info')
+//-                 {{ 'help-page.control_center.tech-info.title' | translate }}
+//-           .block-content.tab-content
+//-             #btabs-static-justified-self-setup.tab-pane.active
+//-               h3.push-15.push-15-t.text-center
+//-                 {{ 'help-page.control_center.self-setup.mikrotik-self-start.title' | translate }}
+//-               .prepare-router.push-15.push-15-t
+//-                 h4
+//-                   i.fa.fa-check.fa-li
+//-                   {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.title' | translate }}
+//-                 ul.fa-ul
+//-                   li.reset-router
+//-                     i.fa.fa-check.fa-li
+//-                     h5 {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.reset' | translate }}
+//-                     ul.fa-ul
+//-                       li
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step1' | translate }}
+//-                       li
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step2' | translate }}
+//-                       li
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step3' | translate }}
+//-                       li
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.reset_router.step4' | translate }}
+//-                   li.update-router
+//-                     i.fa.fa-check.fa-li
+//-                     h5 {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.update' | translate }}
+//-                     ul.fa-ul
+//-                       li 
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step1' | translate }}
+//-                       li 
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step2-begin' | translate }}
+//-                         a(href="{{'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.webfig' | translate}}")
+//-                           {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.webfig' | translate }}
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step2-end' | translate }}
+//-                       li
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.prepare_router.update_router.step3' | translate }}
+//-               .setup_router.push-15.push-15-t
+//-                 h4
+//-                   i.fa.fa-check.fa-li
+//-                   {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.title' | translate }}
+//-                 ul.fa-ul
+//-                   li.add-router
+//-                     i.fa.fa-check.fa-li
+//-                     {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.add' | translate }}
+//-                     ul.fa-ul
+//-                       li 
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step1' | translate }}
+//-                       li 
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step2' | translate }}
+//-                       li 
+//-                         i.fa.fa-angle-right.fa-li
+//-                         {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.add_router.step3' | translate }}
+//-                   li.download-package
+//-                     i.fa.fa-check.fa-li
+//-                     {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.download_package' | translate }}
+//-                   li.run-setup
+//-                     i.fa.fa-check.fa-li
+//-                     {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.run_setup' | translate }}
+//-                   li.final-steps 
+//-                     i.fa.fa-check.fa-li
+//-                     {{ 'help-page.control_center.self-setup.mikrotik-self-start.setup_router.final_step' | translate }}
+//-             #btabs-static-justified-call-for-service.tab-pane
+//-               .youdo.push-15.push-15-t
+//-                 h5.push-15
+//-                   {{ 'help-page.control_center.call-for-service.youdo-begin' | translate }}
+//-                   a(href="{{ 'help-pagecontrol_center.call-for-service.youdo-link' | translate}}", target = "_blank")
+//-                     {{ 'help-page.control_center.call-for-service.youdo-link' | translate }}
+//-                   {{ 'help-page.control_center.call-for-service.youdo-end' | translate }}
+//-                 ul.fa-ul
+//-                   li 
+//-                     i.fa.fa-angle-right.fa-li
+//-                     {{ 'help-page.control_center.call-for-service.step1' | translate }}
+//-                   li 
+//-                     i.fa.fa-angle-right.fa-li
+//-                     {{ 'help-page.control_center.call-for-service.step2' | translate }}
+//-                   li 
+//-                     i.fa.fa-angle-right.fa-li
+//-                     {{ 'help-page.control_center.call-for-service.step3' | translate }}
+//-                   li 
+//-                     i.fa.fa-angle-right.fa-li
+//-                     {{ 'help-page.control_center.call-for-service.step4' | translate }}
+//-                     a(href="mailto:{{ 'help-page.control_center.info-email | translate' }}")
+//-                       {{ 'help-page.control_center.info-email' | translate }}
+//-             #btabs-static-justified-tech-info.tab-pane
+//-               h5.push-15.push-15-t.text-center
+//-                 {{ 'help-page.control_center.tech-info.title' | translate }}
+//-               .router-package.push-15.push-15-t
+//-                 p
+//-                   {{ 'help-page.control_center.tech-info.router-package.package-text1' | translate }}
+//-                   a(href="{{'help-page.control_center.tech-info.router-package.package-url' | translate}}", target = "_blank")
+//-                     {{ 'help-page.control_center.tech-info.router-package.package-url' | translate }}
+//-                   {{ 'help-page.control_center.tech-info.router-package.package-text2' | translate }}
+//-               .vpn-link.push-15.push-15-t
+//-                 p
+//-                   {{ 'help-page.control_center.tech-info.vpn-link.text1' | translate }}
+//-                   a(href="{{'help-page.control_center.tech-info.vpn-server' | translate}}", target = '_blank')
+//-                     {{ 'help-page.control_center.tech-info.vpn-server' | translate }}
+//-                   {{ 'help-page.control_center.tech-info.vpn-link.text2' | translate }}
+//-               .hotspot.push-15.push-15-t
+//-                 p
+//-                   {{ 'help-page.control_center.tech-info.hotspot.text1' | translate }}
+//-                 p
+//-                   {{ 'help-page.control_center.tech-info.hotspot.text2-begin' | translate }}
+//-                   a(href="{{'control_center.tech-info.login-server' | translate}}", target = '_blank')
+//-                     {{ 'help-page.control_center.tech-info.login-server' | translate }}
+//-                   {{ 'control_center.tech-info.hotspot.text2-end' | translate }}

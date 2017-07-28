@@ -1,0 +1,32 @@
+breadcrumbs
+basicstats
+.content
+  .row
+    .col-lg-6.col-lg-offset-3
+      .block
+        .block-header
+          .block-options
+            // Header here
+          h3.block-title Vips
+        .block-content
+          table.table.table-striped
+            thead
+              tr
+                th.text-center(style='width: 50px;') #
+                th Phone
+                th.hidden-xs(style='width: 33%;') Location
+                th.text-center(style='width: 100px;') Actions
+            tbody
+              tr(ng-repeat='vip in $ctrl.vips')
+                td.text-center 1
+                td
+                  | {{ vip.phone }}
+                td.hidden-xs
+                  span.label.label-info
+                    | {{ vip.location_id }}
+                td.text-center
+                  .btn-group
+                    button.btn.btn-xs.btn-default(type='button', data-toggle='tooltip', title='', data-original-title='Edit Client')
+                      i.fa.fa-pencil
+                    button.btn.btn-xs.btn-default(type='button', data-toggle='tooltip', title='', data-original-title='Remove Client')
+                      i.fa.fa-times

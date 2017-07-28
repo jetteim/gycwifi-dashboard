@@ -1,0 +1,15 @@
+button.btn.btn-link.text-gray.dropdown-toggle.padding-6(data-toggle='dropdown', type='button')
+  i.fa.fa-caret-down.fa-caret-down_sidebar-lang
+  img.lang-flag(src='/images/{{$ctrl.lang}}.png', alt='English lang')
+
+ul.dropdown-menu.dropdown-menu-left.font-s13.sidebar-mini-hide
+  li
+    a(href='javascript:void(0)', ng-click="$ctrl.changeLang('ru')")
+      i.pull-right
+        img.lang-flag.lang-flag_small-drop(src='/images/ru.png', alt='English lang')
+      span.font-w600 Русский
+  li
+    a(href='javascript:void(0)', ng-click="$ctrl.changeLang('en')")
+      i.pull-right
+        img.lang-flag.lang-flag_small-drop(src='/images/en.png', alt='English lang')
+      span.font-w600 English

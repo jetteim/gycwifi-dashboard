@@ -1,0 +1,31 @@
+// Basic stats
+.content.bg-white.border-b.text-center
+  .row.items-push.text-uppercase
+    //- .col-xs-4
+    //-   .block
+    //-     .block-content.block-content-full.text-center
+    //-       div#authticker(style='height:80px')
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.basic.connections' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.basic.all_the_time' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.stats.all_time_connections}}
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.basic.connections' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.basic.last_month' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.stats.from_month}}
+    .col-sm-4
+      .font-w700.text-gray-darker.animated.fadeIn {{'statistics.basic.connections' | translate}}
+      .text-muted.animated.fadeIn
+        small
+          i.si.si-calendar
+          |  {{'statistics.basic.last_week' | translate}}
+      a.h2.font-w300.text-primary.animated.flipInX(ui-sref='dashboard.statistic')
+        | {{$ctrl.stats.from_week}}

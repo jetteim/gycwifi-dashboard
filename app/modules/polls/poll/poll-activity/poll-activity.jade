@@ -1,0 +1,34 @@
+.block.block-bordered.poll-activity
+
+  .block-header
+    control(refresh="$ctrl.refresh()")
+
+    h3.block-title.poll-activity__title
+      | {{'polls.chart.activity' | translate}}
+
+  .block-content
+    canvas.chart.chart-line(
+      chart-data="$ctrl.chart.data",
+      chart-labels="$ctrl.chart.labels",
+      chart-options="$ctrl.chart.options",
+      height='200', width='454',
+      chart-dataset-override="$ctrl.chart.datasetOverride",
+      chart-click="$ctrl.handlerClick"
+    )
+
+  .block-content.poll-activity__activity-resume
+    .row.items-push.text-center
+
+      .col-xs-6.activity-resume__column
+        .push-5
+          i.si.si-graph
+        .h5.activity-resume__text-item
+          span.font-w600 {{ $ctrl.chart.attempts }}
+          span.font-w300.activity-resume {{'polls.chart.attempts-total' | translate}}
+
+      .col-xs-6.activity-resume__column
+        .push-5
+          i.si.si-users
+        .h5.activity-resume__text-item
+          span.font-w600 {{ $ctrl.chart.autorizations }}
+          span.font-w300.activity-resume {{'polls.chart.auth-total' | translate}}

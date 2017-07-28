@@ -1,0 +1,19 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-boxed">
+  <div class="row font-s13">
+    <!-- Add Poll-->
+    <div class="col-sm-12"><a ui-sref="dashboard.poll" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-flat clearfix"><i class="si si-plus fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'general.add' | translate}}</span><span class="h4 text-white-op mr-left-8">
+            {{'polls.poll' | translate}}
+            </span></div></a></div>
+    <!-- Polls list-->
+    <div class="col-sm-12">
+      <div ng-repeat="poll in $ctrl.polls" class="block"><a ui-sref="dashboard.poll({pollId:poll.id})">
+          <div class="block-content block-content-full">
+            <div class="font-w600 h4"><i class="fa fa-wpforms pull-right"></i>{{poll.title}}</div>
+          </div></a></div>
+    </div>
+  </div>
+</div>

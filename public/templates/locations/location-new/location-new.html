@@ -1,0 +1,29 @@
+
+<section id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+  <sidebar></sidebar>
+  <topbar></topbar>
+  <main id="main-container" class="main-content-wrap">
+    <breadcrumbs></breadcrumbs>
+    <basicstats></basicstats>
+    <div class="content content-boxed">
+      <div class="row font-s13">
+        <!-- Location Card-->
+        <div class="col-sm-5 col-xs-12">
+          <div class="block">
+            <div class="block-content block-content-full text-center">
+              <location-card location="$ctrl.location"></location-card>
+            </div>
+          </div>
+        </div>
+        <!-- Location Form-->
+        <div class="col-sm-7 col-xs-12">
+          <div class="block block-themed">
+            <div class="block-content">
+              <location-form location="$ctrl.location" action="'create'"></location-form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

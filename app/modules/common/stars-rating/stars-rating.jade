@@ -1,0 +1,14 @@
+div.stars-rating-block
+  span.stars-rating-title(style="display: block; font-size: 11px; opacity: .7")
+    | {{'opinions.yourOpinion' | translate}}
+  span.stars-rating-ui(
+    uib-rating
+    ng-model="$ctrl.rating.average_rating"
+    max="5"
+    enable-reset="false"
+    read-only="$ctrl.isReadonly"
+    titles="['','','','','']"
+    ng-click="$ctrl.select($ctrl.rating.average_rating)"
+    data-toggle="modal"
+    data-target="#rating-modal"
+  )

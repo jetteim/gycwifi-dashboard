@@ -1,0 +1,49 @@
+
+<div id="locations-control" class="block block-themed button block-rounded">
+  <div ng-click="showLocationControl = !showLocationControl" class="block-header">{{ 'manage-page.locations' | translate}}</div>
+  <div ng-show="showLocationControl" class="block-content block-content-full">
+    <table class="table-responsive js-table-sections table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th style="width: 30px;"></th>
+          <th style="width: 40%;">{{ 'statistics.accounts.username' | translate }}</th>
+          <th style="width: 40%;">{{ 'statistics.accounts.email' | translate }}</th>
+          <th colspan="2" style="width: 10%;">{{ 'statistics.accounts.locations_count' | translate }}</th>
+          <th colspan="3" style="width: 10%;">{{ 'statistics.accounts.routers_count' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat-start="location in $ctrl.locations" class="js-table-sections-header">
+        <tr>
+          <td class="text-center"><i class="fa fa-angle-right"></i></td>
+          <td style="width: 30%;">{{ user.username }}</td>
+          <td style="width: 30%;">{{ user.email }}</td>
+          <td style="width: 10%;">{{ user.role }}</td>
+          <td style="width: 10%;">{{ user.expiration }}</td>
+          <td colspan="2" style="width: 10%;">{{ user.locations_count }}</td>
+          <td colspan="3" style="width: 10%;">{{ user.routers_count }}</td>
+        </tr>
+      </tbody>
+      <tbody ng-repeat-end="" on-finish-render="ngRepeatFinished">
+        <tr ng-repeat="location in user.locations">
+          <td class="text-center"></td>
+          <td>{{ location.extended_address }}</td>
+          <td>
+            {{ 'statistics.accounts.smscount' | translate }} 
+            {{ location.smscount }}
+          </td>
+          <td>
+            {{ 'statistics.accounts.auth_count' | translate }} 
+            {{ location.auth_count }}
+          </td>
+          <td style="width: 25%;">{{ 'statistics.accounts.address_completed' | translate }} <small class="text-muted text-center"><span ng-class="{'inline_show' : location.address_completed === true}" class="fa fa-check font_green router-status inline_hide"></span><span ng-class="{'inline_show' : location.address_completed === false}" class="fa fa-remove font_red router-status inline_hide"></span></small></td>
+          <td style="width: 25%;">{{ 'statistics.accounts.phone_completed' | translate }} <small class="text-muted text-center"><span ng-class="{'inline_show' : location.phone_completed === true}" class="fa fa-check font_green router-status inline_hide"></span><span ng-class="{'inline_show' : location.phone_completed === false}" class="fa fa-remove font_red router-status inline_hide"></span></small></td>
+          <td style="width: 25%;">{{ 'statistics.accounts.logo_uploaded' | translate }} <small class="text-muted text-center"><span ng-class="{'inline_show' : location.logo_uploaded === true}" class="fa fa-check font_green router-status inline_hide"></span><span ng-class="{'inline_show' : location.logo_uploaded === false}" class="fa fa-remove font_red router-status inline_hide"></span></small></td>
+          <td style="width: 25%;">{{ 'statistics.accounts.url_completed' | translate }} <small class="text-muted text-center"><span ng-class="{'inline_show' : location.url_completed === true}" class="fa fa-check font_green router-status inline_hide"></span><span ng-class="{'inline_show' : location.url_completed === false}" class="fa fa-remove font_red router-status inline_hide"></span></small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="block-content block-content-full">
+    <pagination page="'locations-control'"></pagination>
+  </div>
+</div>

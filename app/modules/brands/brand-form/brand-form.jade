@@ -1,0 +1,60 @@
+form.js-validation.form-horizontal.push-5-t(name='brandForm', ng-submit='$ctrl.sendForm()')
+  // Title
+  .form-group
+    .col-xs-12
+      label(for='form-title') {{'brands.form.title' | translate}}
+      input#form-title.form-control.form-control_black(type='text', name='title', placeholder='General brand', ng-model='$ctrl.brand.title')
+      // validate message
+      // .ng-messages.col-xs-12(ng-messages="brandForm.title.$error")
+      // p(ng-message="minlength") Min length is 6 chars.
+      // p(ng-message="required") This field is required.
+      // Logo image
+      .form-group
+        label.col-xs-12(for='form-logo')
+          span {{'brands.form.logo' | translate}}
+          img-preloader(img="'brand_logo'")
+        .col-xs-12
+          input#form-logo(type='file', ng-upload='brand_logo')
+      // Background color
+      .form-group
+        label.col-xs-12(for='form-bg-color')
+          span {{'brands.form.background_color' | translate}}
+        .col-md-4.col-xs-6
+          input#form-bg-color(colorpicker='', type='text', ng-model='$ctrl.brand.bg_color', name='bg_color', placeholder='#646464')
+      .form-group
+        label.col-xs-12(for='brand-background')
+          span {{'brands.form.background_image' | translate}}
+          img-preloader(img="'brand_background'")
+        .col-xs-12
+          input#brand-background(type='file', ng-upload='brand_background')
+      .form-group
+        label.col-xs-12(for='auth_expiration_time') {{'brands.form.sms_auth.auth_time' | translate}}
+        .col-xs-12
+          select#auth_expiration_time.form-control.form-control_black(size='1', ng-model='$ctrl.brand.auth_expiration_time')
+            option(value='900') 15 mins
+            option(value='1800') 30 mins
+            option(value='3600') 1 hour
+            option(value='14400') 4 hours
+            option(value='43200') 12 hours
+            option(value='172800') 24 hours
+      // Redirect url
+      .form-group
+        label.col-xs-12(for='brand-redirect_url') {{'brands.form.redirect_url' | translate}}
+        .col-xs-12
+          input#brand-redirect_url.form-control.form-control_black(type='text', placeholder='https://gycwifi.com', ng-model='$ctrl.brand.redirect_url', name='redirect_url')
+      .form-group
+        label.col-xs-12(for='brand-category') {{'brands.form.category' | translate}}
+        .col-xs-12
+          select-category(select-id="'brand-category'", options='$ctrl.brand')
+      .form-group
+        label.col-xs-12(for='select-template') {{'templates.label' | translate}}
+        .col-xs-12
+          select.form-control.form-control_black.ng-pristine(name='select-template', size='1', ng-model='$ctrl.brand.layout_id', ng-options='layout.id as layout.title for layout in $ctrl.layouts')
+      .form-group
+        label.col-xs-12(for='brand-promo') {{'brands.form.promo_text' | translate}}
+        .col-xs-12
+          textarea#brand-promo.form-control.form-control_black(rows='3', placeholder='Promo text ...', ng-model='$ctrl.brand.promo_text')
+      .form-group
+        .col-xs-12
+          button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.loading', ng-if="$ctrl.action == 'create'") {{'brands.form.create' | translate}}
+          button.btn.btn-sm.btn-info(type='submit', ng-disabled='$ctrl.loading', ng-if="$ctrl.action == 'update'") {{'brands.form.update' | translate}}

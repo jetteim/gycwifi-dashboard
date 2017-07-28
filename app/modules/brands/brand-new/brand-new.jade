@@ -1,0 +1,18 @@
+section#page-container.sidebar-l.sidebar-o.side-scroll.header-navbar-fixed
+  sidebar
+  topbar
+  main#main-container.main-content-wrap
+    breadcrumbs
+    basicstats
+    .content.content-boxed
+      .row.font-s13
+        // Brand Card
+        .col-sm-5.col-xs-12
+          .block
+            .block-content.block-content-full.text-center
+              brand-card(brand='$ctrl.brand')
+        // Brand Form
+        .col-sm-7.col-xs-12
+          .block.block-themed
+            .block-content
+              brand-form(brand='$ctrl.brand', action="'create'")

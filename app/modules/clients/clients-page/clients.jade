@@ -1,0 +1,87 @@
+breadcrumbs
+clientstats
+
+// Filter
+.bg-gray-light.border-b
+  .content.content-blocked
+    .row
+      .col-xs-12
+        .block
+          .block-header.text-center
+            label
+              | {{'clients.filter' | translate}}
+          .block-content.push-10
+            .row.push-10
+              .col-xs-12
+                label 
+                  | {{'clients.select-address' | translate}}
+              .col-xs-12.push-10
+                locations-select(change="$ctrl.filterByLocation")#locations-select.locations-select.locations-select_black.col-xs-12
+            .row.push-10
+              .col-xs-12
+                label 
+                  | {{'clients.select-client' | translate}}
+              .col-xs-12.push-10
+                label.radio-inline(for='loyalty-all')
+                  input(type='radio', id='loyalty-all', name='loyalty', value='all', ng-model='$ctrl.loyalty', ng-change='$ctrl.selected()')
+                  | {{'clients.all' | translate}}
+                label.radio-inline(for='loyalty-regular')
+                  input(type='radio', id='loyalty-regular', name='loyalty', value='regular', ng-model='$ctrl.loyalty', ng-change='$ctrl.selected()')
+                  | {{'clients.regular' | translate}}
+                label.radio-inline(for='loyalty-passed')
+                  input(type='radio', id='loyalty-passed', name='loyalty', value='passed', ng-model='$ctrl.loyalty', ng-change='$ctrl.selected()')
+                  | {{'clients.passed' | translate}}
+                label.loyalty-days__label(ng-if="$ctrl.loyalty === 'passed'")
+                  | {{'clients.for' | translate}}
+                  input.loyalty-days__input(type='text', id='loyalty-custom', name='loyalty', ng-model='$ctrl.loyaltyDays', ng-change='$ctrl.selected()')
+                  // todo nolang
+                  | {{'clients.days' | translate}}
+    hr
+    .row
+      .col-xs-12
+        table.table.table-hover
+          thead
+            tr
+              th.text-center(style='width: 80px;')
+                i.si.si-user
+              th.text-center(style='width: 30%;')
+                | {{'clients.name' | translate}}
+              th.text-center(style='width: 15%;')
+                | {{'clients.phone' | translate}}
+              th.text-center(style='width: 15%;') 
+                | {{'clients.email' | translate}}
+              th.text-center.sort(style='width: 15%;', ng-click="$ctrl.changeSort('visits')")
+                | {{'clients.visits' | translate}}
+                .glyphicon.icon-sort(ng-class="{'glyphicon-triangle-bottom' : $ctrl.params.visits === 'desc', 'glyphicon-triangle-top' : $ctrl.params.visits === 'asc'}")
+              th.text-center.sort(style='width: 15%;', ng-click="$ctrl.changeSort('visits30')")
+                | {{'clients.visits30' | translate}}
+                .glyphicon.icon-sort(ng-class="{'glyphicon-triangle-bottom' : $ctrl.params.visits30 === 'desc', 'glyphicon-triangle-top' : $ctrl.params.visits30 === 'asc'}")
+              th.text-center.sort(style='5%', ng-click="$ctrl.changeSort('updated_at')")
+                | {{'clients.created_at' | translate}}
+                .glyphicon.icon-sort(ng-class="{'glyphicon-triangle-bottom' : $ctrl.params.updated_at === 'desc', 'glyphicon-triangle-top' : $ctrl.params.updated_at === 'asc'}")
+          tbody
+            tr(ng-repeat='client in $ctrl.clients')
+              td.text-center
+                .img-container
+                  img.img-avatar.img-avatar48(src='{{ client.image }}', alt='{{ client.username }}')
+              td.text-center
+                | {{ client.username }}
+              td.text-center
+                a(href='tel:{{ client.phone_number }}')
+                  | {{ client.phone_number }}
+              td.text-center
+                a(href='mailto:{{ client.email }}')
+                  | {{ client.email }}
+              td.text-center
+                | {{ client.visits }}
+              td.text-center
+                | {{ client.visits30 }}
+              td.text-center
+                | {{ client.updated_at | date: 'dd/MM/yy'}}
+
+    hr
+    .row
+      .col-md-10.col-md-offset-1.text-center
+        //Disabled and Active States
+        .block-content
+          uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

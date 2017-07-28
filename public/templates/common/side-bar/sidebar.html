@@ -1,0 +1,66 @@
+
+<nav id="sidebar">
+  <!-- Sidebar Scroll Container-->
+  <div id="sidebar-scroll">
+    <!-- Sidebar Content-->
+    <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode-->
+    <div class="sidebar-content">
+      <!-- Side Header-->
+      <div class="side-header side-content bg-white-op">
+        <!-- Layout API, functionality initialized in App() -> uiLayoutApi()-->
+        <button type="button" data-toggle="layout" data-action="sidebar_close" class="btn btn-link text-gray pull-right hidden-md hidden-lg"><i class="fa fa-times"></i></button>
+        <!-- Themes functionality initialized in App() -> uiHandleTheme()--><a ui-sref="dashboard.statistic" class="h5 logo-link text-white"><img src="../images/logo_sidebar.png" class="gyc-logo gyc-logo_sm"/></a>
+        <feedback class="btn-group"></feedback>
+        <lang-switch class="btn-group"></lang-switch>
+      </div>
+      <!-- END Side Header-->
+      <!-- Side Content-->
+      <div class="side-content">
+        <ul class="nav-main">
+          <!-- Dashboard-->
+          <li><a ui-sref="dashboard.statistic"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">{{ 'sidebar.statistic' | translate }}</span></a></li>
+          <!-- Clients-->
+          <li><a ui-sref="dashboard.clients"><i class="si si-users"></i><span class="sidebar-mini-hide">{{ 'sidebar.clients' | translate }}</span></a></li>
+          <li><a ui-sref="dashboard.authorizations"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">{{ 'sidebar.authorizations' | translate }}</span></a></li>
+          <!-- Divider-->
+          <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ 'sidebar.engagement' | translate }}</span></li>
+          <!-- Congratulations-->
+          <li><a ui-sref="dashboard.congratulations"><i class="si si-present"></i><span class="sidebar-mini-hide">{{ 'sidebar.congratulations' | translate }}</span></a></li>
+          <!-- Sales-->
+          <li><a ui-sref="dashboard.sales"><i class="si si-basket-loaded"></i><span class="sidebar-mini-hide">{{ 'sidebar.sales' | translate }}</span></a></li>
+          <!-- Polls-->
+          <li><a ui-sref="dashboard.polls"><i class="glyphicon glyphicon-bullhorn"></i><span class="sidebar-mini-hide">{{ 'sidebar.polls' | translate }}</span></a></li>
+          <!-- Divider-->
+          <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ 'sidebar.settings' | translate }}</span></li>
+          <!-- Brands-->
+          <li><a ui-sref="dashboard.brands"><i class="si si-badge"></i><span class="sidebar-mini-hide">{{ 'sidebar.brands' | translate }}</span></a></li>
+          <!-- Locations-->
+          <li><a ui-sref="dashboard.locations"><i class="si si-pointer"></i><span class="sidebar-mini-hide">{{ 'sidebar.locations' | translate }}</span></a></li>
+          <!-- Routers-->
+          <li><a ui-sref="dashboard.routers"><i class="si si-note"></i><span class="sidebar-mini-hide">{{ 'sidebar.routers' | translate }}</span></a></li>
+          <!-- Divider-->
+          <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ 'sidebar.integration' | translate }}</span></li>
+          <!-- Export to AmoCRM-->
+          <li><a href="" target="_self" ng-click="$ctrl.amoCRM()" onclick="ga('send', 'event', 'dashboard', 'data-export', 'amocrm')"><img src="../images/amocrm_small.png" style="margin-right: 15px; height: 15px;"/><span class="sidebar-mini-hide">{{ 'sidebar.exportTo' | translate }} AmoCRM</span></a></li>
+          <!-- Export to MailChimp-->
+          <li><a href="" target="_self" ng-click="$ctrl.MailChimp()" onclick="ga('send', 'event', 'dashboard', 'data-export', 'mailchimp')"><img src="../images/mailchimp_small.png" style="margin-right: 15px; height: 15px;"/><span class="sidebar-mini-hide">{{ 'sidebar.exportTo' | translate }} MailChimp</span></a>
+            <!-- Divider-->
+            <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ 'sidebar.advanced' | translate }}</span></li>
+            <!-- Market-->
+            <li><a ui-sref="dashboard.market"><i class="si si-wallet"></i><span class="sidebar-mini-hide">{{ 'sidebar.market' | translate }}</span></a></li>
+            <!-- Vips-->
+            <li><a ui-sref="dashboard.vips"><i class="si si-bag"></i><span class="sidebar-mini-hide">{{ 'sidebar.vipNumbers' | translate }}</span></a></li>
+            <!-- Help-->
+            <li><a ui-sref="dashboard.help"><i class="si si-layers"></i><span class="sidebar-mini-hide">{{ 'sidebar.help' | translate }}</span></a></li>
+            <!-- Opinions-->
+            <li ng-if="$ctrl.role === &quot;power_user&quot;"><a ui-sref="dashboard.opinions"><i class="si si-book-open"></i><span class="sidebar-mini-hide">{{ 'sidebar.opinions' | translate }}</span></a></li>
+          </li>
+        </ul>
+      </div>
+      <!-- END Side Content-->
+      <!-- Sidebar Content-->
+      <!-- END Sidebar Scroll Container-->
+    </div>
+  </div>
+</nav>
+<!-- END Sidebar-->

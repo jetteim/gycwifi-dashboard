@@ -1,0 +1,28 @@
+
+<div class="row font-s13">
+  <div class="block">
+    <ul data-js-tabs="" data-toggle="tabs" class="nav nav-tabs nav-justified push-20">
+      <li class="active"><a href="#tab-manage-users" ng-click="$ctrl.tab('users')"><i class="fa fa-user"></i> {{ 'manage-page.users' | translate}}</a></li>
+      <li><a href="#tab-manage-objects" ng-click="$ctrl.tab('objects')"><i class="fa fa-fw fa-pencil"></i> {{'manage-page.objects' | translate}}</a></li>
+      <li><a href="#tab-manage-settings" ng-click="$ctrl.tab('settings')"><i class="fa fa-fw fa-asterisk"></i> {{'manage-page.settings' | translate}}</a></li>
+    </ul>
+    <div class="block-content tab-content">
+      <div id="tab-manage-users" class="tab-pane fade in active">
+        <div id="account-stats-block" class="block block-themed block-rounded">
+          <div class="block-content block-content-full">
+            <accountstats ng-if="$ctrl.tabName == 'users'"></accountstats>
+          </div>
+        </div>
+      </div>
+      <div id="tab-manage-objects" class="tab-pane fade">
+        <routerscontrol ng-if="$ctrl.tabName == 'objects'"></routerscontrol>
+        <brandscontrol ng-if="$ctrl.tabName == 'objects'"></brandscontrol>
+        <locationscontrol ng-if="$ctrl.tabName == 'objects'"></locationscontrol>
+        <userscontrol ng-if="$ctrl.tabName == 'objects'"></userscontrol>
+      </div>
+      <div id="tab-manage-settings" class="tab-pane fade">
+        <div class="row items-push"></div>
+      </div>
+    </div>
+  </div>
+</div>

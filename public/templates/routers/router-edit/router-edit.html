@@ -1,0 +1,24 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-boxed">
+  <div class="row font-s13">
+    <!-- Router Card Col-->
+    <div class="col-sm-4 col-xs-12">
+      <!-- Buttons block-->
+      <div>
+        <!-- Button view locations-->
+        <!-- Button delete router--><a href="" ng-click="$ctrl.deleteRouter()" class="block block-link-hover2 block-margin-10">
+          <div class="block-content block-content-full bg-city clearfix"><i class="si si-trash fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'routers.delete-button.delete' | translate}}</span><span class="h4 text-white-op">{{'routers.delete-button.router' | translate}}</span></div></a>
+      </div>
+    </div>
+    <!-- Router Form Col-->
+    <div class="col-xs-12">
+      <div class="block block-themed">
+        <div class="block-content">
+          <router-form router="$ctrl.router" action="'update'"></router-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

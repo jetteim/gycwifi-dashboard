@@ -1,0 +1,86 @@
+
+<div class="content content-boxed">
+  <div class="row font-s13">
+    <div class="block">
+      <div style="background-image: url('images/backgound_profile.jpg');" class="bg-image">
+        <div class="block-content bg-primary-op text-center overflow-hidden">
+          <div class="push-30-t push animated fadeInDown"><img src="{{$ctrl.profile.avatar}}" alt="" class="img-avatar img-avatar96 img-avatar-thumb"/></div>
+          <div class="push-30 animated fadeInUp">
+            <h2 class="h4 font-w600 text-white push-5">{{$ctrl.profile.username}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form ng-submit="$ctrl.saveProfile()">
+      <div class="block">
+        <ul data-toggle="tabs" class="nav nav-tabs nav-justified push-20">
+          <li class="active"><a href="#tab-profile-avatar"><i class="fa fa-user"></i> {{'profile-page.avatar' | translate}}</a></li>
+          <li><a href="#tab-profile-personal"><i class="fa fa-fw fa-pencil"></i> {{'profile-page.personal' | translate}}</a></li>
+          <li><a href="#tab-profile-password"><i class="fa fa-fw fa-asterisk"></i> {{'profile-page.password.password' | translate}}</a></li>
+        </ul>
+        <div class="block-content tab-content">
+          <div id="tab-profile-avatar" class="tab-pane fade in active">
+            <div class="row items-push">
+              <div class="col-sm-6 col-sm-offset-3 form-horizontal">
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <label for="profile_avatar"><span>{{'profile-page.avatar' | translate}}</span>
+                      <img-preloader img="'user_avatar'"></img-preloader>
+                    </label>
+                    <input id="profile_avatar" type="file" ng-upload="user_avatar" class="form-control input-lg"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-profile-personal" class="tab-pane fade">
+            <div class="row items-push">
+              <div class="col-sm-6 col-sm-offset-3 form-horizontal">
+                <div class="form-group">
+                  <div class="col-xs-5">
+                    <label>{{'profile-page.username' | translate}}</label>
+                    <div class="form-control-static font-w700">{{'profile-page.admin' | translate}}</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <label for="profile-email">{{'profile-page.email' | translate}}</label>
+                    <input id="profile-email" ng-model="$ctrl.email" type="text" name="profile-email" placeholder="Enter your email" value="{{$ctrl.profile.email}}" class="form-control input-lg"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-profile-password" class="tab-pane fade">
+            <div class="row items-push">
+              <div class="col-sm-6 col-sm-offset-3 form-horizontal">
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <label for="profile-password">{{'profile-page.password.current-password' | translate}}</label>
+                    <input id="profile-password" type="password" name="profile-password" class="form-control input-lg"/>
+                  </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <label for="profile-password-new">{{'profile-page.password.new-password' | translate}}</label>
+                    <input id="profile-password-new" type="password" name="profile-password-new" class="form-control input-lg"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <label for="profile-password-new-confirm">{{'profile-page.password.confirm' | translate}}</label>
+                    <input id="profile-password-new-confirm" type="password" name="profile-password-new-confirm" class="form-control input-lg"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block-content block-content-full bg-gray-lighter text-center">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check push-5-r"></i> {{'profile-page.save' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

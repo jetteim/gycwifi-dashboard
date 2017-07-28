@@ -1,0 +1,64 @@
+
+<breadcrumbs></breadcrumbs>
+<basicstats></basicstats>
+<div class="content content-boxed">
+  <div class="row font-s13 col-md-6">
+    <!-- Poll title-->
+    <div class="col-sm-12">
+      <div class="block block-themed">
+        <div class="block-content">
+          <form class="form-horizontal push-5-t">
+            <div class="form-group">
+              <label for="title_" class="col-xs-12">{{'polls.title' | translate}}</label>
+              <div class="col-xs-12">
+                <input type="text" name="title" ng-model="$ctrl.title" class="form-control form-control_black"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Questions list-->
+    <div class="col-sm-12">
+      <question ng-repeat="question in $ctrl.questions" question="question" questions="$ctrl.questions"></question>
+    </div>
+    <!-- Add Question-->
+    <div class="col-sm-12"><a ng-click="$ctrl.add()" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-flat clearfix"><i class="si si-plus fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'general.add' | translate}}</span><span class="h4 text-white-op mr-left-8">
+            {{'polls.question' | translate}}
+            </span></div></a></div>
+    <!-- Create Poll-->
+    <div ng-if="!$ctrl.pollId" class="col-sm-12"><a ng-click="$ctrl.create()" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-primary clearfix"><i class="fa fa-save fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'general.create' | translate}}</span><span class="h4 text-white-op mr-left-8">
+            {{'polls.poll' | translate}}
+            </span></div></a></div>
+    <!-- Update Poll-->
+    <div ng-if="$ctrl.pollId" class="col-sm-12"><a ng-click="$ctrl.update()" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-primary clearfix"><i class="fa fa-save fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'general.update' | translate}}</span><span class="h4 text-white-op mr-left-8">
+            {{'polls.poll' | translate}}
+            </span></div></a></div>
+    <!-- Delete Poll-->
+    <div class="col-sm-12"><a ng-click="$ctrl.remove()" class="block block-link-hover2 button-pointer">
+        <div class="block-content block-content-full bg-city clearfix"><i class="si si-trash fa-2x text-white pull-right"></i><span class="h4 font-w700 text-white">{{'brands.delete-button.delete' | translate}}</span><span class="h4 text-white-op mr-left-8">
+            {{'polls.poll' | translate}}
+            </span></div></a></div>
+  </div>
+  <div class="row font-s13 col-md-6">
+    <!-- Current Poll statistics-->
+    <div class="col-sm-12">
+      <div ng-repeat="chart in charts" class="block block-themed">
+        <div class="block-header text-center">
+          <h3>{{ chart.title }}</h3>
+        </div>
+        <div class="block-content block-content-full text-center">
+          <div id="pollchart{{$index}}">
+            <canvas chart-data="chart.data" chart-labels="chart.labels" chart-options="chartoptions" height="330" width="454" chart-click="handleClickOnPie" class="chart-canvas chart chart-pie chart-xs"></canvas>
+          </div>
+        </div>
+        <div class="block block-themed">
+          <answer-statistic question="$ctrl.questions[$index]"></answer-statistic>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

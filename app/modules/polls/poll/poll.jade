@@ -1,0 +1,71 @@
+breadcrumbs
+basicstats
+.content.content-boxed
+  .row.font-s13.col-md-6
+
+    // Poll title
+    .col-sm-12
+      .block.block-themed
+        .block-content
+          form.form-horizontal.push-5-t
+            .form-group
+              label.col-xs-12(for="title_").
+                {{'polls.title' | translate}}
+              .col-xs-12
+                input.form-control.form-control_black(type="text" name="title" ng-model="$ctrl.title")
+          .excel-export
+            .content-mini.content-mini-full.bg-primary.excel-export__btn(ng-click="$ctrl.downloadExcel()")
+              {{'polls.export' | translate}}
+              i.fa.fa-file-excel-o
+
+    // Questions list
+    .col-sm-12
+      question(ng-repeat="question in $ctrl.questions", question="question", questions="$ctrl.questions")
+
+    // Add Question
+    .col-sm-12
+      a.block.block-link-hover2.button-pointer(ng-click="$ctrl.add()")
+        .block-content.block-content-full.bg-flat.clearfix
+          i.si.si-plus.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white.
+            {{'general.add' | translate}}
+          span.h4.text-white-op.mr-left-8.
+            {{'polls.question' | translate}}
+
+    // Create Poll
+    .col-sm-12(ng-if="!$ctrl.pollId")
+      a.block.block-link-hover2.button-pointer(ng-click="$ctrl.create()")
+        .block-content.block-content-full.bg-primary.clearfix
+          i.fa.fa-save.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white.
+            {{'general.create' | translate}}
+          span.h4.text-white-op.mr-left-8.
+            {{'polls.poll' | translate}}
+
+    // Update Poll
+    .col-sm-12(ng-if="$ctrl.pollId")
+      a.block.block-link-hover2.button-pointer(ng-click="$ctrl.update()")
+        .block-content.block-content-full.bg-primary.clearfix
+          i.fa.fa-save.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white.
+            {{'general.update' | translate}}
+          span.h4.text-white-op.mr-left-8.
+            {{'polls.poll' | translate}}
+
+    // Delete Poll
+    .col-sm-12
+      a.block.block-link-hover2.button-pointer(ng-click="$ctrl.remove()")
+        .block-content.block-content-full.bg-city.clearfix
+          i.si.si-trash.fa-2x.text-white.pull-right
+          span.h4.font-w700.text-white.
+            {{'general.forms.delete-button.delete' | translate}}
+          span.h4.text-white-op.mr-left-8.
+            {{'polls.poll' | translate}}
+
+  .row.col-md-6
+    // Current Poll statistics
+
+    .col-sm-12(ng-repeat="chart in $ctrl.charts")
+      poll-pie-chart(chart="chart")
+      answer-statistic(question="$ctrl.questions[$index]")
+      poll-activity(poll-id="$ctrl.pollId")

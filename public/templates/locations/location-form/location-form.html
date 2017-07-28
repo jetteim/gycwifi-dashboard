@@ -1,0 +1,201 @@
+
+<form ng-submit="$ctrl.sendForm()" class="js-validation form-horizontal push-5-t">
+  <!-- Brand id-->
+  <div class="form-group">
+    <label for="form_brand" class="col-xs-12">Brands list</label>
+    <div class="col-xs-12">
+      <select id="form_brand" ng-options="brand.title for brand in $ctrl.brands" ng-model="$ctrl.brand" ng-change="$ctrl.onChange()" class="form-control form-control_black"></select>
+    </div>
+  </div>
+  <!-- Title-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form-title">{{'locations.form.title' | translate}}</label>
+      <input id="form-title" type="text" name="title" ng-model="$ctrl.location.title" placeholder="My Company" class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Phone-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form_phone">{{'locations.form.phone' | translate}}</label>
+      <input id="form_phone" type="text" name="phone" ng-model="$ctrl.location.phone" ui-mask="(999) 999 - 99 - 99" ui-mask-placeholder-char="_" class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Address-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form_address">{{'locations.form.address' | translate}}</label>
+      <input id="form_address" type="text" name="address" ng-model="$ctrl.location.address" placeholder="Москва, ул. Вавилова, 18" class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Ssid-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form-ssid">{{'locations.form.guest_ssid' | translate}}</label>
+      <input id="form-ssid" type="text" name="ssid" ng-model="$ctrl.location.ssid" placeholder="Enter ssid.." class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Staff ssid-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form_staff_ssid">{{'locations.form.staff_ssid' | translate}}</label>
+      <input id="form_staff_ssid" type="text" name="staff_ssid" ng-model="$ctrl.location.staff_ssid" placeholder="Enter staff ssid.." class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Staff ssid password-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="staff_ssid_password">{{'locations.form.staff_password' | translate}}</label>
+      <input id="staff_ssid_password" type="text" name="staff_ssid_password" ng-model="$ctrl.location.staff_ssid_pass" placeholder="Enter staff ssid password.." class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Redirect url-->
+  <div class="form-group">
+    <label for="form-redirect_url" class="col-xs-12">{{'locations.form.redirect_url' | translate}}</label>
+    <div class="col-xs-12">
+      <input id="form-redirect_url" type="url" name="redirect_url" ng-model="$ctrl.location.redirect_url" placeholder="Enter redirect url.." class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Social-->
+  <div class="form-group">
+    <label class="col-xs-12">{{'locations.form.social_networks' | translate}}</label>
+    <div class="col-xs-12">
+      <label for="checkbox_twitter" class="checkbox-inline">
+        <!--
+        <input type="checkbox" id="checkbox_twitter"
+        name="checkbox_twitter" ng-model="$ctrl.location.twitter"> Twitter
+        </label>
+        -->
+      </label>
+    </div>
+    <div class="col-xs-12">
+      <label for="checkbox_instagram" class="checkbox-inline">
+        <input id="checkbox_instagram" type="checkbox" name="checkbox_instagram" ng-model="$ctrl.location.insta"/> Instagram
+      </label>
+      <label for="checkbox_facebook" class="checkbox-inline">
+        <input id="checkbox_facebook" type="checkbox" name="checkbox_facebook" ng-model="$ctrl.location.facebook"/> Facebook
+      </label>
+    </div>
+    <div class="col-xs-12">
+      <label for="checkbox_google" class="checkbox-inline">
+        <input id="checkbox_google" type="checkbox" name="checkbox_google" ng-model="$ctrl.location.google"/> Google
+      </label>
+      <label for="checkbox_vk" class="checkbox-inline">
+        <input id="checkbox_vk" type="checkbox" name="checkbox_vk" ng-model="$ctrl.location.vk"/> Vk
+      </label>
+      <label for="checkbox_pass" class="checkbox-inline">
+        <input id="checkbox_pass" type="checkbox" name="checkbox_pass" ng-model="$ctrl.location.password"/> {{'locations.form.password' | translate}}
+      </label>
+    </div>
+  </div>
+  <!-- Wlan-->
+  <div class="form-group">
+    <label for="form_wlan" class="col-xs-12">{{'locations.form.wlan' | translate}}</label>
+    <div class="col-xs-12">
+      <select id="form_wlan" name="wlan" size="1" ng-model="$ctrl.location.wlan" class="form-control form-control_black">
+        <option value="512K">512K</option>
+        <option value="1M">1M</option>
+        <option value="2M">2M</option>
+        <option value="5M">5M</option>
+        <option value="10M">10M</option>
+      </select>
+    </div>
+  </div>
+  <!-- Wan-->
+  <div class="form-group">
+    <label for="form_wan" class="col-xs-12">{{'locations.form.wan' | translate}}</label>
+    <div class="col-xs-12">
+      <select id="form_wan" name="wan" size="1" ng-model="$ctrl.location.wan" class="form-control form-control_black">
+        <option value="512K">512K</option>
+        <option value="1M">1M</option>
+        <option value="2M">2M</option>
+        <option value="5M">5M</option>
+        <option value="10M">10M</option>
+      </select>
+    </div>
+  </div>
+  <!-- Auth expiration time-->
+  <div class="form-group">
+    <label for="form_auth_expiration_time" class="col-xs-12">{{'locations.form.auth_time' | translate}}</label>
+    <div class="col-xs-12">
+      <select id="form_auth_expiration_time" name="auth_expiration_time" size="1" ng-model="$ctrl.location.auth_expiration_time" class="form-control form-control_black">
+        <option value="900">15 mins</option>
+        <option value="1800">30 mins</option>
+        <option value="3600">1 hour</option>
+        <option value="14400">4 hours</option>
+        <option value="43200">12 hours</option>
+        <option value="172800">24 hours</option>
+      </select>
+    </div>
+  </div>
+  <!-- Logo-->
+  <div class="form-group">
+    <label for="form-logo" class="col-xs-12"><span>{{'locations.form.logo' | translate}}</span>
+      <img-preloader img="'location_logo'"></img-preloader>
+    </label>
+    <div class="col-xs-12">
+      <input id="form-logo" type="file" ng-upload="location_logo"/>
+    </div>
+  </div>
+  <!-- Background color-->
+  <div class="form-group">
+    <label for="form-bg-color" class="col-xs-12"><span>{{'locations.form.background_color' | translate}}</span></label>
+    <div class="col-md-4 col-xs-6">
+      <input id="form-bg-color" colorpicker="" type="text" ng-model="$ctrl.location.bg_color" name="bg_color"/>
+    </div>
+  </div>
+  <!-- Background image-->
+  <div class="form-group">
+    <label for="location-background" class="col-xs-12"><span>{{'locations.form.background_image' | translate}}</span>
+      <img-preloader img="'location_background'"></img-preloader>
+    </label>
+    <div class="col-xs-12">
+      <input id="location-background" type="file" ng-upload="location_background"/>
+    </div>
+  </div>
+  <!-- Template-->
+  <div class="form-group">
+    <label for="select-template" class="col-xs-12">{{'templates.label' | translate}}</label>
+    <div class="col-xs-12"><span>{{$ctrl.location.template}}</span></div>
+  </div>
+  <!-- Promo category-->
+  <div class="form-group">
+    <label for="form-category" class="col-xs-12">{{'locations.form.category' | translate}}</label>
+    <div class="col-xs-12">
+      <select-category select-id="'form-category'" options="$ctrl.location"></select-category>
+    </div>
+  </div>
+  <!-- Promo text-->
+  <div class="form-group">
+    <label for="brand-promo" class="col-xs-12">{{'brands.form.promo_text' | translate}}</label>
+    <div class="col-xs-12">
+      <textarea id="brand-promo" rows="3" placeholder="Promo text ..." ng-model="$ctrl.location.promo_text" class="form-control form-control_black"></textarea>
+    </div>
+  </div>
+  <!-- Promo Poll-->
+  <div class="form-group">
+    <label for="poll" class="col-xs-12">{{'polls.poll' | translate}}</label>
+    <div class="col-xs-12">
+      <select id="poll" name="poll" ng-options="poll.title for poll in $ctrl.polls" ng-model="$ctrl.poll" ng-change="$ctrl.selectPoll($ctrl.poll.id)" class="form-control form-control_black"></select>
+    </div>
+  </div>
+  <!-- Select promo-->
+  <div class="form-group">
+    <label class="col-xs-12">Тип промо</label>
+    <div class="col-xs-12">
+      <label for="promo_text" class="radio-inline">
+        <input id="promo_text" type="radio" name="last_page_content" value="text" ng-model="$ctrl.location.last_page_content"/> Промо текст
+      </label>
+      <label for="promo_poll" class="radio-inline">
+        <input id="promo_poll" type="radio" name="last_page_content" value="poll" ng-model="$ctrl.location.last_page_content"/> Опрос
+      </label>
+    </div>
+  </div>
+  <!-- button submit-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <button type="submit" ng-disabled="$ctrl.loading" ng-if="$ctrl.action == 'create'" class="btn btn-sm btn-info">{{'locations.form.create' | translate}}</button>
+      <button type="submit" ng-disabled="$ctrl.loading" ng-if="$ctrl.action == 'update'" class="btn btn-sm btn-info">{{'locations.form.update' | translate}}</button>
+    </div>
+  </div>
+</form>

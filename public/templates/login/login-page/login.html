@@ -1,0 +1,97 @@
+
+<div class="content overflow-hidden">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+      <!-- Login Block-->
+      <div class="form-login block block-themed animated fadeIn">
+        <div class="block-header form-login_color">
+          <ul class="block-options">
+            <li class="btn-group">
+              <button data-toggle="dropdown" type="button" class="btn btn-link text-gray dropdown-toggle"><i class="fa fa-caret-down fa-caret-down_sidebar-lang"></i><img src="/images/{{$ctrl.lang}}.png" alt="English lang" class="lang-flag"/></button>
+              <ul class="dropdown-menu dropdown-menu_sidebar dropdown-menu-right font-s13 sidebar-mini-hide">
+                <li><a href="javascript:void(0)" ng-click="$ctrl.changeLang('ru')"><i class="pull-right"><img src="/images/ru.png" alt="English lang" class="lang-flag lang-flag_small-drop"/></i><span class="font-w600">Русский</span></a></li>
+                <li><a href="javascript:void(0)" ng-click="$ctrl.changeLang('en')"><i class="pull-right"><img src="/images/en.png" alt="English lang" class="lang-flag lang-flag_small-drop"/></i><span class="font-w600">English</span></a></li>
+              </ul>
+            </li>
+          </ul>
+          <h3 ng-if="$ctrl.loginForm" class="block-title">{{ 'login-page.title' | translate }}</h3>
+          <h3 ng-if="!$ctrl.loginForm" class="block-title">{{ 'login-page.sign-up-button' | translate }}</h3>
+        </div>
+        <div class="block-content block-content-full block-content-narrow">
+          <!-- Login Title-->
+          <div class="text-center"><img width="150" height="112" src="../logo_login.png"/></div>
+          <!-- END Login Title-->
+          <!-- Login Form-->
+          <!-- jQuery Validation (.js-validation-login class is initialized in /js/pages/base-pages-login-page.js)-->
+          <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation-->
+          <form ng-submit="$ctrl.authenticate('password')" class="js-validation form-horizontal push-30-t push-50">
+            <!--
+            <div class="form-group">
+            <div class="col-xs-12">
+            <div class="form-material form-material-primary">
+            <input ng-model="$ctrl.username" class="form-control" type="text" id="login-username" name="login-username">
+            <label for="login-username">
+            {{ "login-page.username" | translate }}
+            </label>
+            </div>
+            </div>
+            </div>
+            -->
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="form-material form-material-primary">
+                  <input id="login-email" ng-model="$ctrl.email" type="text" name="login-email" class="form-control"/>
+                  <label for="login-email">{{ "login-page.email" | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div ng-if="!$ctrl.loginForm" class="form-group">
+              <div class="col-xs-12">
+                <div class="form-material form-material-primary">
+                  <input id="login-username" ng-model="$ctrl.username" type="text" name="login-username" class="form-control"/>
+                  <label for="login-username">{{ "login-page.username" | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="form-material form-material-primary">
+                  <input id="login-password" ng-model="$ctrl.password" type="password" name="login-password" class="form-control"/>
+                  <label for="login-password">{{ "login-page.password" | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" ng-if="$ctrl.loginForm" class="btn form-login_color login-button col-xs-12"><i class="si si-login pull-right"></i>                  {{ "login-page.sign-in-button" | translate }}</button>
+                <button type="submit" ng-if="!$ctrl.loginForm" class="btn form-login_color login-button col-xs-12"><i class="si si-login pull-right"></i>                  {{ "login-page.sign-up-button" | translate }}</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button ui-sref="requestPassword" class="btn form-login_color login-button col-xs-12"><i class="si si-lock pull-right"></i>                  {{ "Забыли пароль?" | translate }}</button>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-md-12">
+              <button ng-click="$ctrl.authenticate('twitter')" type="button" class="btn btn-block form-login_color push-10r"><i class="fa fa-share-alt pull-right"></i><i class="fa fa-twitter pull-left"></i>                 {{ "login-page.twitter-button" | translate }}</button>
+              <button ng-click="$ctrl.authenticate('instagram')" type="button" class="btn btn-block form-login_color push-10r"><i class="fa fa-share-alt pull-right"></i><i class="fa fa-instagram pull-left"></i>                {{ "login-page.instagram-button" | translate }}</button>
+              <button ng-click="$ctrl.authenticate('google')" type="button" class="btn btn-block form-login_color push-10r"><i class="fa fa-share-alt pull-right"></i><i class="fa fa-google pull-left"></i>                {{ "login-page.google-button" | translate }}</button>
+              <button ng-click="$ctrl.authenticate('vk')" type="button" class="btn btn-block form-login_color push-10r"><i class="fa fa-share-alt pull-right"></i><i class="fa fa-vk pull-left"></i>                {{ "login-page.vk-button" | translate }}</button>
+              <button ng-click="$ctrl.authenticate('facebook')" type="button" class="btn btn-block form-login_color push-10r"><i class="fa fa-share-alt pull-right"></i><i class="fa fa-facebook pull-left"></i>                {{ "login-page.facebook-button" | translate }}</button>
+            </div>
+          </div>
+          <!-- END Login Form-->
+        </div>
+      </div>
+      <!-- END Login Block-->
+    </div>
+  </div>
+</div>
+<!-- END Login Content-->
+<!-- Login Footer-->
+<div class="push-10-t text-center animated fadeInUp"><small class="text-muted font-w600"><a href="" ng-click="$ctrl.signInSignUp()" ng-if="$ctrl.loginForm" class="or-sign-in-up">
+      <!-- <span class="js-year-copy"></span>-->{{ "login-page.or-sign-up" | translate }}</a><a href="" ng-click="$ctrl.signInSignUp()" ng-if="!$ctrl.loginForm" class="or-sign-in-up">
+      <!-- <span class="js-year-copy"></span>-->{{ "login-page.or-sign-in" | translate }}</a></small></div>
+<!-- END Login Footer-->

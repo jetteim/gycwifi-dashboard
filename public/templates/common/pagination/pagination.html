@@ -1,0 +1,6 @@
+
+<ul class="pagination pagination-lg">
+  <li ng-class="{disabled: $ctrl.isFirstPage()}" ng-click="$ctrl.toPrevPage" class="pagination-left-angle"><a href="javascript:void(0)"><i class="fa fa-angle-double-left"></i></a></li>
+  <li ng-repeat="page in $ctrl.pages" ng-click="$ctrl.toPage(page)" class="paginationItem"><a href="" ng-class="{disabled: $ctrl.isCurrentPage(page)}">{{page}}</a></li>
+  <li ng-class="{disabled: $ctrl.isLastPage()}" ng-click="$ctrl.toNextPage" class="pagination-right-angle"><a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a></li>
+</ul>

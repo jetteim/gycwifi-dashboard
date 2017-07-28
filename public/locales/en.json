@@ -1,0 +1,634 @@
+{
+  "authorizations": {
+    "date": "Date",
+    "location": "Location",
+    "provider": "Provider",
+    "router": "Router"
+  },
+  "brands": {
+    "form": {
+      "background_color": "Background color",
+      "background_image": "Background image",
+      "category": "Category",
+      "create": "Create",
+      "logo": "Logo",
+      "promo_text": "Promo text",
+      "redirect_url": "Redirect URL",
+      "sms_auth": {
+        "auth_time": "Auth time",
+        "no": "No",
+        "use_auth": "Use SMS Auth",
+        "yes": "Yes"
+      },
+      "title": "Title",
+      "update": "Update"
+    },
+    "view-button": {
+      "layouts": "layouts",
+      "locations": "locations",
+      "view": "View"
+    }
+  },
+  "clients": {
+    "all": "All clients",
+    "avatar": "Userpic",
+    "created_at": "Date",
+    "days": " days",
+    "email": "Email",
+    "filter": "Clients filter",
+    "name": "Name",
+    "passed": "Missed visitors ",
+    "for": " for ",
+    "phone": "Phone",
+    "regular": "Frequent visitors",
+    "select-address": "Choose address",
+    "select-client": "Choose clients",
+    "visits": "Visits",
+    "visits30": "Visits for last 30 days"
+  },
+  "congratulations": {
+    "email": {
+      "body": "Message body",
+      "interval": "When to send?",
+      "subject": "Subject",
+      "submit": "Save",
+      "title": "Email",
+      "value1": "on time",
+      "value2": "one day before",
+      "value3": "seven days before"
+    },
+    "textblock": {
+      "text": "Setup a message template, and we will send them to your customers automatically",
+      "title": "Compliment your customers"
+    }
+  },
+  "general": {
+    "add": "Add",
+    "cannot_create": "Your account status does not allow you to create {{entity}}. You need to upgrade your account to get access.",
+    "click-to-expand": "click to expand",
+    "create": "Create",
+    "created": "Created",
+    "delete": "Delete",
+    "deleted": "Deleted",
+    "entity": {
+      "brand": "template",
+      "location": "location",
+      "poll": "poll",
+      "router": "router"
+    },
+    "forms": {
+      "add-button": {
+        "add": "Add ",
+        "new-brand": "new template",
+        "new-location": "new locatio",
+        "new-router": "new router",
+        "new-voucher": "new voucher"
+      },
+      "delete-button": {
+        "brand": "template",
+        "delete": "Delete ",
+        "location": "location",
+        "router": "router"
+      }
+    },
+    "no": "No",
+    "save": "Save",
+    "saved": "Saved",
+    "send": "Send",
+    "time": {
+      "days": "Days",
+      "hours": "Hours"
+    },
+    "under-construction": "Under consruction..",
+    "update": "Update",
+    "updated": "Updated",
+    "yes": "Yes"
+  },
+  "help-page": {
+    "contact-form": {
+      "contact-data": {
+        "body": {
+          "hint": "Feel free to use common tags: &lt;blockquote&gt;, &lt;strong&gt;, &lt;em&gt;",
+          "message": "Message",
+          "send": "Send"
+        },
+        "email": "Email",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "subject": {
+          "billing": "Billing",
+          "feature-request": "Feature Request",
+          "management": "Management",
+          "support": "Support",
+          "title": "Where?"
+        }
+      },
+      "h2": "Do you have any further questions?",
+      "h3": "Contact Us"
+    },
+    "control_center": {
+      "additional_info": "Полезная информация",
+      "call-for-service": {
+        "step1": "Создайте задание \"Настройка роутера для работы с сервисом Get Your Client\". Добавьте к заданию ссылку на эту страницу.",
+        "step2": " Настройка роутера не требует каких-либо сложных знаний и навыков, справиться с ней может любой человек с опытом настройки сетевого оборудования.",
+        "step3": "Рекомендуемая стоимость работ: 1500 руб.",
+        "step4": "Если у вас или у специалиста возникли дополнительные вопросы или нужно уточнить технические детали - пишите на ",
+        "title": "Найти специалиста",
+        "youdo-begin": "Вы можете найти специалиста на сервисе ",
+        "youdo-end": ". Для этого:",
+        "youdo-link": "https://youdo.ru"
+      },
+      "final": {
+        "text": "Интеллектуальные решения для разумного маркетинга",
+        "title": "Get Your Client Wi-Fi"
+      },
+      "hero_text": "Бесплатное решение для выполнения требований закона о связи. Настройте WiFi Интернет c СМС-идентификацией за две минуты",
+      "hero_title": "Народный Wifi для бизнеса",
+      "info-email": "info@gycwifi.com",
+      "self-setup": {
+        "mikrotik-self-start": {
+          "prepare_router": {
+            "reset_router": {
+              "reset": "Сбросьте настройки до заводских, если вы используете роутер не из коробки. Для этого:",
+              "step1": "Выключите питание роутера и зажмите скрепкой кнопку сброса (она находится в одном из тонких отверстий на задней стенке - см. инструкцию роутера).",
+              "step2": "Не отпуская кнопку сброса, включите питание роутера. На роутере загорятся оба зелёных светодиода.",
+              "step3": "Подождите 6-7 секунд, пока один из светодиодов не начнёт мигать, и пока он мигает, отпустите кнопку сброса.",
+              "step4": "Подождите ещё 6-7 секунд, выключите и снова включите роутер, чтобы закончить сброс настроек. После загрузки роутера должна появиться открытая wifi сеть с названием вида Mikrotik-ABCDEF."
+            },
+            "title": "Подготовьте роутер перед тем, как начать настройку",
+            "update_router": {
+              "step1": "Подключите роутер к Интернет, а компьютер - к роутеру. Вы можете подключиться к роутеру как по ethernet, так и по wifi.",
+              "step2-begin": "Откройте страницу настроек роутера ",
+              "step2-end": ". Используйте имя пользователя admin с пустым паролем.",
+              "step3": "Выберите пункт меню System - Packages, нажмите кнопку Check For Updates и затем кнопку Download&Install",
+              "update": "Обновите роутер. Для этого:"
+            },
+            "webfig": "http://192.168.88.1"
+          },
+          "setup_router": {
+            "add_router": {
+              "add": "Добавьте новый роутер.",
+              "step1": "Перейдите и заполните пункт меню Настройки - Роутеры",
+              "step2": "Укажите серийный номер роутера и придумайте название для него.",
+              "step3": "Нажмите на кнопку Добавить роутер"
+            },
+            "download_package": "Кликните на зелёную кнопку с названием ClientNNN и скачайте архив с настройками",
+            "final_step": "Откройте через минуту список wifi сетей на любом устройстве. Если в нём появилась сеть с названием, которое вы задали в настройках адреса - значит, всё настроено и уже работает.",
+            "run_setup": "Откройте архив с настройками, распакуйте его содержимое в локальную папку на компьютере и запустите файл start.cmd (Windows) или start.sh (MacOS/Lunix). После успешного выполнения командного файла роутер перезагрузится и начнёт автоматическую настройку",
+            "title": "Настройте роутер"
+          },
+          "title": "Автоматическая настройка роутеров Mikrotik"
+        },
+        "title": "Самостоятельная настройка"
+      },
+      "tech-info": {
+        "hotspot": {
+          "text1": "Второй важный момент - включение режима WiFi Hotspot на роутере. При этом для авторизации подключений используется RADIUS сервер по адресу 10.8.0.1.",
+          "text2-begin": "Во время настройки роутера скрипт заменяет стандартные страницы авторизации так, чтобы запросы на авторизацию направлялись на сервер ",
+          "text2-end": ". Страницы можно найти в папке flash/hotspot/ архива с настройками"
+        },
+        "login-server": "http://login.gycwifi.com",
+        "radius-server": "10.8.0.1",
+        "router-package": {
+          "package-text1": "После добавления роутера система формирует пакет с необходмыми файлами для настройки. Архив с необходимыми файлами и скриптами для настройки доступен по адресу ",
+          "package-text2": ", где clientNNN - имя вашего роутера в системе",
+          "package-url": "https://dashboard.gycwifi.com/api/public/router_files/clientNNN/clientNNN.zip"
+        },
+        "title": "Немного технических деталей",
+        "vpn-link": {
+          "text1": "Для работы с сервисом роутер должен установить VPN соединение с сервером ",
+          "text2": ". В архиве с настройками находятся файлы сертификатов, необходимые для VPN подключения"
+        },
+        "vpn-server": "vpn.gycwifi.com"
+      },
+      "text": "Нажмите на ссылку ",
+      "text1": " и зарегистрируйтесь. После этого просто повторите действия из этого ролика:",
+      "title": "Начать пользоваться очень просто!",
+      "video_url": "https://www.youtube.com/embed/0NqDWlXB--0?rel=0"
+    },
+    "features": {
+      "body-p1": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan     adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa      venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "body-p2": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan        adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa        venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "h2": "Introduction",
+      "h3": "Welcome to our service!"
+    },
+    "introduction": {
+      "body-p1": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan     adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa      venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "body-p2": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan        adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa        venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "h2": "Introduction",
+      "h3": "Welcome to our service!"
+    },
+    "pricing": {
+      "body-p1": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan     adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa      venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "body-p2": "Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan        adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa        venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.",
+      "h2": "Introduction",
+      "h3": "Welcome to our service!"
+    },
+    "start": {
+      "h2": "Follow three steps to get started with Mikrotik router",
+      "step-one": {
+        "reset-router": {
+          "hold-reset": "Turn off the router. Press and hold the reset button using the paper clip (you can find the reset button on the back side of your router)",
+          "release-reset": "Wait for 6-7 secs until one of the green LEDs starts blinking. Release the reset button while it is blinking",
+          "title": "Reset router settings if your router is not out of the box",
+          "toggle-power": "Wait for 6-7 secs more, then turn the router off an back on again. You should see an open wifi network named Mikrotik-ABCDEF after router starts",
+          "turn-on": "While holding the reset button, turn the power on. Both green LEDs should be on"
+        },
+        "title": "Reset settings and update router",
+        "update-router": {
+          "connect-router": "Connect the router to the Internet, abn connect your PC to the router using wifi or ethernet.",
+          "settings-login": ". Log in using admin username and empty password",
+          "settings-page": "Open the router settings page ",
+          "title": "Update router",
+          "update-menu": "Navigate System -> Packages menu item, click Check For Updates buttona and then Download&Install button"
+        }
+      },
+      "step-three": {
+        "add-router": "Add a new router",
+        "download-settings": "Click green button named like ClientNNN to download the settings package",
+        "fill-in": "Fill in router's serial number and name it. Click Add Router",
+        "finalize-setup": "Check you wifi networks list a minute later. If you can see a network with SSID you specified earlier, the setup has been finished.",
+        "run-setup": "Unpack downloaded archive to the local folder on your PC and run start.cmd (Windows) or start.sh (MacOS/Lunix) setup script.The router will reboot and start the automatic setup after successful script executions",
+        "title": "Navigate Settings - Routers menu item"
+      },
+      "step-two": {
+        "add-location": "Add a new location",
+        "fill-in": {
+          "auth-methods": "Check social networks you want to use for authorization. Specify bandwith limit per guest connection and total guest network bandwith limit.",
+          "guest-wifi": "Specify guest wifi SSID. You can use emoji or any international symbols there",
+          "location-info": "Specify access point's title, phone and location address",
+          "login-design": "Upload your logo and pick a category from the list",
+          "redirect-url": "Specify redirect url. Guests will be redirected to this url after authorization",
+          "staff-wifi": "Specify staff SSID and password",
+          "title": "Fill in you access point details"
+        },
+        "save-settings": "Save settings",
+        "title": "Navigate Settings - Locations menu item"
+      },
+      "welcome": "Welcome to the Get Your Client WiFi Management System!"
+    }
+  },
+  "http-error": {
+    "1": {
+      "message": "Please check your Internet connection and try again",
+      "title": "Connection error"
+    },
+    "401": {
+      "message": "Please log in again",
+      "title": "Session expired"
+    },
+    "403": {
+      "message": "Your account status does not allow you to perform this action",
+      "title": "Access denied"
+    },
+    "500": {
+      "message": "Something went wrong. Please refresh browser page and try again",
+      "title": "Service error"
+    },
+    "502": {
+      "message": "We're performing a system update right now which shouldn't take long. Please refresh the page and try again.",
+      "title": "Gateway timeout"
+    }
+  },
+  "layouts": {
+    "layout": "Template layout"
+  },
+  "locations": {
+    "form": {
+      "address": "Address",
+      "auth_time": "Authorization time",
+      "background_color": "Background color",
+      "background_image": "Background image",
+      "brands_list": "Templates",
+      "category": "Category",
+      "create": "Create",
+      "guest_ssid": "Guest SSID",
+      "logo": "Logo",
+      "password": "Password",
+      "phone": "Phone",
+      "poll": " Poll",
+      "promo_text": " Promo text",
+      "promo_type": "Last page content:",
+      "redirect_url": "Redirect URL",
+      "sms_auth": {
+        "auth_time": "Auth time",
+        "no": "No",
+        "use_auth": "Use SMS Auth",
+        "yes": "Yes"
+      },
+      "social_networks": "Social networks",
+      "staff_password": "Guest SSID",
+      "staff_ssid": "Guest SSID",
+      "template": "Template layout",
+      "title": "Title",
+      "update": "Update",
+      "vouchers": "Vouchers",
+      "wan": "WAN bandwith limit",
+      "wlan": "WLAN bandwith limit"
+    },
+    "no-address": "No address provided",
+    "tooltips": {
+      "add": "Add location"
+    },
+    "view-button": {
+      "routers": "locations",
+      "view": "View"
+    }
+  },
+  "login-page": {
+    "email": "Email",
+    "facebook-button": "Log in with Facebook",
+    "google-button": "Log in with Google",
+    "instagram-button": "Log in with Instagram",
+    "or-sign-in": "Or sign in",
+    "or-sign-up": "Or registration",
+    "password": "Password",
+    "recover-password": "Forgot password?",
+    "sign-in-button": "Sign in",
+    "sign-up-button": "Sign up",
+    "title": "Login",
+    "twitter-button": "Log in with Twitter",
+    "username": "Username",
+    "vk-button": "Log in with VK"
+  },
+  "manage-page": {
+    "brands": "Templates",
+    "locations": "Locations",
+    "objects": "Installations",
+    "routers": "Routers",
+    "settings": "Settings",
+    "users": "Users"
+  },
+  "notifications": {
+    "favorite": "Favorite",
+    "notifications": "Notifications",
+    "seen": "Seen"
+  },
+  "opinions": {
+    "feedback": {
+      "like": "What do you like in our servce?",
+      "suggest": "Do you whan to suggest us anything?"
+    },
+    "form": {
+      "caption": "Put your thoughts here",
+      "dismiss": "Dismiss",
+      "submit": "Submit"
+    },
+    "page": {
+      "message": "Message text",
+      "source": "Feedback source",
+      "type": "Feedback type"
+    },
+    "yourOpinion": "Your opinion"
+  },
+  "polls": {
+    "answers": {
+      "answer": "Submitted answer",
+      "date": "Date",
+      "hint": "Click any chart segment to view customers submitted that answer",
+      "list": "Customer list",
+      "phone": "Phone number"
+    },
+    "chart": {
+      "activity": "Activity",
+      "attempts-total": "Answers",
+      "auth-total": "Authorizations",
+      "chart": "Chart"
+    },
+    "export": "Export to Excel",
+    "poll": "poll",
+    "question": "question",
+    "questions": {
+      "add-answer": "Add answer",
+      "answer": "Answer option",
+      "custom": "Custom answer",
+      "delete": "Delete question",
+      "multi": "Multiple (checkbox)",
+      "question": "Question text",
+      "remove": "Remove",
+      "selection": "Answer selecton",
+      "single": "Single answer",
+      "switch": "Multiple (switch)"
+    },
+    "stats": "Poll stats",
+    "title": "Poll title"
+  },
+  "preloader": {
+    "error": "Error",
+    "loaded": "Loaded",
+    "loading": "Loading..."
+  },
+  "profile-page": {
+    "admin": "Admin",
+    "avatar": "Avatar",
+    "email": "Email Address",
+    "password": {
+      "confirm": "Confirm New",
+      "current-password": "Current Password",
+      "new-password": "New Password",
+      "password": "Password"
+    },
+    "personal": "Personal",
+    "save": "Save Changes",
+    "username": "Username"
+  },
+  "routers": {
+    "admin-ethernet-port": "admin-ethernet-port",
+    "admin-password": "Admin password",
+    "block-service-ports": "block-service-ports",
+    "comment": "Comment",
+    "common-name": "Common name",
+    "delete-button": {
+      "delete": "Delete ",
+      "router": "Router"
+    },
+    "disable-service-access": "disable-service-access",
+    "edit": "Edit",
+    "error-add-address": " Add location",
+    "error-missing-location": "You need to have at least one location configured before adding routers.",
+    "first-dns-server": "First DNS server",
+    "form": {
+      "comment": "Comment",
+      "create": "Create",
+      "location_id": "Location ID",
+      "update": "Update"
+    },
+    "ip-name": "IP",
+    "isolate-wlan": "isolate-wlan",
+    "location": "Location",
+    "radius-db-nas-id": "radius-db-nas-id",
+    "radius-secret": "radius-secret",
+    "router": "Router",
+    "router-admin-ip": "router-admin-ip",
+    "router-local-ip": "Router local IP",
+    "second-dns-server": "Second DNS server",
+    "serial": "Serial number",
+    "settings": "Download settings",
+    "slider": {
+      "slide-1": {
+        "body": "Добавьте описание роутера, которое поможет вам понять, что это за роутер. Укажите серийный номер роутера и выберите адрес, по которому находится этот роутер.",
+        "title": "Добавьте роутер"
+      },
+      "slide-2": {
+        "body": "Скачайте настройки роутера и распакуйте архив в любую папку на компьютере.  Подключите роутер к Интернет, а компьютер - к роутеру. Вы можете подключиться к роутеру как по ethernet, так и по wifi. Откройте архив с настройками и запустите файл *start.cmd* (Windows) или *start.sh* (MacOS/Lunix). После успешного выполнения командного файла роутер начнёт автоматическую настройку.",
+        "title": "Настройте роутер"
+      },
+      "slide-3": {
+        "body": "Откройте через минуту список wifi сетей на любом устройстве. Если в нём появилась сеть с названием, которое вы задали в настройках адреса - значит, всё настроено и уже работает.",
+        "title": "Что дальше"
+      }
+    },
+    "split-networks": "split-networks",
+    "ssl-certificate": "SSL certificate",
+    "ssl-key": "SSL key",
+    "status": "Status",
+    "user": "User"
+  },
+  "sidebar": {
+    "account": "Account",
+    "advanced": "Advanced",
+    "authorizations": "Authorizations",
+    "brand": "Template",
+    "brandNew": "New template",
+    "brands": "Templates",
+    "clients": "Clients",
+    "congratulations": "Congratulations",
+    "engagement": "Customers engagement",
+    "exportTo": "Export to",
+    "help": "Help",
+    "integration": "Integration",
+    "layouts": "Template layouts",
+    "location": "Location",
+    "locationNew": "New location",
+    "locations": "Locations",
+    "market": "Market",
+    "opinions": "Opinions",
+    "polls": "Polls",
+    "router": "Router",
+    "routerNew": "New router",
+    "routers": "Routers",
+    "sales": "Promotions",
+    "settings": "Settings",
+    "statistic": "Statistic",
+    "vipNumbers": "Vip numbers"
+  },
+  "statistics": {
+    "accounts": {
+      "address_completed": "Address completed?",
+      "auth_count": "Auth count",
+      "email": "Email",
+      "locations_count": "Locations count",
+      "logo_uploaded": "Logo uploaded?",
+      "phone_completed": "Phone completed?",
+      "routers_count": "Routers count",
+      "smscount": "Sms count",
+      "title": "Account overview",
+      "url_completed": "Url completed?",
+      "username": "Username"
+    },
+    "address_list": {
+      "address": "Location",
+      "all_addresses": "All locations"
+    },
+    "basic": {
+      "all_the_time": "Over time",
+      "connections": "Visits",
+      "last_month": "Last month",
+      "last_week": "Last week",
+      "sms_sent": "Sms sent"
+    },
+    "charts": {
+      "age-pie": {
+        "age1": "18 or less y.o.",
+        "age2": "19-25 y.o.",
+        "age3": "26-30 y.o.",
+        "age4": "31-40 y.o.",
+        "age5": "41-55 y.o.",
+        "age6": "56+ y.o.",
+        "title": "Customers age chart"
+      },
+      "clients-chart": {
+        "new_clients": "New clients",
+        "returning_clients": "Returning clients",
+        "title": "New and returning customers over selected period"
+      },
+      "clients-pie": {
+        "once": "Seen once",
+        "resident": "Seen 11+ times",
+        "ten": "Seen 2-10 times",
+        "title": "Customers loyalty chart"
+      },
+      "gender-pie": {
+        "man": "Male",
+        "title": "Customers gender chart",
+        "woman": "Female"
+      },
+      "newvstotal-pie": {
+        "new_clients": "New clients",
+        "returning_clients": "Returning clients",
+        "title": "New vs returning customers chart"
+      },
+      "social-chart": {
+        "title": "Визиты за последние 30 дней"
+      },
+      "social-pie": {
+        "password": "No social authorization",
+        "title": "social networks chart"
+      },
+      "time-pie": {
+        "day": "Day 12:00 - 17:59",
+        "evening": "Evening 18:00 - 23:59",
+        "morning": "Morning 06:00 - 11:59",
+        "night": "Night 00:00 - 05:59",
+        "title": "Visit time chart"
+      }
+    },
+    "clients": {
+      "all_the_time": "Over time",
+      "clients": "Clients",
+      "last_month": "Last month",
+      "last_week": "Last week"
+    },
+    "filter": {
+      "month": "30 days",
+      "quarter": "90 days",
+      "title": "Filter dates",
+      "week": "7 days",
+      "year": "Year"
+    }
+  },
+  "templates": {
+    "label": "Template"
+  },
+  "topbar": {
+    "actions": "Actions",
+    "inbox": "Inbox",
+    "logout": "Log out",
+    "manage": "Manage",
+    "profile": "Profile"
+  },
+  "tutorial": {
+    "add-location": "Add a location",
+    "add-router": "Now add a router",
+    "start": "As a fist step, you need to set up a location for your hotspot"
+  },
+  "vouchers": {
+    "actions": "#####",
+    "activated": "Available",
+    "create": "Create",
+    "duration": "with time limit of",
+    "expiration": "Valid",
+    "password": "Password",
+    "select": {
+      "24hours": "24 hours",
+      "2hours": "2 hours",
+      "3hours": "3 hours",
+      "48hours": "48 hours",
+      "hour": "1 hour"
+    },
+    "vouchers": "Vouchers"
+  },
+  "walk-tooltip": {
+    "switch": "Tutorial mode"
+  }
+}

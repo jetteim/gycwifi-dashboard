@@ -1,0 +1,18 @@
+
+<!-- Client stats-->
+<div class="content bg-white border-b text-center">
+  <div class="row items-push text-uppercase">
+    <div class="col-sm-4">
+      <div class="font-w700 text-gray-darker animated fadeIn">{{'statistics.clients.clients' | translate}}</div>
+      <div class="text-muted animated fadeIn"><small><i class="si si-calendar"></i> {{'statistics.clients.all_the_time' | translate}}</small></div><a ui-sref="dashboard.statistic" class="h2 font-w300 text-primary animated flipInX">{{$ctrl.clients_all_time}}</a>
+    </div>
+    <div class="col-sm-4">
+      <div class="font-w700 text-gray-darker animated fadeIn">{{'statistics.clients.clients' | translate}}</div>
+      <div class="text-muted animated fadeIn"><small><i class="si si-calendar"></i> {{'statistics.clients.last_month' | translate}}</small></div><a ui-sref="dashboard.statistic" class="h2 font-w300 text-primary animated flipInX">{{$ctrl.clients_last_month}}</a>
+    </div>
+    <div class="col-sm-4">
+      <div class="font-w700 text-gray-darker animated fadeIn">{{'statistics.clients.clients' | translate}}</div>
+      <div class="text-muted animated fadeIn"><small><i class="si si-calendar"></i> {{'statistics.basic.last_week' | translate}}</small></div><a ui-sref="dashboard.statistic" class="h2 font-w300 text-primary animated flipInX">{{$ctrl.clients_last_week}}</a>
+    </div>
+  </div>
+</div>

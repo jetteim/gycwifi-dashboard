@@ -1,0 +1,36 @@
+
+<form name="brandForm" ng-submit="$ctrl.sendForm()" class="js-validation form-horizontal push-5-t">
+  <!-- Title-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form-title">{{'routers.form.comment' | translate}}</label>
+      <input id="form-title" type="text" name="title" placeholder="Enter comment.." ng-model="$ctrl.router.comment" class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Serial number-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <label for="form-serial">{{'routers.serial' | translate}}</label>
+      <input id="form-serial" type="text" name="serial_number" placeholder="Enter serial number.." ng-model="$ctrl.router.serial" class="form-control form-control_black"/>
+    </div>
+  </div>
+  <!-- Location-->
+  <div class="form-group">
+    <label for="location_id" class="col-xs-12">{{'routers.form.location_id' | translate}}</label>
+    <div class="col-xs-12">
+      <select id="location_id" name="brand_id" ng-options="location.title for location in $ctrl.locations" ng-model="$ctrl.location" ng-change="$ctrl.change()" class="form-control form-control_black"></select>
+    </div>
+  </div>
+  <!-- Submit buttons-->
+  <div class="form-group">
+    <div class="col-xs-12">
+      <button type="submit" ng-disabled="$ctrl.dontCreate" ng-if="$ctrl.action == 'create'" class="btn btn-sm btn-info">{{'routers.form.create' | translate}}</button>
+      <button type="submit" ng-disabled="$ctrl.dontCreate" ng-if="$ctrl.action == 'update'" class="btn btn-sm btn-info">{{'routers.form.update' | translate}}</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <p ng-if="$ctrl.dontCreate" class="font_red">Для того, что бы добвать роутер, сначала добавьте хотя бы один адрес.<a ui-sref="locationNew"> Добавить адрес.</a></p>
+    </div>
+  </div>
+</form>

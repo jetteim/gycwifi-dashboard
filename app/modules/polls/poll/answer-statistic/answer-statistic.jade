@@ -1,0 +1,29 @@
+.block.block-bordered
+
+  .block-header
+    control
+
+    h3.block-title
+      | {{'polls.answers.list' | translate}}
+
+  .block-content.answer-statistic-table(ng-if="$ctrl.clients.length")
+    table.table.table-striped.table-vcenter
+      thead
+        tr
+          th.text-center(style='width: 55px') #
+          th.text-center(style='width: 33%') {{'polls.answers.phone' | translate}}
+          th.text-center(style='width: 33%') {{'polls.answers.date' | translate}}
+          th.text-center(style='width: 33%') {{'polls.answers.answer' | translate}}
+      tbody
+        tr(ng-repeat='client in $ctrl.clients track by $index')
+          td.text-center
+            .img-container
+              img.img-avatar.img-avatar32(src='{{ client.image }}', alt='{{ client.username }}')
+          td.text-center.font-w600
+            a(href='tel:{{ client.phone_number }}')
+              | {{ client.phone_number }}
+          td.text-center {{ client.attempt_date | date:'dd.MM.yyyy HH:mm:ss' }}
+          td.text-center {{ client.custom_answer }}
+  .block-content(ng-if="!$ctrl.clients.length")
+    .poll-answer-stat__help
+      |  {{'polls.answers.hint' | translate}}
