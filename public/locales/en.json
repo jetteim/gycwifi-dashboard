@@ -392,6 +392,7 @@
     "chart": {
       "activity": "Activity",
       "attempts-total": "Answers",
+      "conversion": "Conv. rate",
       "auth-total": "Authorizations",
       "chart": "Chart"
     },

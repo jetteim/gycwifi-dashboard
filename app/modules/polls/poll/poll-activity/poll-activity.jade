@@ -19,14 +19,21 @@
   .block-content.poll-activity__activity-resume
     .row.items-push.text-center
 
-      .col-xs-6.activity-resume__column
+    .col-xs-4.activity-resume__column
+      .push-5
+        i.si.si-pie-chart
+      .h5.activity-resume__text-item
+        span.font-w600 {{ `$(($ctrl.chart.attempts / (100 * $ctrl.chart.autorizations)) * 100000) %` }}
+        span.font-w300.activity-resume {{'polls.chart.conversion' | translate}}
+
+      .col-xs-4.activity-resume__column
         .push-5
           i.si.si-graph
         .h5.activity-resume__text-item
           span.font-w600 {{ $ctrl.chart.attempts }}
           span.font-w300.activity-resume {{'polls.chart.attempts-total' | translate}}
 
-      .col-xs-6.activity-resume__column
+      .col-xs-4.activity-resume__column
         .push-5
           i.si.si-users
         .h5.activity-resume__text-item

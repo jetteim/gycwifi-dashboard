@@ -391,6 +391,7 @@
     },
     "chart": {
       "activity": "Ответы",
+      "conversion": "Конверсия",
       "attempts-total": "Ответов",
       "auth-total": "Подключений",
       "chart": "График"
