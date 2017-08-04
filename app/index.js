@@ -40,6 +40,7 @@ import UploadService from './services/upload.service'
 import ValidationService from './services/validation.service'
 import PluginsService from './services/plugins.service'
 import OpinionsService from './services/opinions/opinions.service'
+import FeedbackService from './services/opinions/feedback.service'
 import HttpErrorService from './services/http-error.service'
 import TutorialService from './services/tutorial.service'
 import PollActivityService from './services/stats/poll-activity.service'
@@ -110,6 +111,7 @@ app.service('validationService', ValidationService);
 app.service('pluginsService', PluginsService);
 app.service('$exportService', ExportService);
 app.service('opinionsService', OpinionsService);
+app.service('feedbackService', FeedbackService);
 app.service('httpErrorService', HttpErrorService);
 app.service('tutorialService', TutorialService);
 app.service('pollActivityService', PollActivityService);

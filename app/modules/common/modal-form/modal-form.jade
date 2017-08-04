@@ -1,0 +1,18 @@
+.modal-dialog
+  .modal-content
+    .block.block-themed.block-transparent.remove-margin-b
+      .block-header.bg-primary-dark
+        ul.block-options
+          li
+            button(data-dismiss='modal', type='button')
+              i.si.si-close
+        h3.block-title
+          | {{'opinions.form.caption' | translate}}
+      .block-content
+        textarea.modal-form_textarea(ng-model='$ctrl.message')
+    .modal-footer
+      button.btn.btn-sm.btn-default(type='button', data-dismiss='modal')
+        | {{'opinions.form.dismiss' | translate}}
+      button.btn.btn-sm.btn-primary(type='button', data-dismiss='modal', ng-click='$ctrl.send()')
+        i.fa.fa-check
+          | {{'opinions.form.submit' | translate}}
