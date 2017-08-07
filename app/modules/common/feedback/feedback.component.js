@@ -1,4 +1,5 @@
 import template from './feedback.jade'
+import './feedback.styl'
 
 class Controller {
 
