@@ -16,7 +16,7 @@ import starsRating from './stars-rating/stars-rating.component'
 import uibPagination from './uib-pagination/uib-pagination.component'
 import locationsSelect from './locations-select/locations-select.component'
 import feedback from './feedback/feedback.component'
-import modalForm from './modal-form/modal-form.component'
+import opinionModal from './opinion-modal/opinion-modal.component'
 
 const common = angular.module('common', []);
 
@@ -38,7 +38,7 @@ common.component('starsRating', starsRating);
 common.component('uibPagination', uibPagination);
 common.component('locationsSelect', locationsSelect);
 common.component('feedback', feedback);
-common.component('modalForm', modalForm);
+common.component('opinionModal', opinionModal);
 
 /* @ngInject */
 common.config(($stateProvider, $urlRouterProvider) => {

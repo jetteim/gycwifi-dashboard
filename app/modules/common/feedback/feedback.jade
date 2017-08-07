@@ -3,10 +3,10 @@ button.btn.btn-link.text-gray.dropdown-toggle.padding-6(data-toggle='dropdown', 
   i.fa.fa-smile-o.fa-smile-o_sidebar-feedback
 ul.dropdown-menu.dropdown-menu-left.dropdown-menu_sidebar.font-s13.sidebar-mini-hide
   li
-    a(href='', data-toggle="modal", data-target="#modal-feedback-positive", type="button")
+    a(href='', data-toggle="modal", data-target="#modal-feedback", type="button" ng-click="$ctrl.select('positive')")
       i.fa.fa-smile-o.fa-smile-o_feedback.fa-smile-o_green
       span.font-w600 {{'opinions.feedback.like' | translate}}
   li
-    a(href='', data-toggle="modal", data-target="#modal-feedback-negative", type="button")
+    a(href='', data-toggle="modal", data-target="#modal-feedback", type="button" ng-click="$ctrl.select('negative')")
       i.fa.fa-frown-o.fa-frown-o_feedback.fa-frown-o_yellow
       span.font-w600 {{'opinions.feedback.suggest' | translate}}

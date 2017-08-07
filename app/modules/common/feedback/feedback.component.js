@@ -3,8 +3,21 @@ import template from './feedback.jade'
 class Controller {
 
     /*@ngInject*/
-    constructor() {
+    constructor($window, feedbackService, $rootScope) {
+        this.$window = $window;
+        this.feedbackService = feedbackService;
+        this.$rootScope = $rootScope;
+    }
 
+    select(style) {
+        const opinion = {
+            style: style,
+            location: this.$window.location.href
+        };
+        this.feedbackService.sendOpinion(opinion)
+            .then(resOpinion => {
+                this.$rootScope.$broadcast('opinion.selected', resOpinion);
+            })
     }
 
 }
