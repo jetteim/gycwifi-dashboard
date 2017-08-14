@@ -349,7 +349,9 @@
     "title": "Login",
     "twitter-button": "Log in with Twitter",
     "username": "Username",
-    "vk-button": "Log in with VK"
+    "vk-button": "Log in with VK",
+    "promocode": "Promocode",
+    "forgot-password": "Forgot password?"
   },
   "manage-page": {
     "brands": "Templates",
@@ -363,6 +365,11 @@
     "favorite": "Favorite",
     "notifications": "Notifications",
     "seen": "Seen"
+  },
+  "office": {
+      "reward": "Reward",
+      "payed_at": "Payed at",
+      "client": "Client"
   },
   "opinions": {
     "feedback": {
@@ -431,7 +438,11 @@
     },
     "personal": "Personal",
     "save": "Save Changes",
-    "username": "Username"
+    "username": "Username",
+    "generate-promo-code": "Generate promocode",
+    "promo-code": "Promocode",
+    "referral-link": "Referral link",
+    "copy-link": "Copy link"
   },
   "routers": {
     "admin-ethernet-port": "admin-ethernet-port",

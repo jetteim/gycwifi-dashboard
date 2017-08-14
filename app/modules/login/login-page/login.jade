@@ -62,6 +62,12 @@
                   input#login-password.form-control(ng-model='$ctrl.password', type='password', name='login-password')
                   label(for='login-password')
                     | {{ "login-page.password" | translate }}
+            .form-group(ng-if='!$ctrl.loginForm')
+              .col-xs-12
+                .form-material.form-material-primary
+                  input#promocode.form-control(ng-model='$ctrl.promocode', type='text', name='promocode')
+                  label(for='promocode')
+                    | {{ "login-page.promocode" | translate }}
             .form-group
               .col-xs-12
                 button.btn.form-login_color.login-button.col-xs-12(type='submit', ng-if='$ctrl.loginForm')
@@ -74,7 +80,7 @@
               .col-xs-12
                 button.btn.form-login_color.login-button.col-xs-12(ui-sref='requestPassword')
                   i.si.si-lock.pull-right
-                  |                   {{ "Забыли пароль?" | translate }}
+                  |                   {{ "login-page.forgot-password" | translate }}
           .row
             .col-md-12
               button.btn.btn-block.form-login_color.push-10r(ng-click="$ctrl.authenticate('twitter')" type="button")
@@ -103,10 +109,10 @@
 // Login Footer
 .push-10-t.text-center.animated.fadeInUp
   small.text-muted.font-w600
-    a.or-sign-in-up(href='', ng-click='$ctrl.signInSignUp()', ng-if='$ctrl.loginForm')
+    a.or-sign-in-up(href='#/signup', ng-click='$ctrl.signInSignUp()', ng-if='$ctrl.loginForm')
       // <span class="js-year-copy"></span>
       | {{ "login-page.or-sign-up" | translate }}
-    a.or-sign-in-up(href='', ng-click='$ctrl.signInSignUp()', ng-if='!$ctrl.loginForm')
+    a.or-sign-in-up(href='#/login', ng-click='$ctrl.signInSignUp()', ng-if='!$ctrl.loginForm')
       // <span class="js-year-copy"></span>
       | {{ "login-page.or-sign-in" | translate }}
 // END Login Footer

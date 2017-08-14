@@ -66,6 +66,7 @@ const app = angular.module('app', [
   'ui.router',
   'chart.js',
   'ng-walkthrough',
+  'ngclipboard',
   'pascalprecht.translate',
   'satellizer',
   'colorpicker.module',

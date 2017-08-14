@@ -8,8 +8,8 @@ export default class AuthService {
 
     login(query) {
         return this.$http.post(this.$env.getApiUrl() + '/auth/password', query).then((data) => {
-            this.profileService.setProfile(data.data);
-            return data.data;
+          this.profileService.setProfile(data.data);
+          return data.data;
         });
     }
 
