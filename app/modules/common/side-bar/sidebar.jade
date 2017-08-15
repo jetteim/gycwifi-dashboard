@@ -85,13 +85,13 @@ nav#sidebar
               | {{ 'sidebar.integration' | translate }}
 
           // Export to AmoCRM
-          li(ng-if='$ctrl.user.canSee("amo_crm")')
+          li(ng-if='$ctrl.user.canSee("integrations")')
             a(href='', target='_self', ng-click='$ctrl.amoCRM()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'amocrm')")
               img(src='../images/amocrm_small.png', style="margin-right: 15px; height: 15px;")
               span.sidebar-mini-hide
                 | {{ 'sidebar.exportTo' | translate }} AmoCRM
           // Export to MailChimp
-          li(ng-if='$ctrl.user.canSee("mail_chimp")')
+          li(ng-if='$ctrl.user.canSee("integrations")')
             a(href='', target='_self', ng-click='$ctrl.MailChimp()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'mailchimp')")
               img(src='../images/mailchimp_small.png', style="margin-right: 15px; height: 15px;")
               span.sidebar-mini-hide

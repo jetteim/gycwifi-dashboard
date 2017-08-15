@@ -21,7 +21,7 @@ class Controller {
       this.pluginsService.initTableJS();
     });
     this.changePageHandler = this.getLocations.bind(this);
-    this.getLocations();
+    this.getLocations(1);
   }
 
   getLocations(pageNum) {

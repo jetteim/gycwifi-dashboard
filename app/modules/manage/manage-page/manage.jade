@@ -10,9 +10,13 @@
           i.fa.fa-fw.fa-pencil
           |  {{'manage-page.objects' | translate}}
       li
-        a(href='#tab-manage-settings', ng-click="$ctrl.tab('settings')")
+        a(href='#tab-manage-referrals', ng-click="$ctrl.tab('referrals')")
           i.fa.fa-fw.fa-asterisk
-          |  {{'manage-page.settings' | translate}}
+          |  {{'manage-page.referrals' | translate}}
+      li
+        a(href='#tab-manage-rewards', ng-click="$ctrl.tab('rewards')")
+          i.fa.fa-fw.fa-asterisk
+          |  {{'manage-page.rewards' | translate}}
     .block-content.tab-content
       #tab-manage-users.tab-pane.fade.in.active
         .block.block-themed.block-rounded#account-stats-block
@@ -25,3 +29,11 @@
         userscontrol(ng-if="$ctrl.tabName == 'objects'")
       #tab-manage-settings.tab-pane.fade
         .row.items-push
+      #tab-manage-referrals.tab-pane.fade.in
+        .block.block-themed.block-rounded#account-stats-block
+          .block-content.block-content-full
+            referralscontrol(ng-if="$ctrl.tabName == 'referrals'")
+      #tab-manage-rewards.tab-pane.fade.in
+        .block.block-themed.block-rounded#account-stats-block
+          .block-content.block-content-full
+            rewardscontrol(ng-if="$ctrl.tabName == 'rewards'")

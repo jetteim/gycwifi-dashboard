@@ -359,7 +359,16 @@
     "objects": "Настроенные объекты",
     "routers": "Роутеры",
     "settings": "Мои настройки",
-    "users": "Пользователи"
+    "users": "Пользователи",
+    "referrals": "Рефералы",
+    "rewards": "Вознаграждения",
+    "reward": {
+      "username": "Username",
+      "email": "Email",
+      "promocode": "Промокод",
+      "reward": "Вознаграждение",
+      "payed": "Выплачено"
+    }
   },
   "notifications": {
     "favorite": "Избранное",
@@ -441,7 +450,7 @@
     "username": "Имя пользователя",
     "generate-promo-code": "Сгенерировать промокод",
     "promo-code": "Промокод",
-    "referral-link": "Реферральная ссылка",
+    "referral-link": "Реферальная ссылка",
     "copy-link": "Скопировать ссылку"
   },
   "routers": {

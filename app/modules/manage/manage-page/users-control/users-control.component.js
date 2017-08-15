@@ -21,7 +21,7 @@ class Controller {
       this.pluginsService.initTableJS();
     });
     this.changePageHandler = this.getUsers.bind(this);
-    this.getUsers();
+    this.getUsers(1);
   }
 
   getUsers(pageNum) {

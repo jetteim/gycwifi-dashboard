@@ -359,7 +359,16 @@
     "objects": "Installations",
     "routers": "Routers",
     "settings": "Settings",
-    "users": "Users"
+    "users": "Users",
+    "referrals": "Referrals",
+    "rewards": "Rewards",
+    "reward": {
+      "username": "Username",
+      "email": "Email",
+      "promocode": "Promocode",
+      "reward": "Reward",
+      "payed": "Payed"
+    }
   },
   "notifications": {
     "favorite": "Favorite",

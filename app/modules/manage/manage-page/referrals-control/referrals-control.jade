@@ -1,0 +1,24 @@
+table.table-responsive.js-table-sections.table.table-hover.table-condensed
+  thead
+    tr
+      th(style='width: 80px;')
+        i.si.si-user
+      th(style='width: 35%;')
+        | {{ 'manage-page.reward.username' | translate }}
+      th(style='width: 35%;')
+        | {{ 'manage-page.reward.email' | translate }}
+      th(style='width: 30%;')
+        | {{ 'manage-page.reward.promocode' | translate }}
+  tbody.js-table-sections-header
+    tr(ng-repeat='referral in $ctrl.referrals')
+      td.text-center
+        .img-container
+          img.img-avatar.img-avatar48(ng-src='{{ referral.image }}', alt='{{ referral.username }}')
+      td(style='width: 35%;')
+        | {{ referral.username }}
+      td(style='width: 35%;')
+        | {{ referral.email }}
+      td(style='width: 30%;')
+        | {{ referral.promo_code.code }}
+.content.text-center
+  uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")

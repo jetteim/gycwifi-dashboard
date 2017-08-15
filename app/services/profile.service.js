@@ -26,7 +26,6 @@ export default class ProfileService {
 
     userInfo(){
       let user = this.getProfile().user_info;
-      debugger;
       return {
         id: user.id,
         role: user.role ,

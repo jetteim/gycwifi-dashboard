@@ -1,4 +1,4 @@
-import template from './account-stats.jade'
+import template from './rewards-control.jade'
 
 class Controller {
 
@@ -20,15 +20,14 @@ class Controller {
       // this.$scope.$destroy('ngRepeatFinished');
       this.pluginsService.initTableJS();
     });
-    this.changePageHandler = this.getAccounts.bind(this);
-    this.getAccounts(1);
+    this.changePageHandler = this.getRewards.bind(this);
+    this.getRewards(1);
   }
 
-  getAccounts(pageNum) {
-    this.$api.getById('manage', 'accounts', Object.assign({}, this.params, { page: pageNum }))
+  getRewards(pageNum) {
+    this.$api.getByPageNum('rewards', pageNum )
       .then((response) => {
-        this.accounts = response.accounts;
-        this.isCreateNew = response.can_create || false;
+        this.rewards = response.rewards;
         this.itemsOnPage = response.itemsOnPage || 20;
         this.totalItems = response.items_count;
     });

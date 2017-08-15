@@ -69,7 +69,6 @@ class Controller {
 
             this.$auth.setToken(user.token);
             this.profileService.setProfile(user);
-            debugger;
             this.$state.go('dashboard.statistic');
         })
         .catch((e) => {
