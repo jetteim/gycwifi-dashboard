@@ -4,7 +4,7 @@ import LoginMenuService from '../../services/login-menu.service'
 
 const loginmenu = angular.module('loginmenu', []);
 
-loginmenu.component('loginMenu', loginMenuComponent);
+loginmenu.component('loginmenu', loginMenuComponent);
 loginmenu.component('menuItem', menuItemComponent);
 loginmenu.service('loginMenuService', LoginMenuService);
 
