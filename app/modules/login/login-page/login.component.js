@@ -54,7 +54,7 @@ class Controller {
             username: this.username,
             password: this.password,
             email: this.email,
-            code: this.promocode,
+            promo_code: this.promocode,
             redirectUri: window.location.origin
         };
         console.log(form);
