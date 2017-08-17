@@ -1,11 +1,11 @@
-import template from './vouchers.jade'
-import './vouchers.styl'
+import template from './login-menu.jade'
+import './login-menu.styl'
 
 class Controller {
 
   /* @ngInject */
-  constructor(voucherService, $scope, pluginsService) {
-    this.voucherService = voucherService;
+  constructor(loginMenuService, $scope, pluginsService) {
+    this.loginMenuService = loginMenuService;
     this.$scope = $scope;
     this.pluginsService = pluginsService;
     this.init()
@@ -23,7 +23,9 @@ class Controller {
   }
 
   getVouchers() {
-    this.voucherService.getAll({location_id: this.location.id}).then(vouchers => {
+    this.voucherService.getAll({
+      location_id: this.location.id
+    }).then(vouchers => {
       this.render(vouchers)
     });
   }

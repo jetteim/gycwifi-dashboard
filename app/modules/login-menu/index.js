@@ -1,11 +1,11 @@
-import loginMenuComponent from './vouchers.component'
-import menuItemComponent from './voucher/voucher.component'
-import loginMenuService from '../../services/voucher.service'
+import loginMenuComponent from './login-menu.component'
+import menuItemComponent from './menu-item/menu-item.component'
+import LoginMenuService from '../../services/login-menu.service'
 
-const vouchers = angular.module('vouchers', []);
+const loginmenu = angular.module('loginmenu', []);
 
-vouchers.component('vouchers', vouchersComponent);
-vouchers.component('voucher', voucherComponent);
-vouchers.service('voucherService', VoucherService);
+loginmenu.component('loginMenu', loginMenuComponent);
+loginmenu.component('menuItem', menuItemComponent);
+loginmenu.service('loginMenuService', LoginMenuService);
 
-export default vouchers;
+export default loginmenu;

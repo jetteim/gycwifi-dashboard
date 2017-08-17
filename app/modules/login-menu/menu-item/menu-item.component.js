@@ -1,5 +1,5 @@
-import template from './voucher.jade'
-import './voucher.styl'
+import template from './menu-item.jade'
+import './menu-item.styl'
 
 class Controller {
 

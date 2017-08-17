@@ -20,6 +20,7 @@ import sales from './modules/sales'
 import polls from './modules/polls'
 import opinions from './modules/opinions'
 import vouchers from './modules/vouchers'
+import loginmenu from './modules/login-menu'
 
 // Services
 import JqueryService from './services/jquery.service'
@@ -90,7 +91,8 @@ const app = angular.module('app', [
   'sales',
   'polls',
   'opinions',
-  'vouchers'
+  'vouchers',
+  'loginmenu'
 ]);
 
 app.factory('jquery', JqueryService);
