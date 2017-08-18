@@ -21,7 +21,7 @@ class Controller {
       this.pluginsService.initTableJS();
     });
     this.changePageHandler = this.getBrands.bind(this);
-    this.getBrands();
+    this.getBrands(1);
   }
 
   getBrands(pageNum) {

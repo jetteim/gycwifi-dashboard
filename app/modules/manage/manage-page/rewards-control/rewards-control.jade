@@ -1,0 +1,46 @@
+.row
+  .col-sm-6.col-lg-3
+    a.block.block-bordered.block-link-hover3.text-center
+      .block-content.block-content-full.bg-gray-lighter.border-b
+        .h1.font-w700
+          span.h2
+            | {{ $ctrl.rewardsTotal | currency : "₽ " }}
+          .h3.text-muted.text-uppercase.push-5-t
+            | {{ 'manage-page.reward.earned' | translate}}
+  .col-sm-6.col-lg-3
+    a.block.block-bordered.block-link-hover3.text-center
+      .block-content.block-content-full.bg-gray-lighter.border-b
+        .h1.font-w700
+          span.h2
+            | {{ $ctrl.rewardsPayed | currency : "₽ " }}
+          .h3.text-muted.text-uppercase.push-5-t
+            | {{ 'manage-page.reward.payed' | translate}}
+.row
+  table.table-responsive.js-table-sections.table.table-hover.table-condensed
+    thead
+      tr
+        th.text-center(style='width: 35%;')
+          | {{ 'manage-page.reward.username' | translate }}
+        th.text-center(style='width: 35%;')
+          | {{ 'manage-page.reward.email' | translate }}
+        th.text-center(style='width: 10%;')
+          | {{ 'manage-page.reward.promocode' | translate }}
+        th.text-center(style='width: 10%;')
+          | {{ 'manage-page.reward.reward' | translate }}
+        th.text-center(style='width: 10%;')
+          | {{ 'manage-page.reward.payed' | translate }}
+    tbody.js-table-sections-header
+      tr(ng-repeat='reward in $ctrl.rewards')
+        td.text-center(style='width: 35%;')
+          | {{ reward.user.username }}
+        td.text-center(style='width: 35%;')
+          | {{ reward.user.email }}
+        td.text-center(style='width: 10%;')
+          | {{ reward.user.promo_code.code }}
+        td.text-center(style='width: 10%;')
+          | {{ reward.amount | currency : "₽ " }}
+        td.text-center(style='width: 10%;')
+          i.fa(ng-class="reward.status_cd ==  1 ? 'fa-check'  : 'fa-close';")
+  .content.text-center
+    uib-pagination(items-on-page="$ctrl.itemsOnPage" total-items="$ctrl.totalItems" on-change="$ctrl.changePageHandler")
+

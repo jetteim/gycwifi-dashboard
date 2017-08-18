@@ -9,21 +9,25 @@
             h2.h4.font-w600.text-white.push-5 {{$ctrl.profile.username}}
     form(ng-submit='$ctrl.saveProfile()')
       .block
-        ul.nav.nav-tabs.nav-justified.push-20(data-toggle='tabs')
-          li.active
-            a(href='#tab-profile-avatar')
+        ul.nav.nav-tabs.nav-justified.push-20
+          li(ng-class="{active: $ctrl.tab == 'profile-avatar'}")
+            a(ng-click="$ctrl.setTab('profile-avatar')")
               i.fa.fa-user
               |  {{'profile-page.avatar' | translate}}
-          li
-            a(href='#tab-profile-personal')
+          li(ng-class="{active: $ctrl.tab == 'profile-personal'}")
+            a(ng-click="$ctrl.setTab('profile-personal')")
               i.fa.fa-fw.fa-pencil
               |  {{'profile-page.personal' | translate}}
-          li
-            a(href='#tab-profile-password')
+          li(ng-class="{active: $ctrl.tab == 'profile-password'}")
+            a(ng-click="$ctrl.setTab('profile-password')")
               i.fa.fa-fw.fa-asterisk
               |  {{'profile-page.password.password' | translate}}
-        .block-content.tab-content
-          #tab-profile-avatar.tab-pane.fade.in.active
+          li(ng-class="{active: $ctrl.tab == 'generate-promo-code'}")
+            a(ng-click="$ctrl.setTab('generate-promo-code')")
+              i.fa.fa-fw.fa-asterisk
+              |  {{'profile-page.generate-promo-code' | translate}}
+        .block-content
+          .fade.in(ng-show="$ctrl.tab == 'profile-avatar'")
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal
                 .form-group
@@ -32,7 +36,7 @@
                       span {{'profile-page.avatar' | translate}}
                       img-preloader(img="'user_avatar'")
                     input#profile_avatar.form-control.input-lg(type='file', ng-upload='user_avatar')
-          #tab-profile-personal.tab-pane.fade
+          .fade.in(ng-show="$ctrl.tab == 'profile-personal'")
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal
                 .form-group
@@ -43,7 +47,7 @@
                   .col-xs-12
                     label(for='profile-email') {{'profile-page.email' | translate}}
                     input#profile-email.form-control.input-lg(ng-model='$ctrl.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
-          #tab-profile-password.tab-pane.fade
+          .fade.in(ng-show="$ctrl.tab == 'profile-password'")
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal
                 .form-group
@@ -59,7 +63,29 @@
                   .col-xs-12
                     label(for='profile-password-new-confirm') {{'profile-page.password.confirm' | translate}}
                     input#profile-password-new-confirm.form-control.input-lg(type='password', name='profile-password-new-confirm')
-        .block-content.block-content-full.bg-gray-lighter.text-center
-          button.btn.btn-sm.btn-primary(type='submit')
-            i.fa.fa-check.push-5-r
-            |  {{'profile-page.save' | translate}}
+          .fade.in(ng-show="$ctrl.tab == 'generate-promo-code'")
+            .row.items-push
+              .col-sm-6.col-sm-offset-3.form-horizontal
+                table.table.table-hover(ng-hide="$ctrl.promoCodes.length === 0")
+                  thead
+                    tr
+                      th.text-center(style='width: 30%;')
+                        | {{'profile-page.promo-code' | translate}}
+                      th.text-center(style='width: 70%;')
+                        | {{'profile-page.referral-link' | translate}}
+                  tbody
+                    tr(ng-repeat='promocode in $ctrl.promoCodes')
+                      td.text-center
+                        | {{ promocode.code }}
+                      td.text-center
+                        | {{ promocode.link }}
+                      td.pull-right
+                        a.btn(ngclipboard, data-clipboard-text="{{ promocode.link }}", data-toggle="tooltip" data-placement="top" title type="button" data-original-title="{{ 'profile-page.copy-link' | translate }}")
+                          i.fa.fa-copy.push-5-r
+                .block-content.text-center
+                  a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")
+                    | {{ 'profile-page.generate-promo-code' | translate }}
+          .block-content.block-content-full.bg-gray-lighter.text-center
+            button.btn.btn-sm.btn-primary(type='submit')
+              i.fa.fa-check.push-5-r
+              |  {{'profile-page.save' | translate}}

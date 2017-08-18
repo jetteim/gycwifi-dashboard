@@ -14,15 +14,15 @@ class Controller {
         this.profileService = profileService;
         this.langService = langService;
         this.validationService = validationService;
-
         this.init();
     }
 
     init() {
         if (this.$auth.isAuthenticated()) this.$state.go('dashboard.statistic');
         this.validator = this.validationService.init();
-        this.loginForm = true;
+        this.loginForm = this.$state.current.data.loginState;
         this.lang = this.langService.getLang() || 'ru';
+        this.promocode = this.$location.search().code;
     }
 
     authenticate(provider) {
@@ -54,8 +54,10 @@ class Controller {
             username: this.username,
             password: this.password,
             email: this.email,
+            promo_code: this.promocode,
             redirectUri: window.location.origin
         };
+        console.log(form);
         if (!form.email) delete form.email;
 
         this.authService.login(form)
@@ -64,16 +66,14 @@ class Controller {
                 this.$message.error('Error', 'Login or password is incorrect!');
                 return;
             }
+
             this.$auth.setToken(user.token);
+            this.profileService.setProfile(user);
             this.$state.go('dashboard.statistic');
         })
         .catch((e) => {
             this.$message.error('Error', e.statusText);
         });
-    }
-
-    signInSignUp() {
-        this.loginForm = !this.loginForm;
     }
 
     changeLang(lang) {

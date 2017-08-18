@@ -21,7 +21,7 @@ class Controller {
       this.pluginsService.initTableJS();
     });
     this.changePageHandler = this.getRouters.bind(this);
-    this.getRouters();
+    this.getRouters(1);
   }
 
   getRouters(pageNum) {

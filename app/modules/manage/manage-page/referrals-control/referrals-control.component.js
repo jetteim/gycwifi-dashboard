@@ -1,4 +1,4 @@
-import template from './account-stats.jade'
+import template from './referrals-control.jade'
 
 class Controller {
 
@@ -20,15 +20,14 @@ class Controller {
       // this.$scope.$destroy('ngRepeatFinished');
       this.pluginsService.initTableJS();
     });
-    this.changePageHandler = this.getAccounts.bind(this);
-    this.getAccounts(1);
+    this.changePageHandler = this.getReferrals.bind(this);
+    this.getReferrals(1);
   }
 
-  getAccounts(pageNum) {
-    this.$api.getById('manage', 'accounts', Object.assign({}, this.params, { page: pageNum }))
+  getReferrals(pageNum) {
+    this.$api.getByPageNum('referrals', pageNum )
       .then((response) => {
-        this.accounts = response.accounts;
-        this.isCreateNew = response.can_create || false;
+        this.referrals = response.referrals;
         this.itemsOnPage = response.itemsOnPage || 20;
         this.totalItems = response.items_count;
     });

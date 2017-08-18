@@ -349,7 +349,9 @@
     "title": "Авторизация",
     "twitter-button": "Войти через Twitter",
     "username": "Логин",
-    "vk-button": "Войти через VK"
+    "vk-button": "Войти через VK",
+    "promocode": "Промокод",
+    "forgot-password": "Забыли пароль?"
   },
   "manage-page": {
     "brands": "Шаблоны",
@@ -357,12 +359,27 @@
     "objects": "Настроенные объекты",
     "routers": "Роутеры",
     "settings": "Мои настройки",
-    "users": "Пользователи"
+    "users": "Пользователи",
+    "referrals": "Рефералы",
+    "rewards": "Вознаграждения",
+    "reward": {
+      "username": "Username",
+      "email": "Email",
+      "promocode": "Промокод",
+      "reward": "Вознаграждение",
+      "payed": "Выплачено",
+      "earned": "Начислено"
+    }
   },
   "notifications": {
     "favorite": "Избранное",
     "notifications": "Оповещения",
     "seen": "Просмотрено"
+  },
+  "office": {
+      "reward": "Вознаграждение",
+      "payed_at": "Выплачено",
+      "client": "Клиент"
   },
   "opinions": {
     "feedback": {
@@ -431,7 +448,11 @@
     },
     "personal": "О себе",
     "save": "Сохранить изменения",
-    "username": "Имя пользователя"
+    "username": "Имя пользователя",
+    "generate-promo-code": "Сгенерировать промокод",
+    "promo-code": "Промокод",
+    "referral-link": "Реферальная ссылка",
+    "copy-link": "Скопировать ссылку"
   },
   "routers": {
     "admin-ethernet-port": "admin-ethernet-port",
