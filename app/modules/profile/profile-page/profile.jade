@@ -80,7 +80,7 @@
                       td.text-center
                         | {{ promocode.link }}
                       td.pull-right
-                        a.btn(ngclipboard, data-clipboard-text="{{ promocode.link }}")
+                        a.btn(ngclipboard, data-clipboard-text="{{ promocode.link }}", data-toggle="tooltip" data-placement="top" title type="button" data-original-title="{{ 'profile-page.copy-link' | translate }}")
                           i.fa.fa-copy.push-5-r
                 .block-content.text-center
                   a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")

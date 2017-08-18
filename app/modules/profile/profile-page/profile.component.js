@@ -1,4 +1,4 @@
-import template from './profile.jade'
+import template from './profile.jade';
 
 class Controller {
 

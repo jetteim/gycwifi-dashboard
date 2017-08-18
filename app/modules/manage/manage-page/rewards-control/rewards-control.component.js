@@ -1,4 +1,5 @@
-import template from './rewards-control.jade'
+import template from './rewards-control.jade';
+import './rewards-control.styl';
 
 class Controller {
 
@@ -28,7 +29,9 @@ class Controller {
     this.$api.getByPageNum('rewards', pageNum )
       .then((response) => {
         this.rewards = response.rewards;
-        this.itemsOnPage = response.itemsOnPage || 20;
+        this.rewardsTotal = response.rewards_total;
+        this.rewardsPayed = response.rewards_payed;
+        this.itemsOnPage = response.items_on_page || 20;
         this.totalItems = response.items_count;
     });
     this.pluginsService.initTableJS();

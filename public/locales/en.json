@@ -367,7 +367,8 @@
       "email": "Email",
       "promocode": "Promocode",
       "reward": "Reward",
-      "payed": "Payed"
+      "payed": "Payed",
+      "earned": "Earned"
     }
   },
   "notifications": {

@@ -367,7 +367,8 @@
       "email": "Email",
       "promocode": "Промокод",
       "reward": "Вознаграждение",
-      "payed": "Выплачено"
+      "payed": "Выплачено",
+      "earned": "Начислено"
     }
   },
   "notifications": {
