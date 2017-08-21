@@ -1,23 +1,11 @@
 .row
-  .col-sm-6.col-lg-3
-    a.block.block-bordered.block-link-hover3.text-center
-      .block-content.block-content-full.bg-gray-lighter.border-b
-        .h1.font-w700
-          span.h2
-            | {{ $ctrl.rewardsTotal | currency : "₽ " }}
-          .h3.text-muted.text-uppercase.push-5-t
-            | {{ 'manage-page.reward.earned' | translate}}
-  .col-sm-6.col-lg-3
-    a.block.block-bordered.block-link-hover3.text-center
-      .block-content.block-content-full.bg-gray-lighter.border-b
-        .h1.font-w700
-          span.h2
-            | {{ $ctrl.rewardsPayed | currency : "₽ " }}
-          .h3.text-muted.text-uppercase.push-5-t
-            | {{ 'manage-page.reward.payed' | translate}}
-.row
   table.table-responsive.js-table-sections.table.table-hover.table-condensed
     thead
+      tr
+        th(style='width: 50%;')
+          | {{ 'manage-page.reward.payed' | translate}} : {{ $ctrl.rewardsPayed | currency : "₽ " }}
+        th(style='width: 50%;')
+          | {{ 'manage-page.reward.earned' | translate}} : {{ $ctrl.rewardsTotal | currency : "₽ " }}
       tr
         th.text-center(style='width: 35%;')
           | {{ 'manage-page.reward.username' | translate }}
