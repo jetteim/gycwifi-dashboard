@@ -10,7 +10,7 @@ class Controller {
 
 const component = {
   bindings: {
-    voucher: '<',
+    menuItem: '<',
     remove: '&',
     update: '&'
   },

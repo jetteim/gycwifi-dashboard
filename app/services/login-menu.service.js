@@ -10,7 +10,7 @@ class LoginMenuService extends BaseService {
 
   getAll(params) {
     this.$rootScope.$broadcast('spinner', {
-      entity: 'login_menu_items',
+      entity: 'login_menu',
       action: 'show'
     });
     return super.get(params).then(response => {
@@ -19,7 +19,7 @@ class LoginMenuService extends BaseService {
         login_menu_items = response.data.login_menu_items;
       }
       this.$rootScope.$broadcast('spinner', {
-        entity: 'login_menu_items',
+        entity: 'login_menu',
         action: 'hide'
       });
       return login_menu_items;

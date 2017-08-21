@@ -12,59 +12,60 @@ class Controller {
   }
 
   init() {
-    this.vouchers = [];
-    this.duration = '60'; // default value
+    this.loginMenu = [];
+    this.url = location.url; // default value
     this.$scope.$on('location.loaded', this.locationLoadedHandler.bind(this))
   }
 
   locationLoadedHandler(event, location) {
     this.location = location;
-    this.getVouchers();
+    this.getLoginMenuItems();
   }
 
-  getVouchers() {
-    this.voucherService.getAll({
+  getLoginMenuItems() {
+    this.loginMenuService.getAll({
       location_id: this.location.id
-    }).then(vouchers => {
-      this.render(vouchers)
+    }).then(loginMenu => {
+      this.render(loginMenu)
     });
   }
 
   add() {
-    this.voucherService.create({
+    this.loginMenuService.create({
       location_id: this.location.id,
-      duration: Number(this.duration)
+      url: this.url,
+      title_en: this.title_en,
+      title_ru: this.title_ru
     }).then(response => {
-      const voucher = this.voucherService.formatVoucherTime(response.data.voucher);
-      this.vouchers.push(voucher)
+      this.loginMenu.push(response.data.login_menu_item)
     })
   }
 
-  render(voucher) {
-    this.vouchers = voucher;
+  render(loginMenu) {
+    this.loginMenu = loginMenu;
   }
 
-  remove(voucher) {
-    this.voucherService.remove(voucher.id).then(response => {
-      this.vouchers.splice(Array.prototype.indexOf(voucher), 1);
+  remove(menuItem) {
+    this.loginMenu.remove(login_menu_item.id).then(response => {
+      this.loginMenu.splice(Array.prototype.indexOf(menuItem), 1);
       this.$scope.$digest();
     })
   }
 
-  update(voucher) {
-    this.voucherService.update(voucher.id, voucher)
+  update(menuItem) {
+    this.loginMenuService.update(menuItem.id, menuItem)
   }
 
   refresh() {
-    this.getVouchers()
+    this.getLoginMenuItems()
   }
 
   slide() {
-    this.pluginsService.uiSlideContent('#block-vouchers')
+    this.pluginsService.uiSlideContent('#block-logn-menu')
   }
 
-  isVouchers() {
-    return this.vouchers.length > 0;
+  isloginMenu() {
+    return this.loginMenu.length > 0;
   }
 
 }
