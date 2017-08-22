@@ -3,11 +3,12 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService) {
+  constructor($element, $scope, $api, profileService, $interval) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
     this.profileService = profileService;
+    this.$interval = $interval;
     this.init();
   }
 
@@ -20,6 +21,7 @@ class Controller {
     });
     this.user = this.profileService.userInfo();
     this.promoCodes = this.getPromoCodes();
+    this.copyToolTip = 'profile-page.copy-link';
   }
 
   saveProfile() {
@@ -54,6 +56,11 @@ class Controller {
   promoCodeHash(promocode){
     return { code: promocode,
              link: `${window.location.origin}/sign_up?code=${promocode}`};
+  }
+
+  changeCopyToolTip(){
+    this.copyToolTip = 'profile-page.copied-link';
+    this.$interval( () => { this.copyToolTip = 'profile-page.copy-link'; }, 2000);
   }
 }
 

@@ -452,7 +452,8 @@
     "generate-promo-code": "Сгенерировать промокод",
     "promo-code": "Промокод",
     "referral-link": "Реферальная ссылка",
-    "copy-link": "Скопировать ссылку"
+    "copy-link": "Скопировать ссылку",
+    "copied-link": "Ссылка скопирована"
   },
   "routers": {
     "admin-ethernet-port": "admin-ethernet-port",

@@ -57,7 +57,6 @@ class Controller {
             promo_code: this.promocode,
             redirectUri: window.location.origin
         };
-        console.log(form);
         if (!form.email) delete form.email;
 
         this.authService.login(form)

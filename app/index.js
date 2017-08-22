@@ -1,65 +1,65 @@
-import './index.styl'
+import './index.styl';
 
 // Modules
-import common from './modules/common'
-import statistic from './modules/statistic'
-import authorizations from './modules/authorizations'
-import profile from './modules/profile'
-import brands from './modules/brands'
-import locations from './modules/locations'
-import clients from './modules/clients'
-import routers from './modules/routers'
-import login from './modules/login'
-import manage from './modules/manage'
-import market from './modules/market'
-import vips from './modules/vips'
-import congratulations from './modules/congratulations'
-import help from './modules/help'
-import layouts from './modules/layouts'
-import sales from './modules/sales'
-import polls from './modules/polls'
-import opinions from './modules/opinions'
-import vouchers from './modules/vouchers'
-import loginmenu from './modules/login-menu'
+import common from './modules/common';
+import statistic from './modules/statistic';
+import authorizations from './modules/authorizations';
+import profile from './modules/profile';
+import brands from './modules/brands';
+import locations from './modules/locations';
+import clients from './modules/clients';
+import routers from './modules/routers';
+import login from './modules/login';
+import manage from './modules/manage';
+import market from './modules/market';
+import vips from './modules/vips';
+import congratulations from './modules/congratulations';
+import help from './modules/help';
+import layouts from './modules/layouts';
+import sales from './modules/sales';
+import polls from './modules/polls';
+import opinions from './modules/opinions';
+import vouchers from './modules/vouchers';
+import loginmenu from './modules/login-menu';
 
 // Services
-import JqueryService from './services/jquery.service'
-import EnvService from './services/env.service'
-import ExportService from './services/export.service'
-import ApiService from './services/api.service'
-import AuthService from './services/auth.service'
-import ProfileService from './services/profile.service'
-import EventsService from './services/events.service'
-import GMapService from './services/gmap.service'
-import HandlerService from './services/handler.service'
-import MessageService from './services/message.service'
-import ParamsService from './services/params.service'
-import LangService from './services/lang.service'
-import BreadCrumbsService from './services/breadcrumbs.service'
-import StorageService from './services/storage.service'
-import UploadService from './services/upload.service'
-import ValidationService from './services/validation.service'
-import PluginsService from './services/plugins.service'
-import OpinionsService from './services/opinions/opinions.service'
-import FeedbackService from './services/opinions/feedback.service'
-import HttpErrorService from './services/http-error.service'
-import TutorialService from './services/tutorial.service'
-import PollActivityService from './services/stats/poll-activity.service'
+import JqueryService from './services/jquery.service';
+import EnvService from './services/env.service';
+import ExportService from './services/export.service';
+import ApiService from './services/api.service';
+import AuthService from './services/auth.service';
+import ProfileService from './services/profile.service';
+import EventsService from './services/events.service';
+import GMapService from './services/gmap.service';
+import HandlerService from './services/handler.service';
+import MessageService from './services/message.service';
+import ParamsService from './services/params.service';
+import LangService from './services/lang.service';
+import BreadCrumbsService from './services/breadcrumbs.service';
+import StorageService from './services/storage.service';
+import UploadService from './services/upload.service';;
+import ValidationService from './services/validation.service';
+import PluginsService from './services/plugins.service';
+import OpinionsService from './services/opinions/opinions.service';
+import FeedbackService from './services/opinions/feedback.service';
+import HttpErrorService from './services/http-error.service';
+import TutorialService from './services/tutorial.service';
+import PollActivityService from './services/stats/poll-activity.service';
 
 // Directives
-import jsTabs from './directives/bootstrap.tabs.directive'
-import jsTableSections from './directives/table-header.directive'
-import jsSlimscroll from './directives/slimscroll.directive'
-import ngUpload from './directives/ng-upload.directive'
-import onFinishRender from './directives/on-finish-render.directive'
-import ngAccordion from './directives/ng-accordion.directive'
+import jsTabs from './directives/bootstrap.tabs.directive';
+import jsTableSections from './directives/table-header.directive';
+import jsSlimscroll from './directives/slimscroll.directive';
+import ngUpload from './directives/ng-upload.directive';
+import onFinishRender from './directives/on-finish-render.directive';
+import ngAccordion from './directives/ng-accordion.directive';
 
 // configs
-import interceptors from './config/interceptors'
-import satellizer from './config/satellizer'
-import charts from './config/charts'
-import language from './config/language'
-import checkAuth from './config/check-auth'
+import interceptors from './config/interceptors';
+import satellizer from './config/satellizer';
+import charts from './config/charts';
+import language from './config/language';
+import checkAuth from './config/check-auth';
 
 // App init
 const app = angular.module('app', [
@@ -140,3 +140,4 @@ app.config(language);
 
 // Check auth
 app.run(checkAuth);
+
