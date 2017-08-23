@@ -48,7 +48,7 @@ class Controller {
   }
 
   remove(menuItem) {
-    this.loginMenu.remove(login_menu_item.id).then(response => {
+    this.loginMenu.remove(menuItem.id).then(response => {
       this.loginMenu.splice(Array.prototype.indexOf(menuItem), 1);
       this.$scope.$digest();
     })
