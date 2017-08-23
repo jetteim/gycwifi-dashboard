@@ -13,7 +13,9 @@ class Controller {
 
   init() {
     this.loginMenu = [];
-    this.url = location.url; // default value
+    this.url = location.redirect_url; // default value
+    this.title_ru = location.title; // default value
+    this.title_en = location.title; // default value
     this.$scope.$on('location.loaded', this.locationLoadedHandler.bind(this))
   }
 
