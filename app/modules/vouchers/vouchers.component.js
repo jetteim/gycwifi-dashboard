@@ -23,7 +23,9 @@ class Controller {
   }
 
   getVouchers() {
-    this.voucherService.getAll({location_id: this.location.id}).then(vouchers => {
+    this.voucherService.getAll({
+      location_id: this.location.id
+    }).then(vouchers => {
       this.render(vouchers)
     });
   }
@@ -44,7 +46,7 @@ class Controller {
 
   remove(voucher) {
     this.voucherService.remove(voucher.id).then(response => {
-      this.vouchers.splice(Array.prototype.indexOf(voucher), 1);
+      this.vouchers.splice(this.vouchers.indexOf(voucher), 1);
       this.$scope.$digest();
     })
   }
