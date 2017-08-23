@@ -651,6 +651,14 @@
     },
     "vouchers": "Ваучеры"
   },
+  "login-menu": {
+    "login-menu": "Меню авторизации",
+    "add": "Добавить пункт",
+    "url": "URL",
+    "title_ru": "Название (RU)",
+    "title_en": "Название (EN)",
+    "actions": "Действия"
+  },
   "walk-tooltip": {
     "switch": "Режим обучения"
   }

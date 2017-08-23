@@ -651,6 +651,14 @@
     },
     "vouchers": "Vouchers"
   },
+  "login-menu": {
+    "login-menu": "Login page menu",
+    "add": "Add menu item",
+    "url": "URL",
+    "title_ru": "Title (RU)",
+    "title_en": "Title (EN)",
+    "actions": "Actions"
+  },
   "walk-tooltip": {
     "switch": "Tutorial mode"
   }
