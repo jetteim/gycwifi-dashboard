@@ -1,4 +1,4 @@
-.block.block-bordered#block-vouchers
+.block.block-bordered#block-logn-menu
   .block-header
     ul.block-options
       li
@@ -10,48 +10,34 @@
           i.si.si-arrow-down
     h3.block-title
       i.fa.fa-sticky-note
-      span.voucher-text {{'vouchers.vouchers' | translate}}
+      span.login-menu-text {{'login-menu.login-menu' | translate}}
   .block-content
     .row
-      .col-xs-6
+      .col-xs-12
         a.block.button-pointer(ng-click='$ctrl.add()')
-          .button_add-voucher.bg-flat.clearfix
+          .button_add-login-menu-item.bg-flat.clearfix
             i.si.si-plus.text-white.pull-right
-            span.h5.font-w700.text-white {{'vouchers.create' | translate}}
-      .col-xs-6
-        .form-group
-          label.col-xs-4(for='duration')
-            | {{'vouchers.duration' | translate}}
-          .col-xs-8
-            select#duration.form-control.form-control_black(ng-model='$ctrl.duration')
-              option(value='60') {{'vouchers.select.hour' | translate}}
-              option(value='120') {{'vouchers.select.2hours' | translate}}
-              option(value='180') {{'vouchers.select.3hours' | translate}}
-              option(value='1440') {{'vouchers.select.24hours' | translate}}
-              option(value='2880') {{'vouchers.select.48hours' | translate}}
+            span.h5.font-w700.text-white {{'login-menu.add' | translate}}
+    spinner(entity="'login-menu'", display="'block'")
 
-    spinner(entity="'vouchers'", display="'block'")
-
-    table.table.table-vouchers
-      thead(ng-if="$ctrl.isVouchers()")
+    table.table.table-login-menu
+      thead(ng-if="$ctrl.isloginMenu()")
         tr
-          th.font-s12.table-vouchers__th {{'vouchers.password' | translate}}
-          th.font-s12.table-vouchers__th {{'vouchers.activated' | translate}}
-          th.font-s12.table-vouchers__th.hidden-xs {{'vouchers.expiration' | translate}}
-          th.font-s12.table-vouchers__th.text-center {{'vouchers.actions' | translate}}
+          th.font-s12.table-login-menu__th {{'login-menu.url' | translate}}
+          th.font-s12.table-login-menu__th {{'login-menu.title_ru' | translate}}
+          th.font-s12.table-login-menu__th {{'login-menu.title_en' | translate}}
+          th.font-s12.table-login-menu__th.text-center {{'login-menu.actions' | translate}}
       tbody
-        tr.ng-scope(ng-repeat='voucher in $ctrl.vouchers')
+        tr.ng-scope(ng-repeat='menuItem in $ctrl.loginMenu')
           td.text-center
-            input.form-control.form-control_xs.form-control_black(type='text', ng-model='voucher.password')
+            input.form-control.form-control_xs.form-control_black(type='text', ng-model='menuItem.url')
           td.text-center
-            span(ng-if="!voucher.activated").label.label-success {{'general.yes' | translate}}
-            span(ng-if="voucher.activated").label.label-danger {{'general.no' | translate}}
-          td.hidden-xs
-            span(ng-if="!voucher.expired").label.label-success {{'general.yes' | translate}}
-            span(ng-if="voucher.expired").label.label-danger {{'general.no' | translate}}
+            input.form-control.form-control_xs.form-control_black(type='text', ng-model='menuItem.title_ru')
+          td.text-center
+            input.form-control.form-control_xs.form-control_black(type='text', ng-model='menuItem.title_en')
           td.text-center
             .btn-group
-              button.btn.btn-xs.btn-default(ng-click='$ctrl.update(voucher, $index)')
+              button.btn.btn-xs.btn-default(ng-click='$ctrl.update(menuItem, $index)')
                 i.fa.fa-pencil
-              button.btn.btn-xs.btn-default(ng-click='$ctrl.remove(voucher, $index)')
+              button.btn.btn-xs.btn-default(ng-click='$ctrl.remove(menuItem, $index)')
                 i.fa.fa-times
