@@ -49,7 +49,7 @@ class Controller {
 
   remove(menuItem) {
     this.loginMenuService.remove(menuItem.id).then(response => {
-      this.loginMenu.splice(Array.prototype.indexOf(menuItem), 1);
+      this.loginMenu.splice(this.loginMenu.indexOf(menuItem), 1);
       this.$scope.$digest();
     })
   }
