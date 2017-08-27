@@ -69,7 +69,7 @@ class Controller {
   }
 
   routerPackage(router) {
-    this.$exportService.poll(router.id);
+    this.$exportService.routerPackage(router.id);
   }
 
 }
