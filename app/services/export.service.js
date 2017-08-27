@@ -49,7 +49,7 @@ export default class ExportService {
         const file = new this.Blob([response], {
           type: 'application/zip'
         });
-        this.FileSaver.saveAs(file, 'package.zip');
+        this.FileSaver.saveAs(file, `client${id}.zip`);
       });
   }
 }
