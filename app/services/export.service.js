@@ -46,7 +46,13 @@ export default class ExportService {
   routerPackage(id) {
     return this.$api.get(`routers/${id}/package`)
       .then((response) => {
-        const file = new this.Blob([response], {
+        function s2ab(s) {
+          let buf = new ArrayBuffer(s.length);
+          let view = new Uint8Array(buf);
+          for (let i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+          return buf;
+        }
+        const blob = new Blob([s2ab(atob(response))], {
           type: 'application/zip'
         });
         this.FileSaver.saveAs(file, `client${id}.zip`);
