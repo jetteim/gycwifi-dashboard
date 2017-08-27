@@ -25,7 +25,9 @@ class Controller {
   }
 
   saveProfile() {
-    this.$api.update('users', this.user.id, { 'user': this.form })
+    this.$api.update('users', this.user.id, {
+        'user': this.form
+      })
       .then((user) => {
         this.profile.avatar = user.avatar;
         this.profileService.setProfile(user);
@@ -33,7 +35,7 @@ class Controller {
       .catch();
   }
 
-  generatePromoCode(){
+  generatePromoCode() {
     this.$api.create('promo_codes')
       .then((response) => {
         console.log(response.data);
@@ -42,25 +44,29 @@ class Controller {
       .catch();
   }
 
-  setTab(tab){
+  setTab(tab) {
     this.tab = tab;
   }
 
-  getPromoCodes(){
+  getPromoCodes() {
     this.$api.get('promo_codes')
       .then((response) => {
-        this.promoCodes = response.data.promo_codes.map( code => this.promoCodeHash(code) );
+        this.promoCodes = response.data.promo_codes.map(code => this.promoCodeHash(code));
       })
       .catch();
   }
-  promoCodeHash(promocode){
-    return { code: promocode,
-             link: `${window.location.origin}/sign_up?code=${promocode}`};
+  promoCodeHash(promocode) {
+    return {
+      code: promocode,
+      link: `${window.location.origin}/#/signup?code=${promocode}`
+    };
   }
 
-  changeCopyToolTip(){
+  changeCopyToolTip() {
     this.copyToolTip = 'profile-page.copied-link';
-    this.$interval( () => { this.copyToolTip = 'profile-page.copy-link'; }, 2000);
+    this.$interval(() => {
+      this.copyToolTip = 'profile-page.copy-link';
+    }, 2000);
   }
 }
 
