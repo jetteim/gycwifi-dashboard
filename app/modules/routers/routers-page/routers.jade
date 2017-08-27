@@ -45,7 +45,7 @@ basicstats
               td.font-w600
                 | {{ router.comment }}
               td
-                a.btn.btn-xs.btn-success.push-5-r.push-10.router-settings(href='http://api.gycwifi.com/router_files/{{router.common_name}}/{{router.common_name}}.zip', onclick="ga('send', 'event', 'dashboard', 'router', 'settings')")
+                a.btn.btn-xs.btn-success.push-5-r.push-10.router-settings(href='', target='_self', ng-click='$ctrl.routerPackage({id:router.id})', onclick="ga('send', 'event', 'dashboard', 'router', 'settings')")
                   i.fa.fa-rocket
                   |                   {{ router.common_name }}
               td

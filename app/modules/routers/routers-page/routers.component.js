@@ -3,7 +3,7 @@ import template from './routers.jade'
 class Controller {
 
   /* @ngInject */
-  constructor(locationService, routerService, pluginsService, $scope, $rootScope, $translate, $handler, tutorialService) {
+  constructor(locationService, routerService, pluginsService, $scope, $rootScope, $translate, $handler, tutorialService, $exportService) {
     this.locationService = locationService;
     this.routerService = routerService;
     this.pluginsService = pluginsService;
@@ -12,6 +12,7 @@ class Controller {
     this.$translate = $translate;
     this.$handler = $handler;
     this.tutorialService = tutorialService;
+    this.$exportService = $exportService;
     this.init();
   }
 
@@ -30,8 +31,15 @@ class Controller {
   }
 
   getRouters(pageNum) {
-    this.routerService.get(Object.assign({}, this.params, { page: pageNum }))
-      .then(({ routers, itemsOnPage, can_create, items_count }) => {
+    this.routerService.get(Object.assign({}, this.params, {
+        page: pageNum
+      }))
+      .then(({
+        routers,
+        itemsOnPage,
+        can_create,
+        items_count
+      }) => {
         this.routers = routers;
         this.itemsOnPage = itemsOnPage || 10;
         this.isCreateNewRouters = can_create || false;
@@ -58,6 +66,10 @@ class Controller {
       caption: this.$translate.instant('tutorial.add-router'),
       show: true
     })
+  }
+
+  routerPackage(router) {
+    this.$exportService.poll(router.id);
   }
 
 }
