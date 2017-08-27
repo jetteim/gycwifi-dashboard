@@ -55,7 +55,7 @@ export default class ExportService {
         const blob = new Blob([s2ab(atob(response))], {
           type: 'application/zip'
         });
-        this.FileSaver.saveAs(file, `client${id}.zip`);
+        this.FileSaver.saveAs(blob, `client${id}.zip`);
       });
   }
 }
