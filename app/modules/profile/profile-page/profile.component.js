@@ -13,12 +13,12 @@ class Controller {
   }
 
   init() {
-    this.$scope.upload_success = false;
+    this.upload_success = false;
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
       this.profile.avatar = `${this.$api.getUrl()}${data.url}`;
-      this.$scope.upload_success = true;
+      this.upload_success = true;
     });
     this.user = this.profileService.userInfo();
     this.promoCodes = this.getPromoCodes();
@@ -32,8 +32,14 @@ class Controller {
       .then((profile) => {
         this.profile = profile;
         this.profileService.setProfile(profile);
+        this.upload_success = false;
       })
       .catch();
+  }
+
+  clearAvatar() {
+    this.profile.avatar = null;
+    this.upload_success = false;
   }
 
   generatePromoCode() {
