@@ -9,7 +9,7 @@
               i.fa.fa-times
           .push-30.animated.fadeInUp
             h2.h4.font-w600.text-white.push-5 {{$ctrl.profile.username}}
-    form(ng-submit='$ctrl.saveProfile()')
+    form(ng-submit='$ctrl.saveProfile()' name="profileForm")
       .block
         ul.nav.nav-tabs.nav-justified.push-20
           li(ng-class="{active: $ctrl.tab == 'profile-avatar'}")
@@ -87,6 +87,6 @@
                   a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")
                     | {{ 'profile-page.generate-promo-code' | translate }}
           .block-content.block-content-full.text-center
-            button.btn.btn-sm(ng-class="$ctrl.profile_saved ? 'animated bounceIn btn-success' : 'btn-primary'" type='submit')
+            button.btn.btn-sm(ng-class="[$ctrl.successfulUpdate ? 'animated bounceIn' : 'animated', profileForm.$dirty ? 'btn-primary' : 'btn-success']" type='submit')
               i.fa.fa-check.push-5-r
               |  {{'profile-page.save' | translate}}

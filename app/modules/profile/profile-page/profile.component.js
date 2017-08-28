@@ -14,7 +14,7 @@ class Controller {
 
   init() {
     this.upload_success = false;
-    this.profile_saved = false;
+    this.successfulUpdate = false;
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
@@ -27,26 +27,23 @@ class Controller {
   }
 
   saveProfile() {
-    this.profile_saved = false;
+    this.successfulUpdate = false;
     this.$api.update('users', this.user.id, {
         'profile': this.profile
       })
       .then((profile) => {
         this.profile = profile;
         this.profileService.setProfile(profile);
-        this.upload_success = false;
-        this.profile_saved = true
+        this.successfulUpdate = true
         this.$interval(() => {
-          this.profile_saved = false
-        }, 4000);
+          this.successfulUpdate = false;
+        }, 1000);
       })
       .catch();
   }
 
   clearAvatar() {
     this.profile.avatar = null;
-    this.upload_success = false;
-    this.profile_saved = false;
   }
 
   generatePromoCode() {
