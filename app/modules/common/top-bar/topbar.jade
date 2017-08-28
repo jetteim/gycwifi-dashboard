@@ -11,7 +11,7 @@ header#header-navbar.content-mini.content-mini-full
         button.btn.btn-default.btn-image.dropdown-toggle(data-toggle='dropdown', type='button')
           span
             | {{ $ctrl.profile.username + " " }}
-          img(src='{{$ctrl.profile.avatar}}', alt='Avatar')
+          img(src="{{ $ctrl.profile.avatar || '/images/avatars/avatar2.jpg' }}", alt='Avatar')
           span.caret
         ul.dropdown-menu.dropdown-menu-right
           li.dropdown-header {{'topbar.profile' | translate}}
