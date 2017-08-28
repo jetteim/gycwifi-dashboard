@@ -31,13 +31,15 @@
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal
                 .form-group
-                  .col-xs-10
+                  .col-xs-12
                     label(for='profile_avatar')
                       span {{'profile-page.avatar' | translate}}
                       img-preloader(img="'user_avatar'")
-                    input#profile_avatar.form-control.input-lg(type='file', ng-upload='user_avatar')
-                  .col-xs-2
-                    span.btn-xs.btn-danger.button-pointer(style="display: inline-block; margin-left: 10px", ng-click="$ctrl.profile.avatar=null") {{'general.delete' | translate}}
+                    .col-xs-10
+                      input#profile_avatar.form-control.input-lg(type='file', ng-upload='user_avatar')
+                    .col-xs-2
+                      button.btn.btn-xs.btn-default(ng-click="$ctrl.profile.avatar=null")
+                        i.fa.fa-times
           .fade.in(ng-show="$ctrl.tab == 'profile-personal'")
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal
