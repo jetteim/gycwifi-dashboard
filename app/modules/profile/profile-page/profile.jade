@@ -42,7 +42,7 @@
                 .form-group
                   .col-xs-5
                     label {{'profile-page.username' | translate}}
-                    .form-control-static.font-w700(ng-model='$ctrl.profile.username')
+                    .form-control-static.font-w700 {{ $ctrl.profile.username }}
                 .form-group
                   .col-xs-12
                     label(for='profile-email') {{'profile-page.email' | translate}}
