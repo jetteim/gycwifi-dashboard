@@ -42,11 +42,11 @@
                 .form-group
                   .col-xs-5
                     label {{'profile-page.username' | translate}}
-                    .form-control-static.font-w700 {{'profile-page.admin' | translate}}
+                    .form-control-static.font-w700(ng-model='$ctrl.profile.username')
                 .form-group
                   .col-xs-12
                     label(for='profile-email') {{'profile-page.email' | translate}}
-                    input#profile-email.form-control.input-lg(ng-model='$ctrl.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
+                    input#profile-email.form-control.input-lg(ng-model='$ctrl.profile.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
           .fade.in(ng-show="$ctrl.tab == 'profile-password'")
             .row.items-push
               .col-sm-6.col-sm-offset-3.form-horizontal

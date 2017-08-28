@@ -16,7 +16,7 @@ export default class ProfileService {
   }
 
   getProfile() {
-    if(this.$storage.get('profile')){
+    if (this.$storage.get('profile')) {
       return this.$storage.get('profile');
     }
     console.error('can`t load profile');
@@ -28,7 +28,7 @@ export default class ProfileService {
   }
 
   userInfo() {
-    if(this.getProfile() && this.getProfile().user_info){
+    if (this.getProfile() && this.getProfile().user_info) {
       let user = this.getProfile().user_info;
       return {
         id: user.id,
