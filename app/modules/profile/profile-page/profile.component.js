@@ -37,7 +37,8 @@ class Controller {
         this.successfulUpdate = true
         this.$interval(() => {
           this.successfulUpdate = false;
-        }, 1000);
+          this.$scope.profileForm.$setPristine();
+        }, 2000);
       })
       .catch();
   }
