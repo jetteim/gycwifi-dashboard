@@ -9,7 +9,6 @@ class Controller {
     this.$api = $api;
     this.profileService = profileService;
     this.$interval = $interval;
-    this.$timeout = $timeout;
     this.init();
   }
 
