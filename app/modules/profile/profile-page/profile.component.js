@@ -37,6 +37,7 @@ class Controller {
         this.profileService.setProfile(profile);
         this.upload_success = false;
         this.$timeout((this.profile_saved = true), 0);
+        this.$timeout((this.profile_saved = false), 2000);
       })
       .catch();
   }
