@@ -14,10 +14,9 @@ class Controller {
 
   init() {
     this.profile = this.profileService.getProfile();
-    this.form = {};
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
-      this.form.avatar = this.apiUrl + data.url;
+      this.profile.avatar = this.apiUrl + data.url;
     });
     this.user = this.profileService.userInfo();
     this.promoCodes = this.getPromoCodes();
@@ -26,11 +25,11 @@ class Controller {
 
   saveProfile() {
     this.$api.update('users', this.user.id, {
-        'user': this.form
+        'profile': this.profile
       })
-      .then((user) => {
-        this.profile.avatar = user.avatar;
-        this.profileService.setProfile(user);
+      .then((profile) => {
+        this.profile = profile;
+        this.profileService.setProfile(profile);
       })
       .catch();
   }
