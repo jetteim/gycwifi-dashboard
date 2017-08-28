@@ -87,6 +87,6 @@
                   a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")
                     | {{ 'profile-page.generate-promo-code' | translate }}
           .block-content.block-content-full.text-center
-            button.btn.btn-sm.btn-primary.animated(ng-class="{bounceIn: $ctrl.successfulUpdate}, {disabled: profileForm.$pristine}" type='submit')
+            button.btn.btn-sm.btn-primary.animated(ng-class="{bounceIn: $ctrl.successfulUpdate, disabled: profileForm.$pristine}" type='submit')
               i.fa.fa-check.push-5-r
               |  {{'profile-page.save' | translate}}
