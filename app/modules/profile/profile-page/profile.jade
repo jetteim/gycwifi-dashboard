@@ -29,21 +29,19 @@
         .block-content
           .fade.in(ng-show="$ctrl.tab == 'profile-avatar'")
             .row.items-push
-              .col-sm-6.col-sm-offset-3.form-horizontal
-                .form-group
-                  .col-xs-12
-                    .col-xs-2
-                      label(for='profile_avatar')
-                        span {{'profile-page.avatar' | translate}}
-                        img-preloader(img="'user_avatar'")
-                    .col-xs-8
-                      input#profile_avatar.form-control.input-md(type='file', ng-upload='user_avatar')
-                    .col-xs-2
-                      button.btn.btn-md.btn-default(ng-click="$ctrl.profile.avatar=null")
+              .col-sm-8.col-sm-offset-2.form-horizontal
+                .col-xs-12
+                  .form-group(ng-class="{has-success: 'user_avatar'}")
+                    label(for='profile_avatar')
+                      span {{'profile-page.avatar' | translate}}
+                      img-preloader(img="'user_avatar'")
+                    .input-group
+                      input#profile_avatar.form-control.input-sm(type='file', ng-upload='user_avatar')
+                      button.btn.btn-sm.btn-info(ng-click="$ctrl.profile.avatar=null" ng-class="{hidden: $ctrl.profile.avatar == null}")
                         i.fa.fa-times
           .fade.in(ng-show="$ctrl.tab == 'profile-personal'")
             .row.items-push
-              .col-sm-6.col-sm-offset-3.form-horizontal
+              .col-sm-8.col-sm-offset-2.form-horizontal
                 .form-group
                   .col-xs-5
                     label {{'profile-page.username' | translate}}
@@ -54,7 +52,7 @@
                     input#profile-email.form-control.input-lg(ng-model='$ctrl.profile.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
           .fade.in(ng-show="$ctrl.tab == 'profile-password'")
             .row.items-push
-              .col-sm-6.col-sm-offset-3.form-horizontal
+              .col-sm-8.col-sm-offset-2.form-horizontal
                 .form-group
                   .col-xs-12
                     label(for='profile-password') {{'profile-page.password.current-password' | translate}}
@@ -70,7 +68,7 @@
                     input#profile-password-new-confirm.form-control.input-lg(type='password', name='profile-password-new-confirm')
           .fade.in(ng-show="$ctrl.tab == 'generate-promo-code'")
             .row.items-push
-              .col-sm-6.col-sm-offset-3.form-horizontal
+              .col-sm-8.col-sm-offset-2.form-horizontal
                 table.table.table-hover(ng-hide="$ctrl.promoCodes.length === 0")
                   thead
                     tr
