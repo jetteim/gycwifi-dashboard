@@ -14,6 +14,7 @@ class Controller {
 
   init() {
     this.upload_success = false;
+    this.profile_saved = false;
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
@@ -26,6 +27,7 @@ class Controller {
   }
 
   saveProfile() {
+    this.profile_saved = false;
     this.$api.update('users', this.user.id, {
         'profile': this.profile
       })
@@ -33,6 +35,7 @@ class Controller {
         this.profile = profile;
         this.profileService.setProfile(profile);
         this.upload_success = false;
+        this.profile_saved = true;
       })
       .catch();
   }

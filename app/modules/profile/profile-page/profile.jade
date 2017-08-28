@@ -5,7 +5,7 @@
         .block-content.bg-primary-op.text-center.overflow-hidden
           .push-30-t.push.animated.fadeInDown
             img.img-avatar.img-avatar96.img-avatar-thumb(src='{{$ctrl.profile.avatar}}', alt='')
-            button.btn.btn-xs.btn-danger.btn-rounded(ng-click="$ctrl.clearAvatar()" ng-class="{hidden: $ctrl.profile.avatar == null}" style="vertical-align: top;")
+            button.btn.btn-xs.btn-danger.btn-rounded(ng-click="$ctrl.clearAvatar()" ng-class="{hidden: !$ctrl.profile.avatar}" style="vertical-align: top;")
               i.fa.fa-times
           .push-30.animated.fadeInUp
             h2.h4.font-w600.text-white.push-5 {{$ctrl.profile.username}}
@@ -31,12 +31,12 @@
         .block-content
           .fade.in(ng-show="$ctrl.tab == 'profile-avatar'")
             .row.items-push
-              .col-sm-8.col-sm-offset-2.form-inline
-                .form-group(ng-class="{'has-success': $ctrl.upload_success == true}")
+              .col-sm-8.col-sm-offset-2.form-horizontal
+                .form-group(ng-class="{'has-success': $ctrl.upload_success}")
                   label.sr-only(for='profile_avatar')
                     | {{'profile-page.avatar' | translate}}
-                    img-preloader(img="'user_avatar'")
                   input#profile_avatar.form-control.input-sm(type='file', ng-upload='user_avatar')
+                  img-preloader(img="'user_avatar'")
           .fade.in(ng-show="$ctrl.tab == 'profile-personal'")
             .row.items-push
               .col-sm-8.col-sm-offset-2.form-horizontal
@@ -90,3 +90,4 @@
             button.btn.btn-sm.btn-primary(type='submit')
               i.fa.fa-check.push-5-r
               |  {{'profile-page.save' | translate}}
+            span.label.label-success(ng-class="{hidden: !$ctrl.profile_saved}")
