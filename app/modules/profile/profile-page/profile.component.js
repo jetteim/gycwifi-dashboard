@@ -3,7 +3,7 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService, $interval, $timeout) {
+  constructor($element, $scope, $api, profileService, $interval) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
@@ -36,8 +36,10 @@ class Controller {
         this.profile = profile;
         this.profileService.setProfile(profile);
         this.upload_success = false;
-        this.$timeout((this.profile_saved = true), 0);
-        this.$timeout((this.profile_saved = false), 2000);
+        this.profile_saved = true
+        this.$interval(() => {
+          this.profile_saved = false
+        }, 4000);
       })
       .catch();
   }
@@ -45,6 +47,7 @@ class Controller {
   clearAvatar() {
     this.profile.avatar = null;
     this.upload_success = false;
+    this.profile_saved = false;
   }
 
   generatePromoCode() {
