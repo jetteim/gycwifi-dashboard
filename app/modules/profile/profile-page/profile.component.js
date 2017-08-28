@@ -16,7 +16,7 @@ class Controller {
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
-      this.profile.avatar = this.apiUrl + data.url;
+      this.profile.avatar = `${this.$api.getUrl()}${data.url}`;
     });
     this.user = this.profileService.userInfo();
     this.promoCodes = this.getPromoCodes();
