@@ -3,12 +3,13 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService, $interval) {
+  constructor($element, $scope, $api, profileService, $interval, $timeout) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
     this.profileService = profileService;
     this.$interval = $interval;
+    this.$timeout = $timeout;
     this.init();
   }
 
@@ -35,7 +36,7 @@ class Controller {
         this.profile = profile;
         this.profileService.setProfile(profile);
         this.upload_success = false;
-        this.profile_saved = true;
+        this.$timeout((this.profile_saved = true), 0);
       })
       .catch();
   }
