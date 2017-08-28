@@ -30,7 +30,7 @@
           .fade.in(ng-show="$ctrl.tab == 'profile-avatar'")
             .row.items-push
               .col-sm-8.col-sm-offset-2.form-inline
-                .form-group(ng-class="{has-success: 'user_avatar'}")
+                .form-group(ng-class="{has-success: upload_success}")
                   label(for='profile_avatar')
                     span {{'profile-page.avatar' | translate}}
                     img-preloader(img="'user_avatar'")

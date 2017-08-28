@@ -3,7 +3,7 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService, $interval, $scope) {
+  constructor($element, $scope, $api, profileService, $interval) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
@@ -13,12 +13,12 @@ class Controller {
   }
 
   init() {
-    $scope.avatar_success = false;
+    this.$scope.upload_success = false;
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
       this.profile.avatar = `${this.$api.getUrl()}${data.url}`;
-      $scope.avatar_success = true;
+      this.$scope.upload_success = true;
     });
     this.user = this.profileService.userInfo();
     this.promoCodes = this.getPromoCodes();
