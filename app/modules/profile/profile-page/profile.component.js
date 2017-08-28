@@ -3,7 +3,7 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService, $interval) {
+  constructor($element, $scope, $api, profileService, $interval, $scope) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
