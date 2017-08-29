@@ -13,8 +13,6 @@ class Controller {
   }
 
   init() {
-    this.upload_success = false;
-    this.successfulUpdate = false;
     this.profile = this.profileService.getProfile();
     this.tab = 'profile-avatar';
     this.$scope.$on('image_loaded', (e, data) => {
@@ -37,7 +35,6 @@ class Controller {
         this.successfulUpdate = true
         this.$interval(() => {
           this.successfulUpdate = false;
-          this.$scope.profileForm.$setPristine();
         }, 2000);
       })
       .catch();
