@@ -47,23 +47,23 @@
                 .form-group
                   .col-xs-12
                     label(for='profile-email') {{'profile-page.email' | translate}}
-                    input#profile-email.form-control.input-lg(ng-model='$ctrl.profile.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
+                    input#profile-email.form-control.input-sm(ng-model='$ctrl.profile.email', type='text', name='profile-email', placeholder='Enter your email', value='{{$ctrl.profile.email}}')
           .fade.in(ng-show="$ctrl.tab == 'profile-password'")
             .row.items-push
               .col-sm-8.col-sm-offset-2.form-horizontal
                 .form-group
                   .col-xs-12
                     label(for='profile-password') {{'profile-page.password.current-password' | translate}}
-                    input#profile-password.form-control.input-lg(type='password', name='profile-password')
+                    input#profile-password.form-control.input-sm(type='password', name='profile-password')
                 hr
                 .form-group
                   .col-xs-12
                     label(for='profile-password-new') {{'profile-page.password.new-password' | translate}}
-                    input#profile-password-new.form-control.input-lg(type='password', name='profile-password-new')
+                    input#profile-password-new.form-control.input-sm(type='password', name='profile-password-new')
                 .form-group
                   .col-xs-12
                     label(for='profile-password-new-confirm') {{'profile-page.password.confirm' | translate}}
-                    input#profile-password-new-confirm.form-control.input-lg(type='password', name='profile-password-new-confirm')
+                    input#profile-password-new-confirm.form-control.input-sm(type='password', name='profile-password-new-confirm')
           .fade.in(ng-show="$ctrl.tab == 'generate-promo-code'")
             .row.items-push
               .col-sm-8.col-sm-offset-2.form-horizontal
@@ -87,6 +87,6 @@
                   a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")
                     | {{ 'profile-page.generate-promo-code' | translate }}
           .block-content.block-content-full.text-center
-            button.btn.btn-sm.btn-primary.animated(ng-class="{bounceIn: $ctrl.successfulUpdate}" type='submit')
+            button.btn.btn-sm.btn-primary.animated(ng-class="{zoomIn: $ctrl.successfulUpdate}" type='submit')
               i.fa.fa-check.push-5-r
               |  {{'profile-page.save' | translate}}
