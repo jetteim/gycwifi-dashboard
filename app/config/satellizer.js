@@ -22,9 +22,8 @@ export default ($authProvider, $envProvider) => {
   $authProvider.twitter({
     url: apiUrl + '/auth/twitter',
     clientId: 'fI1qz0H8qdBhk95AFVE1b1S3k',
-    authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-    oauthType: '1.0',
+    responseType: 'token',
     popupOptions: {
       width: 495,
       height: 645
