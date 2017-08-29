@@ -22,7 +22,7 @@ export default ($authProvider, $envProvider) => {
   $authProvider.twitter({
     url: apiUrl + '/auth/twitter',
     clientId: '745965151480913920',
-    authorizationEndpoint: 'https://api.twitter.com/oauth/authorize',
+    // authorizationEndpoint: 'https://api.twitter.com/oauth/authorize',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host
   });
 
