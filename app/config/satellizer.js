@@ -20,7 +20,7 @@ export default ($authProvider, $envProvider) => {
 
   // Twitter (Work in progress)
   $authProvider.twitter({
-    url: apiUrl + '/auth/twitter?redirectUri=dashboard',
+    url: apiUrl + '/auth/twitter?target=user',
     clientId: '745965151480913920',
     //redirectUri: 'dashboard',
     // authorizationEndpoint: 'https://api.twitter.com/oauth/authorize',
@@ -29,7 +29,7 @@ export default ($authProvider, $envProvider) => {
 
   // Instagram
   $authProvider.instagram({
-    url: apiUrl + '/auth/instagram',
+    url: apiUrl + '/auth/instagram?target=user',
     clientId: 'aa1fba4378b24fae8a3c6ae777e59a0f',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host
   });
@@ -37,7 +37,7 @@ export default ($authProvider, $envProvider) => {
   // Google
   $authProvider.google({
     clientId: '356689716495-gd4ovrvbr019u7tr2blutmc4q91ot7v3.apps.googleusercontent.com',
-    url: apiUrl + '/auth/google_oauth2',
+    url: apiUrl + '/auth/google_oauth2?target=user',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host
   });
 
@@ -46,7 +46,7 @@ export default ($authProvider, $envProvider) => {
     clientId: '1744031425861866',
     responseType: 'code',
     name: 'facebook',
-    url: apiUrl + '/auth/facebook',
+    url: apiUrl + '/auth/facebook?target=user',
     authorizationEndpoint: 'https://www.facebook.com/v2.8/dialog/oauth',
     redirectUri: window.location.origin + '/',
     requiredUrlParams: ['display', 'scope'],
@@ -63,7 +63,7 @@ export default ($authProvider, $envProvider) => {
   // VK
   $authProvider.oauth2({
     name: 'vk',
-    url: apiUrl + '/auth/vk',
+    url: apiUrl + '/auth/vk?target=user',
     clientId: '5535231',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
     authorizationEndpoint: 'https://oauth.vk.com/authorize',
