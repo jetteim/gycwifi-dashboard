@@ -20,7 +20,7 @@ export default ($authProvider, $envProvider) => {
 
   // Twitter (Work in progress)
   $authProvider.twitter({
-    url: apiUrl + '/auth/twitter?target=user',
+    url: window.location.origin + '/auth/twitter?target=user',
     clientId: '745965151480913920',
     loginRedirect: null,
     redirectUri: window.location.origin
