@@ -20,8 +20,8 @@ export default ($authProvider, $envProvider) => {
 
   // Twitter (Work in progress)
   $authProvider.twitter({
-    // url: apiUrl + '/auth/twitter',
-    url: window.location.origin + '/auth/twitter?target=user',
+    url: apiUrl + '/auth/twitter?target=user',
+    // url: window.location.origin + '/auth/twitter?target=user',
     authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
     // redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
     redirectUri: window.location.origin + '/auth/twitter?target=user',
