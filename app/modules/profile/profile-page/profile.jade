@@ -84,8 +84,9 @@
                         a.btn(ngclipboard, data-clipboard-text="{{ promocode.link }}", tooltip-placement="top" uib-tooltip="{{ $ctrl.copyToolTip | translate }}", ng-click="$ctrl.changeCopyToolTip();")
                           i.fa.fa-copy.push-5-r
                       .block-content.text-center
-                  a.btn.btn-sm.btn-primary.text-center(ng-click="$ctrl.generatePromoCode()")
-                    | {{ 'profile-page.generate-promo-code' | translate }}
+            .block-content.block-content-full.text-center
+              a.btn.btn-sm.btn-primary(ng-click="$ctrl.generatePromoCode()")
+                | {{ 'profile-page.generate-promo-code' | translate }}
           .block-content.block-content-full.text-center
             button.btn.btn-sm.btn-primary.animated(ng-class="{zoomIn: $ctrl.successfulUpdate}" type='submit')
               i.fa.fa-check.push-5-r

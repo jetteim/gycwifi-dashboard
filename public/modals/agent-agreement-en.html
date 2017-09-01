@@ -1,0 +1,13 @@
+<div class="modal-header">
+  Agent Agreement
+</div>
+<div class="modal-body">
+  coming soon
+</div>
+<div class="modal-footer">
+  <form ng-submit='submitAgreement()' name="agentForm">
+    <input type="checkbox" ng-model="checked">
+    <button class="btn btn-info" type="submit" ng-disabled="!checked">Agree</button>
+    <button class="btn btn-info" ng-click="cancel($event)">Close</button>
+  </form>
+</div>

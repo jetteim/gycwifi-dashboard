@@ -26,7 +26,7 @@ nav#sidebar
           // Clients
           li(ng-if='$ctrl.currentUser.canSee("dashboard.clients")')
             a(ui-sref='dashboard.clients')
-              i.si.si-currentUsers
+              i.si.si-user
               span.sidebar-mini-hide
                 | {{ 'sidebar.clients' | translate }}
           li(ng-if='$ctrl.currentUser.canSee("dashboard.authorizations")')

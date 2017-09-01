@@ -3,12 +3,14 @@ import template from './profile.jade';
 class Controller {
 
   /* @ngInject */
-  constructor($element, $scope, $api, profileService, $interval) {
+  constructor($element, $scope, $interval, $translate, $uibModal, $api, profileService) {
     this.$element = $element;
     this.$scope = $scope;
     this.$api = $api;
     this.profileService = profileService;
     this.$interval = $interval;
+    this.$uibModal = $uibModal;
+    this.$translate = $translate;
     this.init();
   }
 
@@ -20,8 +22,9 @@ class Controller {
       this.upload_success = true;
     });
     this.user = this.profileService.currentUser();
-    this.promoCodes = this.getPromoCodes();
+    this.getPromoCodes();
     this.copyToolTip = 'profile-page.copy-link';
+    this.agreementExcepted = false;
   }
 
   saveProfile() {
@@ -32,7 +35,7 @@ class Controller {
       .then((profile) => {
         this.profile = profile;
         this.profileService.setProfile(profile);
-        this.successfulUpdate = true
+        this.successfulUpdate = true;
         this.$interval(() => {
           this.successfulUpdate = false;
         }, 2000);
@@ -45,11 +48,9 @@ class Controller {
   }
 
   generatePromoCode() {
+    if(!this.agreementExcepted) return this.showAgentAgreement();
     this.$api.create('promo_codes')
-      .then((response) => {
-        console.log(response.data);
-        this.promoCodes.push(this.promoCodeHash(response.data.promo_code));
-      })
+      .then(response => this.promoCodes.push(this.promoCodeHash(response.data.promo_code)))
       .catch();
   }
 
@@ -61,9 +62,11 @@ class Controller {
     this.$api.get('promo_codes')
       .then((response) => {
         this.promoCodes = response.data.promo_codes.map(code => this.promoCodeHash(code));
+        this.agreementExcepted = this.promoCodes.length !== 0;
       })
       .catch();
   }
+
   promoCodeHash(promocode) {
     return {
       code: promocode,
@@ -76,6 +79,27 @@ class Controller {
     this.$interval(() => {
       this.copyToolTip = 'profile-page.copy-link';
     }, 2000);
+  }
+
+  showAgentAgreement(){
+   this.$uibModal.open({
+      templateUrl: `modals/agent-agreement-${this.$translate.use()}.html`,
+      backdrop: true,
+      windowClass: 'modal',
+      size: 'lg',
+      controller: ($scope, $uibModalInstance) => {
+        $scope.cancel = ($event) =>  {
+          $event.preventDefault();
+          $uibModalInstance.dismiss('cancel');
+        };
+        $scope.submitAgreement = () => {
+          this.agreementExcepted = true;
+          this.generatePromoCode();
+          $uibModalInstance.dismiss('cancel');
+        };
+      }
+    });
+
   }
 }
 
