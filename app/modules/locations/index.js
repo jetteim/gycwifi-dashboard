@@ -32,10 +32,10 @@ locations.config($stateProvider => {
       },
       controllerAs: '$ctrl'
     })
-    .state('locationNew', {
+    .state('dashboard.location.new', {
       url: "/location/new",
       template: "<location-new></location-new>"
-    })
+    });
 });
 
 export default locations;

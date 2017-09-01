@@ -33,7 +33,7 @@ brands.config($stateProvider => {
       },
       controllerAs: '$ctrl'
     })
-    .state('brandNew', {
+    .state('dashboard.brand.new', {
       url: "/brand/new",
       template: "<brand-new></brand-new>"
     })

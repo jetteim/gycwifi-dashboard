@@ -27,7 +27,7 @@ export default class ProfileService {
     this.$storage.del('profile');
   }
 
-  userInfo() {
+  currentUser() {
     if (this.getProfile() && this.getProfile().user_info) {
       let user = this.getProfile().user_info;
       return {

@@ -18,18 +18,18 @@ nav#sidebar
       .side-content
         ul.nav-main
           // Dashboard
-          li(ng-if='$ctrl.user.canSee("statistic")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.statistic")')
             a(ui-sref='dashboard.statistic')
               i.si.si-speedometer
               span.sidebar-mini-hide
                 | {{ 'sidebar.statistic' | translate }}
           // Clients
-          li(ng-if='$ctrl.user.canSee("clients")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.clients")')
             a(ui-sref='dashboard.clients')
-              i.si.si-users
+              i.si.si-currentUsers
               span.sidebar-mini-hide
                 | {{ 'sidebar.clients' | translate }}
-          li(ng-if='$ctrl.user.canSee("authorizations")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.authorizations")')
             a(ui-sref='dashboard.authorizations')
               i.si.si-speedometer
               span.sidebar-mini-hide
@@ -39,18 +39,18 @@ nav#sidebar
             span.sidebar-mini-hide {{ 'sidebar.engagement' | translate }}
 
           // Congratulations
-          li(ng-if='$ctrl.user.canSee("congratulations")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.congratulations")')
             a(ui-sref='dashboard.congratulations')
               i.si.si-present
               span.sidebar-mini-hide
                 | {{ 'sidebar.congratulations' | translate }}
           // Sales
-          li(ng-if='$ctrl.user.canSee("sales")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.sales")')
             a(ui-sref='dashboard.sales')
               i.si.si-basket-loaded
               span.sidebar-mini-hide {{ 'sidebar.sales' | translate }}
           // Polls
-          li(ng-if='$ctrl.user.canSee("polls")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.polls")')
             a(ui-sref='dashboard.polls')
               i.glyphicon.glyphicon-bullhorn
               span.sidebar-mini-hide
@@ -61,19 +61,19 @@ nav#sidebar
             span.sidebar-mini-hide {{ 'sidebar.settings' | translate }}
 
           // Brands
-          li(ng-if='$ctrl.user.canSee("brands")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.brands")')
             a(ui-sref='dashboard.brands')
               i.si.si-badge
               span.sidebar-mini-hide
                 | {{ 'sidebar.brands' | translate }}
           // Locations
-          li(ng-if='$ctrl.user.canSee("locations")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.locations")')
             a#nav_add_location(ui-sref='dashboard.locations')
               i.si.si-pointer
               span.sidebar-mini-hide
                 | {{ 'sidebar.locations' | translate }}
           // Routers
-          li(ng-if='$ctrl.user.canSee("routers")')
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.routers")')
             a(ui-sref='dashboard.routers')
               i.si.si-note
               span.sidebar-mini-hide
@@ -85,13 +85,13 @@ nav#sidebar
               | {{ 'sidebar.integration' | translate }}
 
           // Export to AmoCRM
-          li(ng-if='$ctrl.user.canSee("integrations")')
+          li
             a(href='', target='_self', ng-click='$ctrl.amoCRM()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'amocrm')")
               img(src='../images/amocrm_small.png', style="margin-right: 15px; height: 15px;")
               span.sidebar-mini-hide
                 | {{ 'sidebar.exportTo' | translate }} AmoCRM
           // Export to MailChimp
-          li(ng-if='$ctrl.user.canSee("integrations")')
+          li
             a(href='', target='_self', ng-click='$ctrl.MailChimp()', onclick="ga('send', 'event', 'dashboard', 'data-export', 'mailchimp')")
               img(src='../images/mailchimp_small.png', style="margin-right: 15px; height: 15px;")
               span.sidebar-mini-hide
@@ -104,26 +104,26 @@ nav#sidebar
               span.sidebar-mini-hide
                 | {{ 'sidebar.advanced' | translate }}
             // Market
-            li(ng-if='$ctrl.user.canSee("market")')
+            li(ng-if='$ctrl.currentUser.canSee("dashboard.market")')
               a(ui-sref='dashboard.market')
                 i.si.si-wallet
                 span.sidebar-mini-hide
                   | {{ 'sidebar.market' | translate }}
             // Vips
-            li(ng-if='$ctrl.user.canSee("vips")')
+            li(ng-if='$ctrl.currentUser.canSee("dashboard.vips")')
               a(ui-sref='dashboard.vips')
                 i.si.si-bag
                 span.sidebar-mini-hide
                   | {{ 'sidebar.vipNumbers' | translate }}
             // Help
-            li(ng-if='$ctrl.user.canSee("help")')
+            li(ng-if='$ctrl.currentUser.canSee("dashboard.help")')
               a(ui-sref='dashboard.help')
                 i.si.si-layers
                 span.sidebar-mini-hide
                   | {{ 'sidebar.help' | translate }}
             // Opinions
             //- li(ng-if='($ctrl.role === "admin")||(($ctrl.role === "admin"))')
-            li(ng-if='$ctrl.user.canSee("opinions")')
+            li(ng-if='$ctrl.currentUser.canSee("dashboard.opinions")')
               a(ui-sref='dashboard.opinions')
                 i.si.si-book-open
                 span.sidebar-mini-hide

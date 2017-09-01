@@ -9,6 +9,7 @@ class Controller {
     this.profileService = profileService;
     this.$handler = $handler;
     this.$api = $api;
+    this.currentUser = profileService.currentUser();
   }
 
   $onInit() {

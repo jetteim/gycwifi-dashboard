@@ -9,7 +9,7 @@ class Controller {
       this.$scope = $scope;
       this.$exportService = $exportService;
       this.profileService = profileService;
-      this.user = profileService.userInfo();
+      this.currentUser = profileService.currentUser();
     }
 
     $onInit() {

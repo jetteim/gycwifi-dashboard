@@ -30,7 +30,7 @@ routers.config(($stateProvider) => {
       },
       controllerAs: '$ctrl'
     })
-    .state('routerNew', {
+    .state('dashboard.router.new', {
       url: "/router/new",
       template: "<router-new></router-new>"
     })

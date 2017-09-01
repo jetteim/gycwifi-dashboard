@@ -19,7 +19,7 @@ class Controller {
       this.profile.avatar = `${this.$api.getUrl()}${data.url}`;
       this.upload_success = true;
     });
-    this.user = this.profileService.userInfo();
+    this.user = this.profileService.currentUser();
     this.promoCodes = this.getPromoCodes();
     this.copyToolTip = 'profile-page.copy-link';
   }

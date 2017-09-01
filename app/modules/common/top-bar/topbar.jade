@@ -15,17 +15,17 @@ header#header-navbar.content-mini.content-mini-full
           span.caret
         ul.dropdown-menu.dropdown-menu-right
           li.dropdown-header {{'topbar.profile' | translate}}
-          li
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.manage")')
             a(tabindex='-1', href='', ui-sref='dashboard.manage')
               i.si.si-logout.pull-right
               | {{'topbar.manage' | translate}}
-          li
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.inbox")')
             a(tabindex='-1', href='', ui-sref='dashboard.inbox')
               i.si.si-envelope-open.pull-right
               span.badge.badge-primary.pull-right(ng-if='$ctrl.unread_count > 0')
                 | {{ $ctrl.unread_count }}
-              | {{'topbar.inbox' | translate}} 
-          li
+              | {{'topbar.inbox' | translate}}
+          li(ng-if='$ctrl.currentUser.canSee("dashboard.profile")')
             a(tabindex='-1', ui-sref='dashboard.profile')
               i.si.si-user.pull-right
               | {{'topbar.profile' | translate}}
