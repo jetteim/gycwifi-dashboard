@@ -20,10 +20,16 @@ export default ($authProvider, $envProvider) => {
 
   // Twitter (Work in progress)
   $authProvider.twitter({
+    // url: apiUrl + '/auth/twitter',
     url: window.location.origin + '/auth/twitter?target=user',
-    clientId: '745965151480913920',
-    loginRedirect: null,
-    redirectUri: window.location.origin
+    authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
+    // redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+    redirectUri: window.location.origin + '/auth/twitter',
+    oauthType: '1.0',
+    popupOptions: {
+      width: 495,
+      height: 645
+    }
   });
 
   // Instagram
